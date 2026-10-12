@@ -13,3 +13,6 @@
 /* Keep frozen-column offsets aligned with enlarged category text. */
 .table-scroll .category-cell{min-width:96px;max-width:96px}.category-col{width:96px}.table-scroll .model-cell{left:96px}
 @media(max-width:650px){.table-scroll .category-cell{min-width:76px;max-width:76px}.category-col{width:76px}.table-scroll .model-cell{left:76px}}
+
+/* Compact introductory section; repository access belongs with resources. */
+.hero{padding-bottom:12px}.hero .release-status{margin-bottom:14px}.overview{border-top:1px solid var(--line)}.repository-note{margin-top:25px;padding:26px 0;display:flex;justify-content:space-between;align-items:center;gap:35px;border-top:1px solid var(--line)}.repository-note h3{margin:9px 0 10px;font-size:20px}.repository-note p{font-size:13px;color:var(--muted);max-width:690px;margin:0}.repository-note .button{white-space:nowrap;flex-shrink:0}@media(max-width:650px){.hero{padding-bottom:4px}.repository-note{display:block;padding:23px 0}.repository-note .button{margin-top:18px}.repository-note h3{font-size:18px}}
