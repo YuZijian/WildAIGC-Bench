@@ -1,24 +1,29 @@
 # WildAIGC-Bench
 
-A Hard Benchmark for AI-Generated Image Detection in Real-World Online Circulation.
+A hard benchmark for AI-generated and edited image detection in real-world online circulation.
 
 Project website: https://yuzijian.github.io/WildAIGC-Bench/
+Dataset: https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench
 
-## Status
+## First release
 
-V1 annotation is in progress. Dataset downloads, technical report, and baseline results are not yet released.
+407 human-accepted AI images; 83 manually cropped, 324 unchanged. Raw acquired files and processed crops are paired without resizing. The dataset is positive-only; AI-image recall is the primary standalone metric.
 
-## Website
+Dataset upload is underway. The technical report, formal citation and full evaluation settings are in preparation.
 
-The project page is a static website: `index.html`, `style.css`, and `.nojekyll`. No build step is required.
+## Website contents
 
-For GitHub Pages, select **Settings → Pages → Deploy from a branch → main → / (root)**.
+Buildless HTML/CSS/JS: `index.html`, `style.css`, `app.js`, `.nojekyll` and `assets/`.
+Includes editable SVG construction / statistics figures, four accepted examples, a recall comparison chart and all four completed evaluation tables from the 2026-10-12 snapshot. Data are in `assets/evaluation_results.json` and `assets/statistics.json`.
 
-## Planned releases
+The evaluation snapshot is supplied by the maintainer; website generation did not rerun model inference. Full and sampled results are distinguished. Pending runs are not filled in. Two additional standard benchmarks are planned; their results are not included.
 
-- Dataset documentation, reviewed sample manifests, labels, and source/evidence references.
-- Collection and annotation protocols, deduplication and release validation tools.
-- Detector evaluation configurations and results.
-- An index and local extraction script for the ITW-SM real-image reference subset. ITW-SM files will not be redistributed; users must independently obtain access and comply with its terms.
+For GitHub Pages: Settings → Pages → Deploy from a branch → main → / (root).
 
-Public image distribution, licensing, and final metadata fields are still being reviewed. This repository currently contains only the project website.
+## Rights and external data
+
+Images remain subject to applicable third-party rights. The dataset LICENSE distinguishes the maintainers' metadata from third-party images. ITW-SM files are not redistributed; obtain independent authorized access and cite the original work.
+
+## Acknowledgment
+
+The presentation was informed by the ITW-SM project page: https://mever-team.github.io/itw-sm/ . All displayed WildAIGC measurements and examples come from this project's frozen release and supplied evaluation snapshot.

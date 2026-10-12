@@ -1,0 +1,26 @@
+[
+  {
+    "sample_id": "img_978cbe5873565169",
+    "title": "A fabricated abandoned restaurant",
+    "source_page_url": "https://www.snopes.com/fact-check/bucket-shaped-kfc-restaurant/",
+    "version": "processed"
+  },
+  {
+    "sample_id": "img_13509fd21630a792",
+    "title": "An invented ancient artifact",
+    "source_page_url": "https://www.snopes.com/fact-check/egyptian-sculptures-cats/",
+    "version": "processed"
+  },
+  {
+    "sample_id": "img_7a7cad28606e8064",
+    "title": "A falsely reported collapsed monument",
+    "source_page_url": "https://maldita.es/desinfo/20260903/esta-imagen-muestra-el-monumento-a-la-resistencia-derrumbado-tras-el-terremoto-de-colombia/",
+    "version": "processed"
+  },
+  {
+    "sample_id": "img_aa1668fc07a092f3",
+    "title": "A purported volcanic eruption",
+    "source_page_url": "https://factcheck.afp.com/doc.afp.com.C7VA7G4",
+    "version": "processed"
+  }
+]
