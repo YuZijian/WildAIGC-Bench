@@ -1,26 +1,115 @@
 [
   {
-    "sample_id": "img_978cbe5873565169",
-    "title": "A fabricated abandoned restaurant",
-    "source_page_url": "https://www.snopes.com/fact-check/bucket-shaped-kfc-restaurant/",
-    "version": "processed"
+    "sample_id": "img_0fe24cc6e96245b8",
+    "title": "Song Yuqi retail poster",
+    "topic": "Poster / local-edit claim",
+    "source_page_url": "https://www.4anet.com/p/01m4csjyqm986pe0gzfwxsfa9d",
+    "raw_url": "./assets/img_0fe24cc6e96245b8-raw.jpg",
+    "processed_url": "./assets/img_0fe24cc6e96245b8-processed.png",
+    "unchanged": false,
+    "raw_size": [
+      800,
+      1460
+    ],
+    "processed_size": [
+      689,
+      852
+    ],
+    "crop_box_xywh": [
+      93,
+      98,
+      689,
+      852
+    ]
   },
   {
-    "sample_id": "img_13509fd21630a792",
-    "title": "An invented ancient artifact",
-    "source_page_url": "https://www.snopes.com/fact-check/egyptian-sculptures-cats/",
-    "version": "processed"
+    "sample_id": "img_1b3026fd893bf218",
+    "title": "Courier parcels and a television box",
+    "topic": "Everyday scene",
+    "source_page_url": "https://www.creativebloq.com/ai/ai-art/can-you-spot-all-the-clues-that-prove-this-ai-photo-isnt-real",
+    "raw_url": "./assets/img_1b3026fd893bf218-raw.jpg",
+    "processed_url": "./assets/img_1b3026fd893bf218-raw.jpg",
+    "unchanged": true,
+    "raw_size": [
+      1200,
+      1036
+    ],
+    "processed_size": [
+      1200,
+      1036
+    ],
+    "crop_box_xywh": null
   },
   {
-    "sample_id": "img_7a7cad28606e8064",
-    "title": "A falsely reported collapsed monument",
-    "source_page_url": "https://maldita.es/desinfo/20260903/esta-imagen-muestra-el-monumento-a-la-resistencia-derrumbado-tras-el-terremoto-de-colombia/",
-    "version": "processed"
+    "sample_id": "img_2bb3885c6b59817a",
+    "title": "A locally edited football spectator",
+    "topic": "Face replacement",
+    "source_page_url": "https://leadstories.com/hoax-alert/2026/06/fact-check-image-altered-with-openai-tools-made-german-soccer-fan-in-the-stands-look-like-adolf-hitler.html",
+    "raw_url": "./assets/img_2bb3885c6b59817a-raw.jpg",
+    "processed_url": "./assets/img_2bb3885c6b59817a-raw.jpg",
+    "unchanged": true,
+    "raw_size": [
+      988,
+      661
+    ],
+    "processed_size": [
+      988,
+      661
+    ],
+    "crop_box_xywh": null
   },
   {
-    "sample_id": "img_aa1668fc07a092f3",
-    "title": "A purported volcanic eruption",
-    "source_page_url": "https://factcheck.afp.com/doc.afp.com.C7VA7G4",
-    "version": "processed"
+    "sample_id": "img_6cfd077cd16360a7",
+    "title": "A fabricated Ronaldo wedding scene",
+    "topic": "Celebrity event",
+    "source_page_url": "https://crhoy.com/entretenimiento/no-caiga-fotos-que-circulan-de-la-boda-de-cristiano-y-georgina-son-ia/",
+    "raw_url": "./assets/img_6cfd077cd16360a7-raw.jpg",
+    "processed_url": "./assets/img_6cfd077cd16360a7-raw.jpg",
+    "unchanged": true,
+    "raw_size": [
+      1200,
+      1607
+    ],
+    "processed_size": [
+      1200,
+      1607
+    ],
+    "crop_box_xywh": null
+  },
+  {
+    "sample_id": "img_2662f72eae79741a",
+    "title": "Kenyan recruits in a slogan formation",
+    "topic": "Public-event claim",
+    "source_page_url": "https://factcheck.afp.com/doc.afp.com.C79679F",
+    "raw_url": "./assets/img_2662f72eae79741a-raw.jpg",
+    "processed_url": "./assets/img_2662f72eae79741a-raw.jpg",
+    "unchanged": true,
+    "raw_size": [
+      723,
+      469
+    ],
+    "processed_size": [
+      723,
+      469
+    ],
+    "crop_box_xywh": null
+  },
+  {
+    "sample_id": "img_eef641f81db6498b",
+    "title": "A purported Beijing drone collection queue",
+    "topic": "Urban scene",
+    "source_page_url": "https://factcheck.afp.com/doc.afp.com.C98N6CQ",
+    "raw_url": "./assets/img_eef641f81db6498b-raw.jpg",
+    "processed_url": "./assets/img_eef641f81db6498b-raw.jpg",
+    "unchanged": true,
+    "raw_size": [
+      759,
+      1200
+    ],
+    "processed_size": [
+      759,
+      1200
+    ],
+    "crop_box_xywh": null
   }
 ]

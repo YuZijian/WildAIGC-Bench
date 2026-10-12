@@ -1,29 +1,22 @@
 # WildAIGC-Bench
 
-A hard benchmark for AI-generated and edited image detection in real-world online circulation.
-
-Project website: https://yuzijian.github.io/WildAIGC-Bench/
+Project: https://yuzijian.github.io/WildAIGC-Bench/
 Dataset: https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench
 
-## First release
+407 human-reviewed AI images, raw and processed versions. 83 manually cropped, 324 unchanged. Raw bytes and exact crop regions are preserved in the dataset.
 
-407 human-accepted AI images; 83 manually cropped, 324 unchanged. Raw acquired files and processed crops are paired without resizing. The dataset is positive-only; AI-image recall is the primary standalone metric.
+Static GitHub Pages site: `index.html`, `style.css`, `app.js`, `.nojekyll`, `assets/`. No build step.
 
-Dataset upload is underway. The technical report, formal citation and full evaluation settings are in preparation.
+## Current website
 
-## Website contents
+Neutral navy/slate styling; six maintainer-selected examples with raw/processed switching and large-image viewer; editable construction / statistics SVGs; two evaluation tables from the latest supplied 2026-10-12 snapshot.
 
-Buildless HTML/CSS/JS: `index.html`, `style.css`, `app.js`, `.nojekyll` and `assets/`.
-Includes editable SVG construction / statistics figures, four accepted examples, a recall comparison chart and all four completed evaluation tables from the 2026-10-12 snapshot. Data are in `assets/evaluation_results.json` and `assets/statistics.json`.
+`assets/evaluation_results.json` holds 11 methods, cross-benchmark accuracy and WildAIGC metrics. Missing measurements are null and left blank on the page. † marks sampled large-benchmark dimensions for large models. Averages use only completed benchmarks and exclude WildAIGC. The descriptive accuracy gap uses raw WildAIGC, as supplied.
 
-The evaluation snapshot is supplied by the maintainer; website generation did not rerun model inference. Full and sampled results are distinguished. Pending runs are not filled in. Two additional standard benchmarks are planned; their results are not included.
+`assets/sample_examples.json` records the six example IDs, exact-byte asset URLs, dimensions and crop status. Unchanged samples share an asset because raw and processed bytes are identical.
 
-For GitHub Pages: Settings → Pages → Deploy from a branch → main → / (root).
+The technical report and real-image false-positive analysis are follow-up work. The website update does not rerun inference or modify the frozen dataset. ITW-SM remains an evaluated benchmark, not a resource download hosted here.
 
-## Rights and external data
+## Rights
 
-Images remain subject to applicable third-party rights. The dataset LICENSE distinguishes the maintainers' metadata from third-party images. ITW-SM files are not redistributed; obtain independent authorized access and cite the original work.
-
-## Acknowledgment
-
-The presentation was informed by the ITW-SM project page: https://mever-team.github.io/itw-sm/ . All displayed WildAIGC measurements and examples come from this project's frozen release and supplied evaluation snapshot.
+See the dataset LICENSE for the distinction between maintainer metadata and third-party image rights. Examples retain their source links. Obtain external benchmark files from their respective authors under applicable access terms.
