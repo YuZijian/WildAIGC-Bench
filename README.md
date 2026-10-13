@@ -13,9 +13,9 @@
 
 WildAIGC-Bench brings together AI-generated and edited images tied to real news events, collected from their circulation across the web and social media. It preserves the image files found online, including the effects of actual sharing rather than artificially simulated degradation. These photographic-looking images challenge detectors that perform well on other benchmark collections.
 
-| From real news events. Through real social feeds. | Human-verified labels | Detector blind spots |
+| Real news, real circulation | Human review, clear evidence | Shared detector blind spots |
 |:---|:---|:---|
-| AI imagery tied to news events, collected after actual web and social-media circulation, without artificially simulated degradation. | Every image manually checked, with source evidence supporting its AI label. | All evaluated detectors show lower recall here than their average across external benchmarks. |
+| AI imagery from news events, collected as it circulated across the web and social media, without simulated degradation. | Each image is manually confirmed as AI-generated or edited, with clear source evidence supporting its label. | All evaluated detectors show lower recall than their external-benchmark average, with some images missed by every detector. |
 
 ## A look at the collection
 
