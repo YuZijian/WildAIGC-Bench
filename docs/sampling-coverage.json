@@ -1,0 +1,65 @@
+{
+  "SynthWildx_sample": {
+    "total": 1781,
+    "label_counts": {
+      "1": 1354,
+      "0": 427
+    },
+    "input_sha256": "503b421e480c6ce751863b0d608d7fc32690cfcf178c284a10629f9c05ef5743"
+  },
+  "UnivFD_sample": {
+    "total": 2000,
+    "label_counts": {
+      "0": 1000,
+      "1": 1000
+    },
+    "input_sha256": "32cfe8b51c3fb3ff51278dd56fc7bee4035aad25835de304977c83e1bc56aec9"
+  },
+  "AIGIBench_sample": {
+    "total": 2000,
+    "label_counts": {
+      "0": 1001,
+      "1": 999
+    },
+    "input_sha256": "f09a4b5ac229decc02977e37c6c5b594b1475336741640f13e0ed83c25217c93"
+  },
+  "EvalGen_sample": {
+    "total": 2000,
+    "label_counts": {
+      "1": 2000
+    },
+    "input_sha256": "1e9bf5ab71f2987cb9970f014f2b289bb298035cc1af78e8cd51a00def0b5cb1"
+  },
+  "Chameleon_sample": {
+    "total": 2000,
+    "label_counts": {
+      "0": 1142,
+      "1": 858
+    },
+    "input_sha256": "2bfc9baf5af9e8cb68db87059bf75fec62da57c48358f75299c25dc717454345"
+  },
+  "RRDataset_sample": {
+    "total": 2000,
+    "label_counts": {
+      "0": 1000,
+      "1": 1000
+    },
+    "input_sha256": "307181ec35f43c17450d58fdded224e9246fb4d9bf6dd0c3f30fea9487abdf59"
+  },
+  "synthbuster_sample": {
+    "total": 4000,
+    "label_counts": {
+      "1": 3000,
+      "0": 1000
+    },
+    "input_sha256": "fbd9ab9377024f5ab7e7d3971e155d48dcb569b58d1f366eb01e01260da06730"
+  },
+  "WildRF_sample": {
+    "total": 1834,
+    "label_counts": {
+      "1": 925,
+      "0": 909
+    },
+    "input_sha256": "f981a8c34486f1099008d60e584f93ba69f1604a206a73139716d734c8fb1b8d"
+  }
+}

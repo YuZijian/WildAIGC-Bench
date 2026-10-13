@@ -1,41 +1,53 @@
-# Evaluation scope and interpretation
+# Evaluation protocol and results
 
-[Interactive result tables](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Structured results](../assets/evaluation_results.json) · [Repository overview](../README.md)
+[Project page](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Model settings](model-settings.md) · [Results JSON](../assets/evaluation_results.json) · [Processed predictions](../assets/processed_predictions.jsonl)
 
-## Benchmark groups
+Snapshot: 13 October 2026. Ten selected methods are displayed; this is not an exhaustive list of internal experiments. No model was rerun while preparing these results.
 
-| Group | Benchmarks |
-|---|---|
-| Standard | EvalGen, synthbuster, UnivFD |
-| In-the-Wild | AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset, ITW-SM |
-| This project | WildAIGC-Bench raw and processed |
+## Metrics and operating points
 
-The current project page shows a selected baseline set. Missing measurements are null in JSON and blank in the tables. Counts and summaries describe the displayed measurements, not all algorithms ever evaluated internally.
+The positive class is AI-generated/edited (`fake=1`). WildAIGC contains 407 positive samples: report **AI-image recall**, TP/(TP+FN). There is no standalone WildAIGC FPR or AUROC. ITW-SM provides an external reference of 5,000 fake and 5,000 real images. Its real-image FPR is FP/(FP+TN); it is not a source-matched real control for WildAIGC.
 
-## Two result tables
+The principal tables compare fake-class recall, and show ITW-SM real FPR beside it. All ten displayed configurations have lower processed recall on WildAIGC than on ITW-SM's fake subset. This is an observed difference between collections, not a causal estimate of compression damage or a claim about every possible model configuration. Models are evaluated at their recorded operating points, **not calibrated to equal FPR**. Other-benchmark accuracy is supplementary and is not subtracted from WildAIGC recall. Different benchmark content and sampling coverage still limit comparisons.
 
-1. **Cross-benchmark accuracy:** per-method accuracy and the average of completed benchmarks excluding WildAIGC. Methods with missing cells have different averaging coverage.
-2. **WildAIGC detail:** raw accuracy, processed accuracy, their difference, the other-benchmark average, and the gap between that average and WildAIGC raw accuracy.
+Unknown, parsing-failure or error outputs are mapped to real: FN for fake inputs and TN for real inputs. Unknown counts are reported separately. This policy can lower FPR while increasing fake misses; it must not be described as a correct classification of every unknown. MLLMs provide labels, so AUROC is not computed for them.
 
-The displayed data preserve the supplied values and rounding. Derived aggregates have not been recomputed from the displayed four-decimal cells.
+## Data provenance and retained records
 
-## Sampling
+- Eight external benchmark aggregates come from the supplied `summary.csv`, selected full runs for small models and sample runs for large models. The maintainer explicitly confirmed CSV precedence over the older narrative report, including FakeVLM synthbuster/UnivFD.
+- All 407 processed predictions for each displayed method match the frozen sample-ID set exactly, with no duplicate IDs. Processed metrics are recomputed from these records.
+- ITW-SM predictions are recomputed where available (10,000 unique records, 5,000 per class). AIDE ITW-SM metrics are supplied aggregates; its per-image file is absent.
+- Wild raw metrics are supplied aggregates. Raw per-image files were overwritten by processed runs and are unavailable. Aggregate metrics were retained for both versions.
+- The published processed prediction file contains sample IDs, versions, labels/scores and unknown flags. Internal paths and generated response text are omitted.
 
-A dagger (`†`) marks large-model evaluations using subsets of up to 2,000 images on large benchmark dimensions. Smaller dimensions are evaluated in full. WildAIGC uses all 407 accepted images. Full and sampled evaluations must be identified when comparing results; exact dimension sizes and sampling settings will accompany the full evaluation protocol.
+No confidence interval is presented as population representativeness: the set is curated and related images exist. Stored group IDs are not a validated independent-event partition.
 
-## Metric boundaries
+## Sampling and class composition
 
-WildAIGC is positive-only: accuracy equals AI-image recall. Standalone AUROC, false-positive rate and true-negative rate are not defined without real-image controls.
+Standard benchmarks: EvalGen, synthbuster, UnivFD. In-the-Wild: AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset, ITW-SM and WildAIGC.
 
-The accuracy gap against averages of other benchmarks is a descriptive number across different class compositions and sources. It is not a matched-recall decline or causal estimate of what makes an image difficult. Model versions, checkpoints, thresholds, prompts and preprocessing need to be specified for a reproducible model comparison.
+Small-model runs use the full eight external dimensions. Large-model runs use fixed lists of 2,000 on large dimensions; synthbuster (4,000), SynthWildx (1,781) and WildRF (1,834) use full lists. ITW-SM and WildAIGC are full for all methods. Blank cells indicate no supplied aggregate. A 2,000-image list can include real images: 2,000 is not necessarily the recall denominator.
 
-All accepted images were inspected for crop suitability; processed differs from raw only where cropping was needed. A small overall raw/processed difference cannot establish that a detector ignores peripheral cues, because unchanged images and opposite-direction prediction changes may mask effects. A crop-subset and paired-prediction analysis is planned.
+The supplied sampling description states seed 42 and label stratification. Available list class counts are recorded in [sampling coverage](sampling-coverage.json); this does not assume equal class counts. Exact input lists contain internal storage references and are not published as runnable public download lists. Aggregate-only full-set class counts cannot all be reconstructed from rounded metrics. Results therefore retain each evaluated total n and metric provenance; no fabricated denominator is supplied.
 
-## Next releases
+## Crop subset and shared misses
 
-- Complete remaining empty results.
-- Publish full model configurations and the evaluation harness after documentation and cleanup.
-- Add real-image false-positive-rate analysis under the corresponding external dataset access terms.
-- Complete the technical report and formal citation.
+All images were reviewed for crop suitability: 83 cropped, 324 byte-identical. The crop-subset table compares **processed performance in two different groups**; it does not estimate the effect of cropping. Without raw per-image predictions, transition counts and paired crop analysis cannot be reconstructed. Whole-set raw/processed differences do not prove that detectors ignore peripheral cues. Cropping also changes image dimensions and potentially model preprocessing.
 
-External benchmark images are obtained from their authors; this repository does not redistribute them. The current snapshot is supplied by the maintainer, and preparing this website did not rerun inference.
+Thirty processed samples are missed by all ten displayed methods. These IDs appear in the results JSON, alongside sanitized predictions. This is descriptive of these configurations; it neither proves a shared failure mechanism nor means all future detectors will fail. Gallery examples retain their original selection and show model detection counts without selecting new images for low scores.
+
+## PE model selection
+
+The maintainer reports that 5% of the training data was held out for validation. Training ran for 10 epochs; `best` denotes the checkpoint with the highest validation accuracy. Benchmark sample selection did not use detector predictions. Exact training-data composition, weight hashes and the complete validation split are not supplied here; no broader training-overlap audit is claimed.
+
+## Reproduce metrics without rerunning inference
+
+The standalone [scorer](../scripts/score_predictions.py) accepts normalized predictions, validates unique IDs and reports counts/recall/FPR/unknowns. It requires no model or external data access. For example, after downloading this repository:
+
+```bash
+python scripts/score_predictions.py assets/processed_predictions.jsonl --method dda
+```
+
+This recomputes the released predictions (DDA: 148/407 detected); it does not independently authenticate the image files. Once the data manifest is available, add `--manifest /path/to/release_manifest.json` to require the same sample-ID set. See `--help` for normalized input format. It is a metric scorer, not a complete detector inference harness. Match the same frozen 407 sample IDs and explicitly report raw or processed.
+
+Optional future experiments: calibrated Recall@FPR using a separate real calibration split; new raw predictions if a paired crop experiment is desired. Neither is required to use this release or requested as a mandatory rerun.
