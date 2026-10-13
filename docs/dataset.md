@@ -19,7 +19,7 @@ The maintainers report that **two reviewers examined every one of the 407 accept
 
 **Outputs of general-purpose AI-image detectors (including the compared methods) were never used for dataset inclusion. Generation-platform watermark tests used as provenance evidence are distinct from these detector predictions.** Manual screening excluded obvious artistic AI creations; low-quality cases included low resolution, extreme blur, severe truncation without a fuller source, and platform-added AI labels without an available clean version. No numerical quality cutoff was recorded. All 407 labels remain the accepted human annotations; this documentation update does not re-audit or relabel samples. Evidence and human judgments remain fallible; corrections should identify the sample and supporting source.
 
-There are 320 stored `split_group` values. These group related records and are not a validated count of independent events. Sources are concentrated in news and fact-check coverage, so the set does not represent all internet AI imagery. A per-image complete generation/edit taxonomy was not established and is not retrospectively inferred from titles.
+Internal records contain 320 related-sample groups; these are not a validated count of independent events. Group identifiers are not included in the public metadata. Sources are concentrated in news and fact-check coverage, so the set does not represent all internet AI imagery. A per-image complete generation/edit taxonomy was not established and is not retrospectively inferred from titles.
 
 ## Raw versus processed
 
@@ -37,12 +37,12 @@ As of 13 October 2026, the maintainer confirms the Hugging Face repository is pr
 
 - `raw/` and `processed/`: the paired 407-image files.
 - `data/test-*.parquet`: two image columns plus core metadata, configured as the `default/test` split for preview and loading.
-- `metadata.jsonl` and `samples.csv`: the same 14 core metadata fields, with native arrays in JSONL.
+- `metadata.jsonl` and `samples.csv`: the same 11 core metadata fields, with native arrays in JSONL.
 - `release_manifest.json`: sample IDs, paths, SHA256 hashes, dimensions and crop coordinates.
 - `checksums.sha256`, `validation.json` and `SOURCE_GAPS.txt`: file integrity and known provenance gaps.
 - `README.md` and `LICENSE`: usage and component-specific rights information.
 
-The 14 metadata fields are `sample_id`, `label`, `split_group`, `title`, `background`, `evidence_summary`, `limitations`, `media_kind`, `source_page_url`, `image_url`, `social_source_urls`, `reference_urls`, `raw_path`, and `processed_path`.
+The 11 metadata fields are `sample_id`, `label`, `title`, `background`, `evidence_summary`, `source_page_url`, `image_url`, `social_source_urls`, `reference_urls`, `raw_path`, and `processed_path`.
 
 A recorded source page may be a news or fact-check report. It is not necessarily the original social post. Missing references remain empty; expired signed acquisition URLs have signing parameters omitted and may not resolve. Source gaps are documented in the release.
 
