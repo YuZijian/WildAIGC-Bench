@@ -164,6 +164,11 @@
           "both_detected": 20,
           "both_missed": 51
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.5426142857142857,
+        "fpr": 0.146,
+        "acc": 0.6651428571428573
       }
     },
     {
@@ -316,6 +321,11 @@
           "both_detected": 22,
           "both_missed": 47
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.7910999999999999,
+        "fpr": 0.08073333333333334,
+        "acc": 0.8626857142857143
       }
     },
     {
@@ -463,6 +473,11 @@
           "both_detected": 5,
           "both_missed": 58
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.47211428571428565,
+        "fpr": 0.1253,
+        "acc": 0.6425428571428572
       }
     },
     {
@@ -615,6 +630,11 @@
           "both_detected": 16,
           "both_missed": 61
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.7908714285714286,
+        "fpr": 0.06556666666666666,
+        "acc": 0.8662285714285716
       }
     },
     {
@@ -767,6 +787,11 @@
           "both_detected": 8,
           "both_missed": 66
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.8834714285714286,
+        "fpr": 0.043633333333333336,
+        "acc": 0.9226142857142857
       }
     },
     {
@@ -919,6 +944,11 @@
           "both_detected": 10,
           "both_missed": 66
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.9177142857142858,
+        "fpr": 0.027483333333333332,
+        "acc": 0.9480000000000001
       }
     },
     {
@@ -1071,6 +1101,11 @@
           "both_detected": 30,
           "both_missed": 33
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.7396857142857144,
+        "fpr": 0.07205,
+        "acc": 0.8308571428571428
       }
     },
     {
@@ -1223,6 +1258,11 @@
           "both_detected": 23,
           "both_missed": 39
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.8958285714285713,
+        "fpr": 0.41250000000000003,
+        "acc": 0.7812571428571429
       }
     },
     {
@@ -1363,6 +1403,11 @@
           "both_detected": 18,
           "both_missed": 46
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.7837285714285713,
+        "fpr": 0.11948333333333333,
+        "acc": 0.8401285714285714
       }
     },
     {
@@ -1503,6 +1548,11 @@
           "both_detected": 18,
           "both_missed": 42
         }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.8834714285714285,
+        "fpr": 0.20791666666666667,
+        "acc": 0.8565428571428572
       }
     }
   ],
@@ -1545,5 +1595,38 @@
     "split_group_count": 320,
     "group_note": "Stored split groups are bookkeeping groups, not a validated count of independent events."
   },
-  "paired_note": "83 changed images paired by frozen sample ID. Descriptive run-to-run prediction changes, not an isolated causal estimate of watermark removal. Unchanged 324 predictions coincide; this does not establish independent reruns."
+  "paired_note": "83 changed images paired by frozen sample ID. Descriptive run-to-run prediction changes, not an isolated causal estimate of watermark removal. Unchanged 324 predictions coincide; this does not establish independent reruns.",
+  "common_benchmark_macro_policy": {
+    "aggregation": "unweighted arithmetic mean of supplied per-benchmark metrics",
+    "scope": {
+      "recall": [
+        "EvalGen",
+        "AIGIBench",
+        "Chameleon",
+        "SynthWildx",
+        "WildRF",
+        "RRDataset",
+        "ITW-SM"
+      ],
+      "fpr": [
+        "AIGIBench",
+        "Chameleon",
+        "SynthWildx",
+        "WildRF",
+        "RRDataset",
+        "ITW-SM"
+      ],
+      "acc": [
+        "EvalGen",
+        "AIGIBench",
+        "Chameleon",
+        "SynthWildx",
+        "WildRF",
+        "RRDataset",
+        "ITW-SM"
+      ]
+    },
+    "wild_excluded": true,
+    "note": "Fixed shared coverage across all ten displayed methods. Recompute all rows if coverage changes. Aggregates inherit precision of supplied metrics."
+  }
 }

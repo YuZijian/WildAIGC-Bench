@@ -54,3 +54,9 @@ python scripts/score_predictions.py predictions.jsonl
 Supply your own normalized predictions with `sample_id`, `gt`, `pred_fake` and `unknown`. Scoring does not independently authenticate image files. Once the data manifest is available, add `--manifest /path/to/release_manifest.json` to require the same sample-ID set. See `--help` for normalized input format. It is a metric scorer, not a complete detector inference harness. Match the same frozen 407 sample IDs and explicitly report raw or processed.
 
 Optional future experiments: calibrated Recall@FPR using a separate real calibration split; repeated-run controls if estimating variability or isolating crop mechanisms. Neither is required to use this release or requested as a mandatory rerun.
+
+## Common-benchmark macro averages
+
+The Recall and Accuracy tables average EvalGen, AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM (seven benchmarks). The FPR table averages the same set excluding EvalGen (six), because the evaluated EvalGen collection has no real images. Each benchmark receives equal weight, irrespective of image count.
+
+Every displayed method uses this identical coverage. Synthbuster and UnivFD remain visible individually but are excluded from the means because two methods lack results. WildAIGC remains a separate challenge score and is excluded. If coverage expands, all means must be recomputed together. These means inherit supplied metric rounding and are descriptive; different domains and full-versus-sampled scopes remain relevant. Low FPR alone is not a good detector: predicting everything real gives zero FPR, so inspect Recall too.
