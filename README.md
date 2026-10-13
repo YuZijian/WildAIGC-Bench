@@ -51,6 +51,10 @@ The collection does not claim to reconstruct every image's complete reposting or
 
 Source-website counts refer to recorded reports or fact-check pages, not necessarily the earliest publisher or original social platform. Counts are per image, not independent event counts.
 
+## Our PE baselines
+
+PE-336 and PE-518 are our trained baselines: a simple detection framework combining a pretrained PE-Core-Large (Perception Encoder) backbone with a classification head. The names indicate input resolutions of 336 × 336 and 518 × 518 pixels. This simple framework achieves strong results on the external benchmark suite; further architecture and training details will be provided in our forthcoming technical report. The backbone is Meta’s [Perception Encoder](https://github.com/facebookresearch/perception_models); the detector training is our own.
+
 ## Evaluation snapshot — 13 October 2026
 
 **A test of evidence-linked AI imagery encountered in online events and claims.**

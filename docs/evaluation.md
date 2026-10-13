@@ -39,6 +39,10 @@ These are descriptive comparisons of the supplied runs. Cropping can remove peri
 
 Thirty processed samples are missed by all ten displayed methods. The shared-miss count is reported on the project page. This is descriptive of these configurations; it neither proves a shared failure mechanism nor means all future detectors will fail. Gallery examples retain their original selection and show model detection counts without selecting new images for low scores.
 
+## Our PE baselines
+
+PE-336 and PE-518 are our trained baselines: a simple detection framework combining a pretrained PE-Core-Large (Perception Encoder) backbone with a classification head. The names indicate input resolutions of 336 × 336 and 518 × 518 pixels. This simple framework achieves strong results on the external benchmark suite; further architecture and training details will be provided in our forthcoming technical report. The backbone is Meta’s [Perception Encoder](https://github.com/facebookresearch/perception_models); the detector training is our own.
+
 ## PE model selection
 
 The maintainer reports that 5% of the training data was held out for validation. Training ran for 10 epochs; `best` denotes the checkpoint with the highest validation accuracy. Benchmark sample selection did not use detector predictions. Exact training-data composition, weight hashes and the complete validation split are not supplied here; no broader training-overlap audit is claimed.

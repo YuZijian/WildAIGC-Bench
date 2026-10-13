@@ -2,6 +2,10 @@
 
 These settings describe the supplied adapters, not a claim that every implementation exactly reproduces its original paper. Exact public checkpoint revisions/hashes and a pinned environment are not supplied; complete inference reproducibility remains incomplete. Internal filesystem paths and API credentials are not published.
 
+## Our PE baselines
+
+PE-336 and PE-518 are our trained baselines: a simple detection framework combining a pretrained PE-Core-Large (Perception Encoder) backbone with a classification head. The names indicate input resolutions of 336 × 336 and 518 × 518 pixels. This simple framework achieves strong results on the external benchmark suite; further architecture and training details will be provided in our forthcoming technical report. The backbone is Meta’s [Perception Encoder](https://github.com/facebookresearch/perception_models); the detector training is our own.
+
 | Method | Supplied configuration | Decision / caveat |
 |---|---|---|
 | DRCT | CLIP ViT-L/14; 224 center crop; ImageNet normalization; checkpoint basename `13_acc0.9664.pth` | fake score = 1 − softmax class 0 |
