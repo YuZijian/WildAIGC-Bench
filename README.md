@@ -21,7 +21,7 @@ WildAIGC-Bench v1.0 contains **407 human-reviewed AI images** associated with re
 
 ![AI-image recall on WildAIGC-Bench and external benchmarks](assets/recall_overview.svg)
 
-The figure compares processed AI-image recall with the equally weighted mean recall on the seven external benchmarks evaluated by all displayed methods. These are different image collections, so the gap is a descriptive comparison, not an isolated measure of propagation loss.
+The figure compares processed AI-image recall with the equally weighted mean recall on the nine external benchmarks evaluated by all displayed methods. These are different image collections, so the gap is a descriptive comparison, not an isolated measure of propagation loss.
 
 Results reflect each model’s evaluated configuration and decision rule. Higher recall alone does not imply better overall detection performance; consult the external real-image FPR results in the [detailed tables](docs/detailed-results.md).
 

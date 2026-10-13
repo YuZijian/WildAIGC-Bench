@@ -2,7 +2,7 @@
   "snapshot": "2026-10-13",
   "positive_class": "aigc/fake = 1",
   "scope": "10 selected methods; fixed 407 accepted images",
-  "metrics_note": "Recall uses all fake samples, including unknowns as misses. FPR uses ITW-SM real samples only, not WildAIGC. Default operating points; not matched FPR.",
+  "metrics_note": "Recall includes unknowns as misses. External real-image FPR is not a source-matched WildAIGC control. Evaluated configurations are not calibrated to matched FPR. Supplementary synthbuster/UnivFD accuracy counts unknowns as errors; other aggregates retain their documented scoring policy.",
   "benchmarks": [
     "EvalGen",
     "synthbuster",
@@ -166,9 +166,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.5426142857142857,
-        "fpr": 0.146,
-        "acc": 0.6651428571428573
+        "recall": 0.5085777777777778,
+        "fpr": 0.128075,
+        "acc": 0.6521777777777777
       }
     },
     {
@@ -323,9 +323,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.7910999999999999,
-        "fpr": 0.08073333333333334,
-        "acc": 0.8626857142857143
+        "recall": 0.8165888888888888,
+        "fpr": 0.094825,
+        "acc": 0.8705111111111111
       }
     },
     {
@@ -475,9 +475,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.47211428571428565,
-        "fpr": 0.1253,
-        "acc": 0.6425428571428572
+        "recall": 0.5297333333333333,
+        "fpr": 0.1305375,
+        "acc": 0.6680333333333333
       }
     },
     {
@@ -632,9 +632,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.7908714285714286,
-        "fpr": 0.06556666666666666,
-        "acc": 0.8662285714285716
+        "recall": 0.8116666666666668,
+        "fpr": 0.061125,
+        "acc": 0.8762888888888889
       }
     },
     {
@@ -789,9 +789,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.8834714285714286,
-        "fpr": 0.043633333333333336,
-        "acc": 0.9226142857142857
+        "recall": 0.9049,
+        "fpr": 0.0461875,
+        "acc": 0.9306666666666666
       }
     },
     {
@@ -946,9 +946,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.9177142857142858,
-        "fpr": 0.027483333333333332,
-        "acc": 0.9480000000000001
+        "recall": 0.9350555555555555,
+        "fpr": 0.027025,
+        "acc": 0.956188888888889
       }
     },
     {
@@ -1103,9 +1103,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.7396857142857144,
-        "fpr": 0.07205,
-        "acc": 0.8308571428571428
+        "recall": 0.6918333333333334,
+        "fpr": 0.1089125,
+        "acc": 0.7797777777777778
       }
     },
     {
@@ -1121,17 +1121,19 @@
         },
         "synthbuster": {
           "n": 4000,
-          "acc": 0.7867,
-          "recall": 0.9587,
+          "acc": 0.7865,
+          "recall": 0.9586666666666667,
           "fpr": 0.729,
-          "unknown_rate": 0.003
+          "unknown_rate": 0.003,
+          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
         },
         "UnivFD": {
           "n": 2000,
           "acc": 0.7535,
           "recall": 0.927,
           "fpr": 0.42,
-          "unknown_rate": 0.0015
+          "unknown_rate": 0.0015,
+          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
         },
         "AIGIBench": {
           "n": 2000,
@@ -1260,9 +1262,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.8958285714285713,
-        "fpr": 0.41250000000000003,
-        "acc": 0.7812571428571429
+        "recall": 0.9062740740740741,
+        "fpr": 0.453,
+        "acc": 0.7787555555555555
       }
     },
     {
@@ -1276,8 +1278,22 @@
           "fpr": null,
           "unknown_rate": 0.0
         },
-        "synthbuster": null,
-        "UnivFD": null,
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.8565,
+          "recall": 0.8103333333333333,
+          "fpr": 0.005,
+          "unknown_rate": 0.0,
+          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+        },
+        "UnivFD": {
+          "n": 2000,
+          "acc": 0.6,
+          "recall": 0.537,
+          "fpr": 0.337,
+          "unknown_rate": 0.0,
+          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+        },
         "AIGIBench": {
           "n": 2000,
           "acc": 0.727,
@@ -1405,9 +1421,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.7837285714285713,
-        "fpr": 0.11948333333333333,
-        "acc": 0.8401285714285714
+        "recall": 0.7592703703703703,
+        "fpr": 0.1323625,
+        "acc": 0.8152666666666666
       }
     },
     {
@@ -1421,8 +1437,22 @@
           "fpr": null,
           "unknown_rate": 0.0005
         },
-        "synthbuster": null,
-        "UnivFD": null,
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.82925,
+          "recall": 0.83,
+          "fpr": 0.173,
+          "unknown_rate": 0.0,
+          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+        },
+        "UnivFD": {
+          "n": 2000,
+          "acc": 0.643,
+          "recall": 0.443,
+          "fpr": 0.157,
+          "unknown_rate": 0.0,
+          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+        },
         "AIGIBench": {
           "n": 2000,
           "acc": 0.78,
@@ -1550,9 +1580,9 @@
         }
       },
       "common_benchmark_macro": {
-        "recall": 0.8834714285714285,
-        "fpr": 0.20791666666666667,
-        "acc": 0.8565428571428572
+        "recall": 0.8285888888888888,
+        "fpr": 0.1971875,
+        "acc": 0.8297833333333333
       }
     }
   ],
@@ -1601,6 +1631,8 @@
     "scope": {
       "recall": [
         "EvalGen",
+        "synthbuster",
+        "UnivFD",
         "AIGIBench",
         "Chameleon",
         "SynthWildx",
@@ -1609,6 +1641,8 @@
         "ITW-SM"
       ],
       "fpr": [
+        "synthbuster",
+        "UnivFD",
         "AIGIBench",
         "Chameleon",
         "SynthWildx",
@@ -1618,6 +1652,8 @@
       ],
       "acc": [
         "EvalGen",
+        "synthbuster",
+        "UnivFD",
         "AIGIBench",
         "Chameleon",
         "SynthWildx",

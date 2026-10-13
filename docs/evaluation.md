@@ -61,6 +61,10 @@ Optional future experiments: calibrated Recall@FPR using a separate real calibra
 
 ## Common-benchmark macro averages
 
-The Recall and Accuracy tables average EvalGen, AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM (seven benchmarks). The FPR table averages the same set excluding EvalGen (six), because the evaluated EvalGen collection has no real images. Each benchmark receives equal weight, irrespective of image count.
+Recall and Accuracy average all nine external benchmarks: EvalGen, synthbuster, UnivFD, AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM. FPR averages the eight with real images (excluding EvalGen). Each benchmark receives equal weight, regardless of sample count. WildAIGC remains a separate challenge score.
 
-Every displayed method uses this identical coverage. Synthbuster and UnivFD remain visible individually but are excluded from the means because two methods lack results. WildAIGC remains a separate challenge score and is excluded. If coverage expands, all means must be recomputed together. These means inherit supplied metric rounding and are descriptive; different domains and full-versus-sampled scopes remain relevant. Low FPR alone is not a good detector: predicting everything real gives zero FPR, so inspect Recall too.
+Coverage is identical for all ten methods. All means were recomputed after receiving the missing synthbuster and UnivFD predictions. The means are descriptive and retain the precision and scoring policy of their component metrics; full versus sampled evaluations and different test distributions remain relevant. Lower FPR alone does not establish a better detector.
+
+### Supplementary records
+
+BusterX++, FakeVLM and Veritas++ now have complete eight-benchmark shard records, verified against the fixed sample CSV indices. The new synthbuster and UnivFD results use 4,000 and 2,000 images respectively, with no missing or duplicate indices. Existing six-benchmark predictions are unchanged. Supplementary accuracy counts unknown outputs as incorrect; FakeVLM synthbuster is therefore 0.7865 rather than the earlier supplied 0.7867. Other historical aggregate metrics retain their documented policy and are not claimed to have been uniformly rescored. The previously unavailable historical classifier predictions and AIDE ITW-SM predictions remain unavailable.
