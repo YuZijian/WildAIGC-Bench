@@ -58,11 +58,11 @@ Source-website counts refer to recorded reports or fact-check pages, not necessa
 - 407 accepted images, each reviewed by two people, selected without general-purpose detector outputs.
 - Raw and processed versions with exact crop coordinates and hashes.
 - Thirty images missed by all ten displayed configurations; best processed recall among them is 54.05%.
-- Public predictions support model comparison and paired analysis of the 83 cropped images.
+- Paired analysis of the 83 cropped images shows individual prediction changes.
 
 Ten selected configurations have lower recall on WildAIGC processed than on ITW-SM fake images. The page leads with a **standalone WildAIGC table**, followed by paired crop analysis. Cross-benchmark fake recall and real-image FPR from multiple benchmarks are separate reference tables. No mixed-class accuracy-minus-recall gap is used. Thirty processed images are missed by all ten displayed methods. These observations do not establish a causal degradation mechanism.
 
-[Full tables](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Protocol](docs/evaluation.md) · [Model settings](docs/model-settings.md) · [Results JSON](assets/evaluation_results.json) · [Processed predictions](assets/processed_predictions.jsonl)
+[Full tables](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Protocol](docs/evaluation.md) · [Model settings](docs/model-settings.md)
 
 Processed and retained ITW-SM records were recomputed without new inference. The raw supplement now supports 83-image paired crop transitions. AIDE ITW-SM remains an aggregate-only result. Qwen raw is updated to 155/407 from the newly supplied records, replacing the earlier 149/407 aggregate. Unknown outputs are reported and treated as real under the supplied scoring policy.
 

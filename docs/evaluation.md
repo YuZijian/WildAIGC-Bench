@@ -1,6 +1,6 @@
 # Evaluation protocol and results
 
-[Project page](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Model settings](model-settings.md) · [Results JSON](../assets/evaluation_results.json) · [Processed predictions](../assets/processed_predictions.jsonl)
+[Project page](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Model settings](model-settings.md)
 
 Snapshot: 13 October 2026. Ten selected methods are displayed; this is not an exhaustive list of internal experiments. No model was rerun while preparing these results.
 
@@ -19,7 +19,7 @@ Unknown, parsing-failure or error outputs are mapped to real: FN for fake inputs
 - ITW-SM predictions are recomputed where available (10,000 unique records, 5,000 per class). AIDE ITW-SM metrics are supplied aggregates; its per-image file is absent.
 - The 13 October supplement provides raw files and a separate 83-image raw subset for the changed images. IDs match the frozen crop list exactly; subset predictions match the full supplied raw files. The 324 byte-identical images have matching raw/processed predictions; these files do not establish whether unchanged inputs were independently rerun. Processed predictions agree with the prior materials.
 - Qwen raw in the supplement is 155/407 (0.3808), versus the prior aggregate 149/407 (0.3661). The new version is used and the earlier figure is retained in the local change audit; no claim is made about why runs differ.
-- The published processed prediction file contains sample IDs, versions, labels/scores and unknown flags. Internal paths and generated response text are omitted.
+- Per-image records support the reported analysis; the project page presents aggregate results without inference-result download links.
 
 No confidence interval is presented as population representativeness: the set is curated and related images exist. Stored group IDs are not a validated independent-event partition.
 
@@ -33,11 +33,11 @@ The supplied sampling description states seed 42 and label stratification. Avail
 
 ## Crop subset and shared misses
 
-All images were reviewed for crop suitability: 83 cropped, 324 byte-identical. The crop table now pairs the 83 changed inputs by sample ID. For AIDE, 18 misses become detections and 2 detections become misses; FakeVLM has 13 and 8 respectively. Both directions are reported because aggregate deltas can hide prediction changes. Paired predictions are downloadable in [crop_paired_predictions.jsonl](../assets/crop_paired_predictions.jsonl).
+All images were reviewed for crop suitability: 83 cropped, 324 byte-identical. The crop table now pairs the 83 changed inputs by sample ID. For AIDE, 18 misses become detections and 2 detections become misses; FakeVLM has 13 and 8 respectively. Both directions are reported because aggregate deltas can hide prediction changes. Paired transition counts are shown on the project page.
 
 These are descriptive comparisons of the supplied runs. Cropping can remove peripheral comments, platform marks or whitespace while changing input geometry and subsequent model preprocessing. No causal attribution solely to watermarks is made, and possible run variability is not isolated. Unknowns use the same mapping as the main results.
 
-Thirty processed samples are missed by all ten displayed methods. These IDs appear in the results JSON, alongside sanitized predictions. This is descriptive of these configurations; it neither proves a shared failure mechanism nor means all future detectors will fail. Gallery examples retain their original selection and show model detection counts without selecting new images for low scores.
+Thirty processed samples are missed by all ten displayed methods. The shared-miss count is reported on the project page. This is descriptive of these configurations; it neither proves a shared failure mechanism nor means all future detectors will fail. Gallery examples retain their original selection and show model detection counts without selecting new images for low scores.
 
 ## PE model selection
 
@@ -48,9 +48,9 @@ The maintainer reports that 5% of the training data was held out for validation.
 The standalone [scorer](../scripts/score_predictions.py) accepts normalized predictions, validates unique IDs and reports counts/recall/FPR/unknowns. It requires no model or external data access. For example, after downloading this repository:
 
 ```bash
-python scripts/score_predictions.py assets/processed_predictions.jsonl --method dda
+python scripts/score_predictions.py predictions.jsonl
 ```
 
-This recomputes the released predictions (DDA: 148/407 detected); it does not independently authenticate the image files. Once the data manifest is available, add `--manifest /path/to/release_manifest.json` to require the same sample-ID set. See `--help` for normalized input format. It is a metric scorer, not a complete detector inference harness. Match the same frozen 407 sample IDs and explicitly report raw or processed.
+Supply your own normalized predictions with `sample_id`, `gt`, `pred_fake` and `unknown`. Scoring does not independently authenticate image files. Once the data manifest is available, add `--manifest /path/to/release_manifest.json` to require the same sample-ID set. See `--help` for normalized input format. It is a metric scorer, not a complete detector inference harness. Match the same frozen 407 sample IDs and explicitly report raw or processed.
 
 Optional future experiments: calibrated Recall@FPR using a separate real calibration split; repeated-run controls if estimating variability or isolating crop mechanisms. Neither is required to use this release or requested as a mandatory rerun.

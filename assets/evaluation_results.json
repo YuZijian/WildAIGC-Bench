@@ -619,7 +619,7 @@
     },
     {
       "model": "pe336_best",
-      "method": "PE-336 (best)",
+      "method": "PE-336",
       "cross_benchmark": {
         "EvalGen": {
           "n": 55285,
@@ -771,7 +771,7 @@
     },
     {
       "model": "pe518_best",
-      "method": "PE-518 (best)",
+      "method": "PE-518",
       "cross_benchmark": {
         "EvalGen": {
           "n": 55285,
@@ -923,7 +923,7 @@
     },
     {
       "model": "qwen",
-      "method": "Qwen3.6-35B (API)",
+      "method": "Qwen3.6-35B",
       "cross_benchmark": {
         "EvalGen": {
           "n": 2000,
