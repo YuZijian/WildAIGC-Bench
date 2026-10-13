@@ -1,12 +1,12 @@
 # WildAIGC-Bench
 
-**A hard benchmark for AI-generated and edited image detection in real-world online circulation.**
+**An evidence-linked benchmark of AI-generated and edited images documented in real online circulation.**
 
 [Project page](https://yuzijian.github.io/WildAIGC-Bench/) · [Dataset on Hugging Face](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) · [Detailed results](docs/detailed-results.md) · [Evaluation protocol](docs/evaluation.md)
 
 WildAIGC-Bench v1.0 contains **407 human-reviewed AI images** associated with real news events and social-media claims. It focuses on photographic-looking content acquired from online circulation, with source references and paired raw / processed versions.
 
-**Release status:** the Hugging Face dataset is currently private; public release and the technical report are in preparation.
+**Release status:** the dataset is publicly available on Hugging Face. The technical report is in preparation.
 
 ## What makes it useful?
 
@@ -23,6 +23,8 @@ WildAIGC-Bench v1.0 contains **407 human-reviewed AI images** associated with re
 
 The figure compares processed AI-image recall with the equally weighted mean recall on the seven external benchmarks evaluated by all displayed methods. These are different image collections, so the gap is a descriptive comparison, not an isolated measure of propagation loss.
 
+Results reflect each model’s evaluated configuration and decision rule. Higher recall alone does not imply better overall detection performance; consult the external real-image FPR results in the [detailed tables](docs/detailed-results.md).
+
 **WildAIGC-Bench is positive-only:** accuracy equals AI-image recall. Unknown predictions count as misses. Real-image false-positive rates and additional results are reported separately.
 
 [WildAIGC results](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [All detailed tables](docs/detailed-results.md) · [Protocol and metric definitions](docs/evaluation.md) · [Model settings](docs/model-settings.md)
@@ -31,7 +33,7 @@ PE-336 and PE-518 are our trained baselines: a pretrained **PE-Core-Large (Perce
 
 ## Quick start
 
-Once the Hugging Face dataset is public, or with authorized access:
+Load the publicly available dataset:
 
 ```python
 from datasets import load_dataset
