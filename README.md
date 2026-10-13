@@ -2,92 +2,72 @@
 
 **A hard benchmark for AI-generated and edited image detection in real-world online circulation.**
 
-[Project page](https://yuzijian.github.io/WildAIGC-Bench/) · [Dataset on Hugging Face](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) · [Evaluation notes](docs/evaluation.md) · [Construction and data format](docs/dataset.md) · [Issues](https://github.com/YuZijian/WildAIGC-Bench/issues)
+[Project page](https://yuzijian.github.io/WildAIGC-Bench/) · [Dataset on Hugging Face](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) · [Detailed results](docs/detailed-results.md) · [Evaluation protocol](docs/evaluation.md)
 
-The first release contains **407 human-reviewed AI images** connected to news events and social-media claims. Each sample includes recorded source references and evidence context. The collection targets photographic-looking content acquired from actual online circulation, rather than recreating propagation effects with a synthetic degradation recipe.
+WildAIGC-Bench v1.0 contains **407 human-reviewed AI images** associated with real news events and social-media claims. It focuses on photographic-looking content acquired from online circulation, with source references and paired raw / processed versions.
 
-The dataset is currently private on Hugging Face; public release is pending. The technical report and formal paper citation are in preparation. This repository provides documentation, project-page source, reusable figures, example assets and structured evaluation results. The prepared full image release is stored on Hugging Face but is not yet publicly accessible.
+**Release status:** the Hugging Face dataset is currently private; public release and the technical report are in preparation.
 
-## Dataset at a glance
+## What makes it useful?
 
-- **Positive-only test set:** all 407 accepted samples are labeled `aigc`. Standalone accuracy therefore equals AI-image recall; separate real-image controls are needed for false-positive rates and complete binary metrics.
-- **Human review throughout:** two reviewers checked every image and resolved disagreements using context and source evidence. General-purpose AI-image detector outputs were never used for inclusion; generation-platform watermark tests served as provenance evidence. All images were inspected for crop suitability.
-- **Raw and processed versions:** raw preserves acquired bytes. Processed uses a rectangular crop of the target where needed, without resizing, inpainting or enhancement; otherwise it is byte-identical to raw.
-- **Traceable context:** compact metadata records the image, claim, available evidence, limitations and source links. A separate manifest records dimensions, crop coordinates and hashes.
-- **Frozen v1.0:** sample IDs and file hashes identify the release. Additional collection or corrections should use a new version and a changelog.
+- **Real online circulation.** Images come from news and social-media contexts, without applying synthetic degradation to construct the benchmark.
+- **Two reviewers, every image.** Inclusion is based on source evidence and reviewer consensus, without consulting general-purpose detector predictions.
+- **A challenging evaluation.** Among the ten displayed configurations, the highest processed recall is **54.05%**; **30 of 407** processed images are missed by all ten.
+- **Traceable, paired files.** Raw preserves the acquired bytes. Processed crops the target region where needed, removing surrounding comments, platform marks or other extraneous content without resizing. Uncropped pairs are byte-identical.
 
-[Explore the six interactive examples on the project page →](https://yuzijian.github.io/WildAIGC-Bench/#dataset)
+[View six examples and enlarge them on the project page →](https://yuzijian.github.io/WildAIGC-Bench/#dataset)
 
-## Load the dataset
+## Results at a glance
 
-After the maintainer makes the Hugging Face repository public (or with authorized access):
+![AI-image recall on WildAIGC-Bench and external benchmarks](assets/recall_overview.svg)
+
+The figure compares processed AI-image recall with the equally weighted mean recall on the seven external benchmarks evaluated by all displayed methods. These are different image collections, so the gap is a descriptive comparison, not an isolated measure of propagation loss.
+
+**WildAIGC-Bench is positive-only:** accuracy equals AI-image recall. Unknown predictions count as misses. Real-image false-positive rates and additional results are reported separately.
+
+[WildAIGC results](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [All detailed tables](docs/detailed-results.md) · [Protocol and metric definitions](docs/evaluation.md) · [Model settings](docs/model-settings.md)
+
+PE-336 and PE-518 are our trained baselines: a pretrained **PE-Core-Large (Perception Encoder)** backbone with a classification head, using 336 × 336 and 518 × 518 inputs respectively. Further training details will accompany the technical report.
+
+## Quick start
+
+Once the Hugging Face dataset is public, or with authorized access:
 
 ```python
 from datasets import load_dataset
 
 ds = load_dataset("yuzj1997yzj/WildAIGC-Bench", split="test")
 sample = ds[0]
-image = sample["processed_image"]  # default evaluation input
+image = sample["processed_image"]
 print(sample["sample_id"], sample["label"])
 ```
 
-The `raw_image` column provides the acquired version. Both columns contain the corresponding original file bytes; decoded display size is not a benchmark transformation. Specify the version used when reporting results.
+Use `processed_image` for the processed evaluation and `raw_image` for the acquired version. Report the dataset revision, image version and decision threshold alongside results. See [data format and provenance](docs/dataset.md) for metadata fields, crop coordinates and file hashes.
 
-See [dataset format and provenance notes](docs/dataset.md) for fields, crop semantics, source gaps and exact-byte verification.
+## Construction
 
-## Collection and release workflow
+![Discover, trace evidence, deduplicate, human review, freeze release](assets/construction_illustrated.png)
 
-![Illustrated construction workflow](assets/construction_illustrated.png)
+Source evidence supports human annotation; **detectors receive images alone**. The collection does not reconstruct complete reposting or compression histories. Read the [construction and data documentation](docs/dataset.md) for the full protocol, and the [project page](https://yuzijian.github.io/WildAIGC-Bench/#statistics) for resolution and source distributions.
 
-Discover an event → acquire relevant media → check image–claim correspondence and evidence → check duplicates and group related samples → human annotation and admission → crop where needed and freeze a release manifest.
+## Repository guide
 
-The collection does not claim to reconstruct every image's complete reposting or compression history. Reported source findings and their limitations remain distinct from the final human annotation.
+| Location | Contents |
+|---|---|
+| [Project page](https://yuzijian.github.io/WildAIGC-Bench/) | Overview, examples, key results and dataset statistics |
+| [docs/dataset.md](docs/dataset.md) | Construction, data format and usage |
+| [docs/detailed-results.md](docs/detailed-results.md) | Full evaluation tables, including crop analysis and real-image FPR |
+| [docs/evaluation.md](docs/evaluation.md) | Evaluation protocol, metrics and limitations |
+| [docs/model-settings.md](docs/model-settings.md) | Detector configurations and known settings |
+| [scripts/score_predictions.py](scripts/score_predictions.py) | Standalone metric scorer |
+| `index.html`, `style.css`, `app.js`, `assets/` | Homepage source, figures and example assets |
 
-## Dataset statistics
+The full inference harness is not yet released. Benchmark images are distributed through the Hugging Face dataset rather than this repository.
 
-![Raw and processed image dimensions](assets/resolution_distribution.svg)
+## Citation and rights
 
-[Source-website distribution](assets/source_website_distribution.svg) · [Statistics JSON](assets/statistics.json)
+A formal citation will accompany the technical report. For now, reference **WildAIGC-Bench v1.0**, this repository and the exact revision used.
 
-Source-website counts refer to recorded reports or fact-check pages, not necessarily the earliest publisher or original social platform. Counts are per image, not independent event counts.
+The dataset [LICENSE](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/LICENSE) distinguishes maintainer-authored metadata from third-party image rights. Source attribution does not grant blanket rights to redistribute third-party images; external benchmarks retain their own access terms.
 
-## Our PE baselines
-
-PE-336 and PE-518 are our trained baselines: a simple detection framework combining a pretrained PE-Core-Large (Perception Encoder) backbone with a classification head. The names indicate input resolutions of 336 × 336 and 518 × 518 pixels. This simple framework achieves strong results on the external benchmark suite; further architecture and training details will be provided in our forthcoming technical report. The backbone is Meta’s [Perception Encoder](https://github.com/facebookresearch/perception_models); the detector training is our own.
-
-## Evaluation snapshot — 13 October 2026
-
-**A test of evidence-linked AI imagery encountered in online events and claims.**
-
-- 407 accepted images, each reviewed by two people, selected without general-purpose detector outputs.
-- Raw and processed versions with exact crop coordinates and hashes.
-- Thirty images missed by all ten displayed configurations; best processed recall among them is 54.05%.
-- Paired analysis of the 83 cropped images shows individual prediction changes.
-
-Ten selected configurations have lower recall on WildAIGC processed than on ITW-SM fake images. The page highlights a recall comparison figure and a compact standalone WildAIGC table. Cross-benchmark recall is expandable; paired crop analysis, FPR and supplementary accuracy tables are in the repository’s detailed results. No mixed-class accuracy-minus-recall gap is used. Thirty processed images are missed by all ten displayed methods. These observations do not establish a causal degradation mechanism.
-
-[Core results](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Detailed tables](docs/detailed-results.md) · [Protocol](docs/evaluation.md) · [Model settings](docs/model-settings.md)
-
-Processed and retained ITW-SM records were recomputed without new inference. The raw supplement now supports 83-image paired crop transitions. AIDE ITW-SM remains an aggregate-only result. Qwen raw is updated to 155/407 from the newly supplied records, replacing the earlier 149/407 aggregate. Unknown outputs are reported and treated as real under the supplied scoring policy.
-
-## Repository contents
-
-```text
-index.html / style.css / app.js   Project page and interactive examples
-docs/dataset.md                  Construction, format and usage notes
-docs/evaluation.md               Benchmark groups and evaluation caveats
-assets/evaluation_results.json   Current displayed measurements
-assets/statistics.json           Frozen-release statistics
-assets/*.svg                     Editable construction and distribution figures
-assets/sample_examples.json      Six example IDs and paired asset references
-```
-
-A standalone metric scorer is in `scripts/score_predictions.py`. Model configuration notes document known settings and missing details; the full inference harness and technical report are not yet released. Real-image FPR across available external benchmarks is reported; matched-FPR calibration is future work.
-
-## Citation, rights and corrections
-
-Formal citation will be added with the technical report. For now, cite **WildAIGC-Bench v1.0**, the repository URL and the exact revision used.
-
-See the dataset's [LICENSE](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/LICENSE) for the distinction between maintainer-authored metadata and third-party image rights. Image source attribution is not a blanket image license. External benchmarks remain subject to their authors' access terms.
-
-Use [repository issues](https://github.com/YuZijian/WildAIGC-Bench/issues) for corrections, rights concerns and reproducibility questions; include sample IDs or the relevant result configuration.
+For corrections, rights concerns or reproducibility questions, [open an issue](https://github.com/YuZijian/WildAIGC-Bench/issues) with the relevant sample ID or evaluation configuration.
