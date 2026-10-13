@@ -1,70 +1,44 @@
-# Dataset construction and usage
+# Dataset guide
 
-[Project page](https://yuzijian.github.io/WildAIGC-Bench/) · [Dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) · [Repository overview](../README.md)
+[Dataset on Hugging Face](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) · [Repository](../README.md) · [Evaluation](evaluation.md)
 
-## From event to accepted sample
+## Collection and annotation
 
-1. Discover news events, fact-check reports and social-media claims involving potentially synthetic imagery.
-2. Acquire the relevant media file and preserve the downloaded bytes, with available source references.
-3. Check the correspondence between the image and claim, photographic appearance, evidence of generative involvement and evidence limitations.
-4. Check raw-file SHA256 duplicates, review visual similarity and group related images/events. A group is not a guarantee that every image is an independent event.
-5. Have two reviewers decide the authenticity label and, separately, release inclusion. Screening considers duplicates, sensitive content, unsuitable creative examples and image quality.
-6. Inspect every accepted image for crop suitability. Preserve raw, save a crop only where needed, then freeze IDs, hashes and a versioned manifest.
+WildAIGC-Bench v1.0 contains 407 human-annotated AI-generated or edited images from documented news events and online claims. Collection follows event discovery, source/evidence review, duplicate checking, manual confirmation and release selection.
 
-The 407-image release includes only accepted candidates labeled `aigc`; evidence-only assets and rejected candidates are not detector inputs. Source findings are recorded rather than presented as independently repeated forensic tests.
+Each retained label is supported by source evidence, such as creator disclosures, detected generation-platform watermarks or documented fact-check findings. General-purpose detector predictions were not used for inclusion. Source reports do not imply that every forensic test was independently repeated by the maintainers.
 
-## Human review and selection
+Selection favors ordinary photographic appearance and excludes overtly stylized artwork, unsuitable image quality and redundant samples. This is a curated challenge set, concentrated in news and fact-check contexts; it does not represent the full distribution of online AI imagery. Source references support annotation, while detector evaluation uses images alone.
 
-The maintainers report that **two reviewers examined every one of the 407 accepted images**. They jointly resolved disagreements using image context and source evidence, retaining a sample only after reaching agreement with sufficient evidence. Accepted evidence included creator declarations, explicit detection of generation-platform watermarks (including SynthID or OpenAI-related signals), and fact-checking conclusions identifying AI involvement. Not every sample uses every evidence route, and the release does not claim independent repetition of every reported forensic test.
+## Raw and processed
 
-**Outputs of general-purpose AI-image detectors (including the compared methods) were never used for dataset inclusion. Generation-platform watermark tests used as provenance evidence are distinct from these detector predictions.** Manual screening excluded obvious artistic AI creations; low-quality cases included low resolution, extreme blur, severe truncation without a fuller source, and platform-added AI labels without an available clean version. No numerical quality cutoff was recorded. All 407 labels remain the accepted human annotations; this documentation update does not re-audit or relabel samples. Evidence and human judgments remain fallible; corrections should identify the sample and supporting source.
+`raw` preserves the acquired online file, which need not be the generator’s first output. `processed` is a rectangular crop of the target region where appropriate, removing peripheral comments, platform marks or whitespace. No resizing, resampling, inpainting or enhancement is applied. When no crop is needed, processed is byte-identical to raw.
 
-Internal records contain 320 related-sample groups; these are not a validated count of independent events. Group identifiers are not included in the public metadata. Sources are concentrated in news and fact-check coverage, so the set does not represent all internet AI imagery. A per-image complete generation/edit taxonomy was not established and is not retrospectively inferred from titles.
+Crop boxes are `[x, y, width, height]` in decoded raw raster coordinates without EXIF rotation. Crops are saved as lossless PNGs. Raw/processed dimensions, coordinates and SHA256 hashes are recorded in the manifest.
 
-## Raw versus processed
+## Files and loading
 
-Raw is the acquired online file, including any interface, comments, captions, watermarks or platform identifiers already present. It need not be the generator's first output.
+The dataset is publicly available on Hugging Face.
 
-Processed focuses on the target image where a rectangular crop is appropriate. Cropping may exclude peripheral comments, generation marks, platform identifiers or whitespace. It does not involve local erasure, inpainting, enhancement, resizing or resampling. Some cues may remain.
-
-Every image was reviewed for whether cropping was needed. If no crop was applied, processed is byte-identical to raw. Where a crop exists, it is saved as a lossless PNG from raw raster coordinates. The crop box is `[x, y, width, height]`; no EXIF rotation is applied.
-
-## Access status
-
-As of 13 October 2026, the maintainer confirms the Hugging Face repository is private. Public access is pending. Loading examples become usable for the public after release; an exact public revision will then be recorded.
-
-## Files in the Hugging Face release
-
-- `raw/` and `processed/`: the paired 407-image files.
-- `data/test-*.parquet`: two image columns plus core metadata, configured as the `default/test` split for preview and loading.
-- `metadata.jsonl` and `samples.csv`: the same 11 core metadata fields, with native arrays in JSONL.
-- `release_manifest.json`: sample IDs, paths, SHA256 hashes, dimensions and crop coordinates.
-- `checksums.sha256`, `validation.json` and `SOURCE_GAPS.txt`: file integrity and known provenance gaps.
-- `README.md` and `LICENSE`: usage and component-specific rights information.
-
-The 11 metadata fields are `sample_id`, `label`, `title`, `background`, `evidence_summary`, `source_page_url`, `image_url`, `social_source_urls`, `reference_urls`, `raw_path`, and `processed_path`.
-
-A recorded source page may be a news or fact-check report. It is not necessarily the original social post. Missing references remain empty; expired signed acquisition URLs have signing parameters omitted and may not resolve. Source gaps are documented in the release.
-
-## Exact-byte loading
+| File | Contents |
+|---|---|
+| `raw/`, `processed/` | Paired benchmark images |
+| `data/test-*.parquet` | Dataset Viewer and `load_dataset` input, including both image columns |
+| `metadata.jsonl`, `samples.csv` | Labels, context, evidence and source links |
+| `release_manifest.json` | Version, sample IDs, image hashes, dimensions and crop coordinates |
+| `checksums.sha256`, `validation.json` | File integrity and validation summary |
+| `SOURCE_GAPS.txt` | Missing or expired source references |
+| `LICENSE` | Metadata licensing and third-party image rights |
 
 ```python
-import hashlib
-import json
-from datasets import Image, load_dataset
-from huggingface_hub import hf_hub_download
+from datasets import load_dataset
 
-repo = "yuzj1997yzj/WildAIGC-Bench"
-# Replace main with a published release commit when recording an evaluation.
-revision = "main"
-ds = load_dataset(repo, revision=revision, split="test")
-ds = ds.cast_column("processed_image", Image(decode=False))
-manifest_path = hf_hub_download(repo, "release_manifest.json", revision=revision, repo_type="dataset")
-with open(manifest_path) as f:
-    manifest = json.load(f)
-expected = {r["sample_id"]: r["processed_sha256"] for r in manifest["samples"]}
-item = ds[0]
-assert hashlib.sha256(item["processed_image"]["bytes"]).hexdigest() == expected[item["sample_id"]]
+ds = load_dataset("yuzj1997yzj/WildAIGC-Bench", split="test")
+image = ds[0]["processed_image"]
 ```
 
-Use one pinned revision consistently for images, metadata and the manifest. Do not use test images for training or threshold selection when reporting benchmark performance.
+Metadata fields are `sample_id`, `label`, `title`, `background`, `evidence_summary`, `source_page_url`, `image_url`, `social_source_urls`, `reference_urls`, `raw_path` and `processed_path`. Parquet additionally contains `raw_image` and `processed_image` with the corresponding file bytes. The configuration is `default`, split `test`.
+
+A recorded source page may be a report rather than the original social post. Acquisition URLs and reference links may expire; missing values remain empty. Evidence summaries and source links are retained for inspection and corrections. For screenshots or composites, the label concerns the target AI-generated/edited content.
+
+Use one pinned dataset revision consistently, identify the evaluated image version, and retain sample IDs when scoring. Do not use test images for training or threshold selection. Report corrections or rights concerns through [repository issues](https://github.com/YuZijian/WildAIGC-Bench/issues).

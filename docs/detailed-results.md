@@ -1,6 +1,6 @@
 # Detailed evaluation tables
 
-Snapshot: 13 October 2026. All metrics retain the supplied protocol. [Evaluation definitions](evaluation.md) · [Model settings](model-settings.md). These tables support the forthcoming report; they are not the report itself.
+Snapshot: 13 October 2026. All metrics retain the supplied protocol. [Evaluation definitions](evaluation.md) · [Dataset guide](dataset.md). These tables support the forthcoming report; they are not the report itself.
 
 
 ## WildAIGC
@@ -80,4 +80,4 @@ Snapshot: 13 October 2026. All metrics retain the supplied protocol. [Evaluation
 
 Common means use identical shared coverage; see the evaluation protocol. Unknowns follow the recorded scoring policy. Paired changes do not isolate watermark removal from geometry, preprocessing or run variability.
 
-Supplement update: synthbuster (4,000 images) and UnivFD (2,000 fixed-subset images) now have complete BusterX++, FakeVLM and Veritas++ records. Their accuracy counts unknown outputs as incorrect. FakeVLM synthbuster changes from the supplied 0.7867 to 0.7865 under this rule (one real-image unknown was previously counted correct). Other historical aggregates retain their recorded policy; they are not claimed to be uniformly rescored. † Fixed subsets on larger dimensions; full evaluation on smaller dimensions.
+† Fixed subsets on larger dimensions; full evaluation on smaller dimensions. See the evaluation guide for coverage and unknown-output handling.

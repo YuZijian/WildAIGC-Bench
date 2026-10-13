@@ -87,12 +87,10 @@
         "fpr": 0.139,
         "acc": 0.7296,
         "unknown_count": 0,
-        "unknown_rate": 0.0,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.29484029484029484,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -107,35 +105,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 25,
-          "fn": 58,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.30120482,
-          "fpr": null,
-          "acc": 0.30120482,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 93,
-          "fn": 231,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.28703704,
-          "fpr": null,
-          "acc": 0.28703704,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 120,
@@ -244,12 +213,10 @@
         "fpr": 0.1008,
         "acc": 0.8723,
         "unknown_count": 0,
-        "unknown_rate": 0.0,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.3538083538083538,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -264,35 +231,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 31,
-          "fn": 52,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.37349398,
-          "fpr": null,
-          "acc": 0.37349398,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 117,
-          "fn": 207,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.36111111,
-          "fpr": null,
-          "acc": 0.36111111,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 144,
@@ -396,12 +334,10 @@
         "acc": 0.6234,
         "recall": 0.4308,
         "fpr": 0.184,
-        "unknown_rate": 0.0,
-        "provenance": "reported aggregate; predictions unavailable"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.14496314496314497,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -416,35 +352,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 23,
-          "fn": 60,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.27710843,
-          "fpr": null,
-          "acc": 0.27710843,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 52,
-          "fn": 272,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.16049383,
-          "fpr": null,
-          "acc": 0.16049383,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 59,
@@ -553,12 +460,10 @@
         "fpr": 0.094,
         "acc": 0.8973,
         "unknown_count": 0,
-        "unknown_rate": 0.0,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.3366093366093366,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -573,35 +478,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 18,
-          "fn": 65,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.21686747,
-          "fpr": null,
-          "acc": 0.21686747,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 117,
-          "fn": 207,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.36111111,
-          "fpr": null,
-          "acc": 0.36111111,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 137,
@@ -710,12 +586,10 @@
         "fpr": 0.1198,
         "acc": 0.8415,
         "unknown_count": 0,
-        "unknown_rate": 0.0,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.1941031941031941,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -730,35 +604,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 14,
-          "fn": 69,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.1686747,
-          "fpr": null,
-          "acc": 0.1686747,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 68,
-          "fn": 256,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.20987654,
-          "fpr": null,
-          "acc": 0.20987654,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 79,
@@ -867,12 +712,10 @@
         "fpr": 0.0576,
         "acc": 0.9132,
         "unknown_count": 0,
-        "unknown_rate": 0.0,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.22358722358722358,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -887,35 +730,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 15,
-          "fn": 68,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.18072289,
-          "fpr": null,
-          "acc": 0.18072289,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 79,
-          "fn": 245,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.24382716,
-          "fpr": null,
-          "acc": 0.24382716,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 91,
@@ -1024,12 +838,10 @@
         "fpr": 0.0746,
         "acc": 0.928,
         "unknown_count": 0,
-        "unknown_rate": 0.0,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.3808353808353808,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -1044,35 +856,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 35,
-          "fn": 48,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.42168675,
-          "fpr": null,
-          "acc": 0.42168675,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 110,
-          "fn": 214,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.33950617,
-          "fpr": null,
-          "acc": 0.33950617,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 155,
@@ -1124,16 +907,14 @@
           "acc": 0.7865,
           "recall": 0.9586666666666667,
           "fpr": 0.729,
-          "unknown_rate": 0.003,
-          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+          "unknown_rate": 0.003
         },
         "UnivFD": {
           "n": 2000,
           "acc": 0.7535,
           "recall": 0.927,
           "fpr": 0.42,
-          "unknown_rate": 0.0015,
-          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+          "unknown_rate": 0.0015
         },
         "AIGIBench": {
           "n": 2000,
@@ -1183,12 +964,10 @@
         "fpr": 0.4564,
         "acc": 0.7123,
         "unknown_count": 57,
-        "unknown_rate": 0.0057,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0057
       },
       "wild": {
         "raw_recall": 0.5282555282555282,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -1203,35 +982,6 @@
           "unknown_count": 1,
           "unknown_rate": 0.002457
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 36,
-          "fn": 47,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.43373494,
-          "fpr": null,
-          "acc": 0.43373494,
-          "unknown_count": 1,
-          "unknown_rate": 0.01204819
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 184,
-          "fn": 140,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.56790123,
-          "fpr": null,
-          "acc": 0.56790123,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 215,
@@ -1283,16 +1033,14 @@
           "acc": 0.8565,
           "recall": 0.8103333333333333,
           "fpr": 0.005,
-          "unknown_rate": 0.0,
-          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+          "unknown_rate": 0.0
         },
         "UnivFD": {
           "n": 2000,
           "acc": 0.6,
           "recall": 0.537,
           "fpr": 0.337,
-          "unknown_rate": 0.0,
-          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+          "unknown_rate": 0.0
         },
         "AIGIBench": {
           "n": 2000,
@@ -1342,12 +1090,10 @@
         "fpr": 0.1232,
         "acc": 0.9095,
         "unknown_count": 0,
-        "unknown_rate": 0.0,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0
       },
       "wild": {
         "raw_recall": 0.2972972972972973,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -1362,35 +1108,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 27,
-          "fn": 56,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.3253012,
-          "fpr": null,
-          "acc": 0.3253012,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 93,
-          "fn": 231,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.28703704,
-          "fpr": null,
-          "acc": 0.28703704,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 121,
@@ -1442,16 +1159,14 @@
           "acc": 0.82925,
           "recall": 0.83,
           "fpr": 0.173,
-          "unknown_rate": 0.0,
-          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+          "unknown_rate": 0.0
         },
         "UnivFD": {
           "n": 2000,
           "acc": 0.643,
           "recall": 0.443,
           "fpr": 0.157,
-          "unknown_rate": 0.0,
-          "provenance": "recomputed from supplementary indexed shards and fixed sample CSV; unknown counted incorrect for accuracy"
+          "unknown_rate": 0.0
         },
         "AIGIBench": {
           "n": 2000,
@@ -1501,12 +1216,10 @@
         "fpr": 0.315,
         "acc": 0.8195,
         "unknown_count": 1,
-        "unknown_rate": 0.0001,
-        "provenance": "recomputed from retained predictions"
+        "unknown_rate": 0.0001
       },
       "wild": {
         "raw_recall": 0.4643734643734644,
-        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -1521,35 +1234,6 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "cropped_processed": {
-          "n": 83,
-          "n_fake": 83,
-          "n_real": 0,
-          "tp": 31,
-          "fn": 52,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.37349398,
-          "fpr": null,
-          "acc": 0.37349398,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "unchanged_processed": {
-          "n": 324,
-          "n_fake": 324,
-          "n_real": 0,
-          "tp": 161,
-          "fn": 163,
-          "fp": 0,
-          "tn": 0,
-          "recall": 0.49691358,
-          "fpr": null,
-          "acc": 0.49691358,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_raw_processed_available": true,
         "raw": {
           "n": 407,
           "tp": 189,
@@ -1586,46 +1270,6 @@
       }
     }
   ],
-  "sample_analysis": {
-    "cropped_count": 83,
-    "unchanged_count": 324,
-    "missed_by_all_displayed_methods": 30,
-    "all_miss_ids": [
-      "img_0207628b68a971fb",
-      "img_0b3775a476073c20",
-      "img_0f319696d381c113",
-      "img_241f0c312a19527c",
-      "img_2662f72eae79741a",
-      "img_2eb0aece89095c5f",
-      "img_31f42ca5de7874fe",
-      "img_3d55c9865d1b8e09",
-      "img_50ea2563b4e08a0c",
-      "img_52552d455e50fe0e",
-      "img_55d53cbecbc5e298",
-      "img_6080d46f305875fd",
-      "img_617f1de2ba990187",
-      "img_6242657807a3a290",
-      "img_6323152717fda7f1",
-      "img_653753dd792c5154",
-      "img_66f373a2122d69da",
-      "img_81f8012529ce84e0",
-      "img_8a0dc98b6ee84c38",
-      "img_99bb19a7188a2c16",
-      "img_a05e62d2342d94e2",
-      "img_a437a4dcc6349eb6",
-      "img_a4ce8e4741253657",
-      "img_b88db1f146842787",
-      "img_bbabc0120d40ca4c",
-      "img_d6f956a6f354566c",
-      "img_e35c7df347065542",
-      "img_eb9f34a4f74e273c",
-      "img_f871976306102af9",
-      "img_fe6ed36356e5862b"
-    ],
-    "split_group_count": 320,
-    "group_note": "Stored split groups are bookkeeping groups, not a validated count of independent events."
-  },
-  "paired_note": "83 changed images paired by frozen sample ID. Descriptive run-to-run prediction changes, not an isolated causal estimate of watermark removal. Unchanged 324 predictions coincide; this does not establish independent reruns.",
   "common_benchmark_macro_policy": {
     "aggregation": "unweighted arithmetic mean of supplied per-benchmark metrics",
     "scope": {

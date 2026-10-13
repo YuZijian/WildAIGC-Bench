@@ -1,70 +1,41 @@
-# Evaluation protocol and results
+# Evaluation guide
 
-[Project page](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Model settings](model-settings.md)
+[Results](detailed-results.md) · [Dataset](dataset.md) · [Project page](https://yuzijian.github.io/WildAIGC-Bench/)
 
-Snapshot: 13 October 2026. Ten selected methods are displayed; this is not an exhaustive list of internal experiments. No model was rerun while preparing these results.
+## Task and metrics
 
-## Metrics and operating points
+The positive class is AI-generated or edited imagery (`aigc` / `fake=1`). WildAIGC-Bench contains only positive samples, so its accuracy equals AI-image recall: the fraction of AI images detected. It does not independently measure real-image false-positive rate (FPR) or AUROC. Unknown outputs count as misses on WildAIGC.
 
-The positive class is AI-generated/edited (`fake=1`). WildAIGC contains 407 positive samples: report **AI-image recall**, TP/(TP+FN). There is no standalone WildAIGC FPR or AUROC. ITW-SM provides an external reference of 5,000 fake and 5,000 real images. Its real-image FPR is FP/(FP+TN); it is not a source-matched real control for WildAIGC.
+External real-image FPR is shown separately. Those real images are not source-matched controls for WildAIGC. Evaluations use each model’s evaluated configuration and decision rule, not a calibration to equal FPR. Higher recall alone does not imply better overall detection performance. Label-only methods have no reported AUROC.
 
-The first table presents WildAIGC alone: raw/processed recall, detection counts, unknown counts and change in percentage points. A paired table analyzes the 83 cropped samples. Cross-benchmark recall and real-image FPR are separate reference tables. FPR includes all external dimensions with supplied real-image metrics, not only ITW-SM. All ten displayed configurations have lower processed recall on WildAIGC than on ITW-SM's fake subset. This is an observed difference between collections, not a causal estimate of compression damage or a claim about every possible model configuration. Models are evaluated at their recorded operating points, **not calibrated to equal FPR**. Other-benchmark accuracy is supplementary and is not subtracted from WildAIGC recall. Different benchmark content and sampling coverage still limit comparisons.
+## Coverage and averaging
 
-Unknown, parsing-failure or error outputs are mapped to real: FN for fake inputs and TN for real inputs. Unknown counts are reported separately. This policy can lower FPR while increasing fake misses; it must not be described as a correct classification of every unknown. MLLMs provide labels, so AUROC is not computed for them.
+Standard benchmarks: EvalGen, synthbuster and UnivFD. In-the-Wild benchmarks: AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM. WildAIGC is reported as a separate challenge set.
 
-## Data provenance and retained records
+Classification models use the full external benchmark sets. Multimodal large language models use fixed subsets of 2,000 images for EvalGen, UnivFD, AIGIBench, Chameleon and RRDataset; synthbuster, SynthWildx and WildRF use their full evaluated lists. ITW-SM and WildAIGC are evaluated in full. Subsets are marked with † in the tables. Sample totals and class counts are available in [sampling coverage](sampling-coverage.json).
 
-- Eight external benchmark aggregates come from the supplied `summary.csv`, selected full runs for small models and sample runs for large models. The maintainer explicitly confirmed CSV precedence over the older narrative report, including FakeVLM synthbuster/UnivFD.
-- All 407 processed predictions for each displayed method match the frozen sample-ID set exactly, with no duplicate IDs. Processed metrics are recomputed from these records.
-- ITW-SM predictions are recomputed where available (10,000 unique records, 5,000 per class). AIDE ITW-SM metrics are supplied aggregates; its per-image file is absent.
-- The 13 October supplement provides raw files and a separate 83-image raw subset for the changed images. IDs match the frozen crop list exactly; subset predictions match the full supplied raw files. The 324 byte-identical images have matching raw/processed predictions; these files do not establish whether unchanged inputs were independently rerun. Processed predictions agree with the prior materials.
-- Qwen raw in the supplement is 155/407 (0.3808), versus the prior aggregate 149/407 (0.3661). The new version is used and the earlier figure is retained in the local change audit; no claim is made about why runs differ.
-- Per-image records support the reported analysis; the project page presents aggregate results without inference-result download links.
+Recall and Accuracy means give equal weight to all nine external benchmarks. FPR means cover the eight containing real images, excluding EvalGen. Every method uses the same benchmark coverage; WildAIGC is excluded from these means. Means inherit the precision of the component results. Differences in content and full-versus-subset evaluation should be considered when comparing methods.
 
-No confidence interval is presented as population representativeness: the set is curated and related images exist. Stored group IDs are not a validated independent-event partition.
+## Unknown outputs
 
-## Sampling and class composition
+WildAIGC unknowns are misses. Historical external results map unknowns to a real prediction: a miss for an AI image, but a true negative for a real image. This can reduce reported FPR. The supplementary synthbuster and UnivFD accuracy results for BusterX++, FakeVLM and Veritas++ instead count unknowns as incorrect. External accuracy therefore retains a mixed historical policy and should not be described as uniformly rescored. FPR counts explicit fake predictions among real images.
 
-Standard benchmarks: EvalGen, synthbuster, UnivFD. In-the-Wild: AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset, ITW-SM and WildAIGC.
+## Raw and processed
 
-Small-model runs use the full eight external dimensions. Large-model runs use fixed lists of 2,000 on large dimensions; synthbuster (4,000), SynthWildx (1,781) and WildRF (1,834) use full lists. ITW-SM and WildAIGC are full for all methods. Blank cells indicate no supplied aggregate. A 2,000-image list can include real images: 2,000 is not necessarily the recall denominator.
+The main challenge score uses processed images. Raw results and the paired crop analysis are reported separately. Cropping can change surrounding content, input geometry and subsequent model preprocessing. Raw/processed differences do not isolate watermark removal or compression effects.
 
-The supplied sampling description states seed 42 and label stratification. Available list class counts are recorded in [sampling coverage](sampling-coverage.json); this does not assume equal class counts. Exact input lists contain internal storage references and are not published as runnable public download lists. Aggregate-only full-set class counts cannot all be reconstructed from rounded metrics. Results therefore retain each evaluated total n and metric provenance; no fabricated denominator is supplied.
+The results describe the evaluated configurations on a curated collection. They do not establish a universal detector ranking, a causal explanation of difficulty, or population-wide performance. Context and sources are used for annotation; detectors receive images alone.
 
-## Crop subset and shared misses
+## Score your predictions
 
-All images were reviewed for crop suitability: 83 cropped, 324 byte-identical. The crop table now pairs the 83 changed inputs by sample ID. For AIDE, 18 misses become detections and 2 detections become misses; FakeVLM has 13 and 8 respectively. Both directions are reported because aggregate deltas can hide prediction changes. Paired transition counts are shown on the project page.
-
-These are descriptive comparisons of the supplied runs. Cropping can remove peripheral comments, platform marks or whitespace while changing input geometry and subsequent model preprocessing. No causal attribution solely to watermarks is made, and possible run variability is not isolated. Unknowns use the same mapping as the main results.
-
-Thirty processed samples are missed by all ten displayed methods. The shared-miss count is reported on the project page. This is descriptive of these configurations; it neither proves a shared failure mechanism nor means all future detectors will fail. Gallery examples retain their original selection and show model detection counts without selecting new images for low scores.
-
-## Our PE baselines
-
-PE-336 and PE-518 are our trained baselines: a simple detection framework combining a pretrained PE-Core-Large (Perception Encoder) backbone with a classification head. The names indicate input resolutions of 336 × 336 and 518 × 518 pixels. This simple framework achieves strong results on the external benchmark suite; further architecture and training details will be provided in our forthcoming technical report. The backbone is Meta’s [Perception Encoder](https://github.com/facebookresearch/perception_models); the detector training is our own.
-
-## PE model selection
-
-The maintainer reports that 5% of the training data was held out for validation. Training ran for 10 epochs; `best` denotes the checkpoint with the highest validation accuracy. Benchmark sample selection did not use detector predictions. Exact training-data composition, weight hashes and the complete validation split are not supplied here; no broader training-overlap audit is claimed.
-
-## Reproduce metrics without rerunning inference
-
-The standalone [scorer](../scripts/score_predictions.py) accepts normalized predictions, validates unique IDs and reports counts/recall/FPR/unknowns. It requires no model or external data access. For example, after downloading this repository:
+The [scorer](../scripts/score_predictions.py) accepts JSONL records with `sample_id`, `gt`, `pred_fake` and `unknown`:
 
 ```bash
-python scripts/score_predictions.py predictions.jsonl
+python scripts/score_predictions.py predictions.jsonl --manifest release_manifest.json
 ```
 
-Supply your own normalized predictions with `sample_id`, `gt`, `pred_fake` and `unknown`. Scoring does not independently authenticate image files. Once the data manifest is available, add `--manifest /path/to/release_manifest.json` to require the same sample-ID set. See `--help` for normalized input format. It is a metric scorer, not a complete detector inference harness. Match the same frozen 407 sample IDs and explicitly report raw or processed.
+Use the dataset’s manifest to check sample IDs and report the raw or processed version used. This utility maps unknowns to real; on the positive-only WildAIGC set, they count as misses. It is a metric scorer, not a model inference package. Test images must not be used for training or threshold selection.
 
-Optional future experiments: calibrated Recall@FPR using a separate real calibration split; repeated-run controls if estimating variability or isolating crop mechanisms. Neither is required to use this release or requested as a mandatory rerun.
+## PE baselines
 
-## Common-benchmark macro averages
-
-Recall and Accuracy average all nine external benchmarks: EvalGen, synthbuster, UnivFD, AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM. FPR averages the eight with real images (excluding EvalGen). Each benchmark receives equal weight, regardless of sample count. WildAIGC remains a separate challenge score.
-
-Coverage is identical for all ten methods. All means were recomputed after receiving the missing synthbuster and UnivFD predictions. The means are descriptive and retain the precision and scoring policy of their component metrics; full versus sampled evaluations and different test distributions remain relevant. Lower FPR alone does not establish a better detector.
-
-### Supplementary records
-
-BusterX++, FakeVLM and Veritas++ now have complete eight-benchmark shard records, verified against the fixed sample CSV indices. The new synthbuster and UnivFD results use 4,000 and 2,000 images respectively, with no missing or duplicate indices. Existing six-benchmark predictions are unchanged. Supplementary accuracy counts unknown outputs as incorrect; FakeVLM synthbuster is therefore 0.7865 rather than the earlier supplied 0.7867. Other historical aggregate metrics retain their documented policy and are not claimed to have been uniformly rescored. The previously unavailable historical classifier predictions and AIDE ITW-SM predictions remain unavailable.
+PE-336 and PE-518 are our trained detectors using PE-Core-Large (Perception Encoder) and a classification head. Their names indicate 336 × 336 and 518 × 518 input resolutions. Model implementation and training details are outside this release.
