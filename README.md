@@ -11,11 +11,11 @@
 
 </div>
 
-WildAIGC-Bench brings together photographic-looking AI-generated and edited images from documented news events and online claims. Collected as they circulated on the web, these images challenge detectors that perform well on other benchmark collections.
+WildAIGC-Bench brings together AI-generated and edited images tied to real news events, collected from their circulation across the web and social media. It preserves the image files found online, including the effects of actual sharing rather than artificially simulated degradation. These photographic-looking images challenge detectors that perform well on other benchmark collections.
 
-| Realism in circulation | Human-verified labels | Detector blind spots |
+| From real news events. Through real social feeds. | Human-verified labels | Detector blind spots |
 |:---|:---|:---|
-| Ordinary photographic appearance and actual online sharing, without a synthetic compression pipeline. | Every image manually checked, with source evidence supporting its AI label. | All evaluated detectors show lower recall here than their average across external benchmarks. |
+| AI imagery tied to news events, collected after actual web and social-media circulation, without artificially simulated degradation. | Every image manually checked, with source evidence supporting its AI label. | All evaluated detectors show lower recall here than their average across external benchmarks. |
 
 ## A look at the collection
 
