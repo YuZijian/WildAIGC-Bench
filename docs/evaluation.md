@@ -8,7 +8,7 @@ Snapshot: 13 October 2026. Ten selected methods are displayed; this is not an ex
 
 The positive class is AI-generated/edited (`fake=1`). WildAIGC contains 407 positive samples: report **AI-image recall**, TP/(TP+FN). There is no standalone WildAIGC FPR or AUROC. ITW-SM provides an external reference of 5,000 fake and 5,000 real images. Its real-image FPR is FP/(FP+TN); it is not a source-matched real control for WildAIGC.
 
-The principal tables compare fake-class recall, and show ITW-SM real FPR beside it. All ten displayed configurations have lower processed recall on WildAIGC than on ITW-SM's fake subset. This is an observed difference between collections, not a causal estimate of compression damage or a claim about every possible model configuration. Models are evaluated at their recorded operating points, **not calibrated to equal FPR**. Other-benchmark accuracy is supplementary and is not subtracted from WildAIGC recall. Different benchmark content and sampling coverage still limit comparisons.
+The first table presents WildAIGC alone: raw/processed recall, detection counts, unknown counts and change in percentage points. A paired table analyzes the 83 cropped samples. Cross-benchmark recall and real-image FPR are separate reference tables. FPR includes all external dimensions with supplied real-image metrics, not only ITW-SM. All ten displayed configurations have lower processed recall on WildAIGC than on ITW-SM's fake subset. This is an observed difference between collections, not a causal estimate of compression damage or a claim about every possible model configuration. Models are evaluated at their recorded operating points, **not calibrated to equal FPR**. Other-benchmark accuracy is supplementary and is not subtracted from WildAIGC recall. Different benchmark content and sampling coverage still limit comparisons.
 
 Unknown, parsing-failure or error outputs are mapped to real: FN for fake inputs and TN for real inputs. Unknown counts are reported separately. This policy can lower FPR while increasing fake misses; it must not be described as a correct classification of every unknown. MLLMs provide labels, so AUROC is not computed for them.
 
@@ -17,7 +17,8 @@ Unknown, parsing-failure or error outputs are mapped to real: FN for fake inputs
 - Eight external benchmark aggregates come from the supplied `summary.csv`, selected full runs for small models and sample runs for large models. The maintainer explicitly confirmed CSV precedence over the older narrative report, including FakeVLM synthbuster/UnivFD.
 - All 407 processed predictions for each displayed method match the frozen sample-ID set exactly, with no duplicate IDs. Processed metrics are recomputed from these records.
 - ITW-SM predictions are recomputed where available (10,000 unique records, 5,000 per class). AIDE ITW-SM metrics are supplied aggregates; its per-image file is absent.
-- Wild raw metrics are supplied aggregates. Raw per-image files were overwritten by processed runs and are unavailable. Aggregate metrics were retained for both versions.
+- The 13 October supplement provides raw files and a separate 83-image raw subset for the changed images. IDs match the frozen crop list exactly; subset predictions match the full supplied raw files. The 324 byte-identical images have matching raw/processed predictions; these files do not establish whether unchanged inputs were independently rerun. Processed predictions agree with the prior materials.
+- Qwen raw in the supplement is 155/407 (0.3808), versus the prior aggregate 149/407 (0.3661). The new version is used and the earlier figure is retained in the local change audit; no claim is made about why runs differ.
 - The published processed prediction file contains sample IDs, versions, labels/scores and unknown flags. Internal paths and generated response text are omitted.
 
 No confidence interval is presented as population representativeness: the set is curated and related images exist. Stored group IDs are not a validated independent-event partition.
@@ -32,7 +33,9 @@ The supplied sampling description states seed 42 and label stratification. Avail
 
 ## Crop subset and shared misses
 
-All images were reviewed for crop suitability: 83 cropped, 324 byte-identical. The crop-subset table compares **processed performance in two different groups**; it does not estimate the effect of cropping. Without raw per-image predictions, transition counts and paired crop analysis cannot be reconstructed. Whole-set raw/processed differences do not prove that detectors ignore peripheral cues. Cropping also changes image dimensions and potentially model preprocessing.
+All images were reviewed for crop suitability: 83 cropped, 324 byte-identical. The crop table now pairs the 83 changed inputs by sample ID. For AIDE, 18 misses become detections and 2 detections become misses; FakeVLM has 13 and 8 respectively. Both directions are reported because aggregate deltas can hide prediction changes. Paired predictions are downloadable in [crop_paired_predictions.jsonl](../assets/crop_paired_predictions.jsonl).
+
+These are descriptive comparisons of the supplied runs. Cropping can remove peripheral comments, platform marks or whitespace while changing input geometry and subsequent model preprocessing. No causal attribution solely to watermarks is made, and possible run variability is not isolated. Unknowns use the same mapping as the main results.
 
 Thirty processed samples are missed by all ten displayed methods. These IDs appear in the results JSON, alongside sanitized predictions. This is descriptive of these configurations; it neither proves a shared failure mechanism nor means all future detectors will fail. Gallery examples retain their original selection and show model detection counts without selecting new images for low scores.
 
@@ -50,4 +53,4 @@ python scripts/score_predictions.py assets/processed_predictions.jsonl --method 
 
 This recomputes the released predictions (DDA: 148/407 detected); it does not independently authenticate the image files. Once the data manifest is available, add `--manifest /path/to/release_manifest.json` to require the same sample-ID set. See `--help` for normalized input format. It is a metric scorer, not a complete detector inference harness. Match the same frozen 407 sample IDs and explicitly report raw or processed.
 
-Optional future experiments: calibrated Recall@FPR using a separate real calibration split; new raw predictions if a paired crop experiment is desired. Neither is required to use this release or requested as a mandatory rerun.
+Optional future experiments: calibrated Recall@FPR using a separate real calibration split; repeated-run controls if estimating variability or isolating crop mechanisms. Neither is required to use this release or requested as a mandatory rerun.

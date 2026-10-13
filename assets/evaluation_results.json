@@ -91,8 +91,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.2948,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.29484029484029484,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -135,7 +135,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 120,
+          "fn": 287,
+          "recall": 0.29484029484029484,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 27,
+            "fn": 56,
+            "recall": 0.3253012048192771,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 25,
+            "fn": 58,
+            "recall": 0.30120481927710846,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 7,
+          "missed_to_detected": 5,
+          "both_detected": 20,
+          "both_missed": 51
+        }
       }
     },
     {
@@ -215,8 +243,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.3538,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.3538083538083538,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -259,7 +287,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 144,
+          "fn": 263,
+          "recall": 0.3538083538083538,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 27,
+            "fn": 56,
+            "recall": 0.3253012048192771,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 31,
+            "fn": 52,
+            "recall": 0.37349397590361444,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 5,
+          "missed_to_detected": 9,
+          "both_detected": 22,
+          "both_missed": 47
+        }
       }
     },
     {
@@ -334,8 +390,8 @@
         "provenance": "reported aggregate; predictions unavailable"
       },
       "wild": {
-        "raw_recall": 0.145,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.14496314496314497,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -378,7 +434,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 59,
+          "fn": 348,
+          "recall": 0.14496314496314497,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 7,
+            "fn": 76,
+            "recall": 0.08433734939759036,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 23,
+            "fn": 60,
+            "recall": 0.27710843373493976,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 2,
+          "missed_to_detected": 18,
+          "both_detected": 5,
+          "both_missed": 58
+        }
       }
     },
     {
@@ -458,8 +542,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.3366,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.3366093366093366,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -502,7 +586,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 137,
+          "fn": 270,
+          "recall": 0.3366093366093366,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 20,
+            "fn": 63,
+            "recall": 0.24096385542168675,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 18,
+            "fn": 65,
+            "recall": 0.21686746987951808,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 4,
+          "missed_to_detected": 2,
+          "both_detected": 16,
+          "both_missed": 61
+        }
       }
     },
     {
@@ -582,8 +694,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.1941,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.1941031941031941,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -626,7 +738,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 79,
+          "fn": 328,
+          "recall": 0.1941031941031941,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 11,
+            "fn": 72,
+            "recall": 0.13253012048192772,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 14,
+            "fn": 69,
+            "recall": 0.1686746987951807,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 3,
+          "missed_to_detected": 6,
+          "both_detected": 8,
+          "both_missed": 66
+        }
       }
     },
     {
@@ -706,8 +846,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.2236,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.22358722358722358,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -750,7 +890,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 91,
+          "fn": 316,
+          "recall": 0.22358722358722358,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 12,
+            "fn": 71,
+            "recall": 0.14457831325301204,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 15,
+            "fn": 68,
+            "recall": 0.18072289156626506,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 2,
+          "missed_to_detected": 5,
+          "both_detected": 10,
+          "both_missed": 66
+        }
       }
     },
     {
@@ -830,8 +998,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.3661,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.3808353808353808,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -874,7 +1042,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 155,
+          "fn": 252,
+          "recall": 0.3808353808353808,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 45,
+            "fn": 38,
+            "recall": 0.5421686746987951,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 35,
+            "fn": 48,
+            "recall": 0.42168674698795183,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 15,
+          "missed_to_detected": 5,
+          "both_detected": 30,
+          "both_missed": 33
+        }
       }
     },
     {
@@ -954,8 +1150,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.5283,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.5282555282555282,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -998,7 +1194,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 215,
+          "fn": 192,
+          "recall": 0.5282555282555282,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 31,
+            "fn": 52,
+            "recall": 0.37349397590361444,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 36,
+            "fn": 47,
+            "recall": 0.43373493975903615,
+            "unknown_count": 1
+          },
+          "detected_to_missed": 8,
+          "missed_to_detected": 13,
+          "both_detected": 23,
+          "both_missed": 39
+        }
       }
     },
     {
@@ -1066,8 +1290,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.2973,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.2972972972972973,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -1110,7 +1334,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 121,
+          "fn": 286,
+          "recall": 0.2972972972972973,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 28,
+            "fn": 55,
+            "recall": 0.3373493975903614,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 27,
+            "fn": 56,
+            "recall": 0.3253012048192771,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 10,
+          "missed_to_detected": 9,
+          "both_detected": 18,
+          "both_missed": 46
+        }
       }
     },
     {
@@ -1178,8 +1430,8 @@
         "provenance": "recomputed from retained predictions"
       },
       "wild": {
-        "raw_recall": 0.4644,
-        "raw_source": "reported aggregate; predictions unavailable",
+        "raw_recall": 0.4643734643734644,
+        "raw_source": "supplementary raw file; cropped 83 checked against separate subset, 324 unchanged predictions match processed",
         "processed": {
           "n": 407,
           "n_fake": 407,
@@ -1222,7 +1474,35 @@
           "unknown_count": 0,
           "unknown_rate": 0.0
         },
-        "paired_raw_processed_available": false
+        "paired_raw_processed_available": true,
+        "raw": {
+          "n": 407,
+          "tp": 189,
+          "fn": 218,
+          "recall": 0.4643734643734644,
+          "unknown_count": 0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 28,
+            "fn": 55,
+            "recall": 0.3373493975903614,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 31,
+            "fn": 52,
+            "recall": 0.37349397590361444,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 10,
+          "missed_to_detected": 13,
+          "both_detected": 18,
+          "both_missed": 42
+        }
       }
     }
   ],
@@ -1264,5 +1544,6 @@
     ],
     "split_group_count": 320,
     "group_note": "Stored split groups are bookkeeping groups, not a validated count of independent events."
-  }
+  },
+  "paired_note": "83 changed images paired by frozen sample ID. Descriptive run-to-run prediction changes, not an isolated causal estimate of watermark removal. Unchanged 324 predictions coincide; this does not establish independent reruns."
 }
