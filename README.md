@@ -37,7 +37,7 @@ See [dataset format and provenance notes](docs/dataset.md) for fields, crop sema
 
 ## Collection and release workflow
 
-![Construction workflow](assets/construction_workflow.svg)
+![Illustrated construction workflow](assets/construction_illustrated.png)
 
 Discover an event → acquire relevant media → check image–claim correspondence and evidence → check duplicates and group related samples → human annotation and admission → crop where needed and freeze a release manifest.
 
@@ -64,9 +64,9 @@ PE-336 and PE-518 are our trained baselines: a simple detection framework combin
 - Thirty images missed by all ten displayed configurations; best processed recall among them is 54.05%.
 - Paired analysis of the 83 cropped images shows individual prediction changes.
 
-Ten selected configurations have lower recall on WildAIGC processed than on ITW-SM fake images. The page leads with a **standalone WildAIGC table**, followed by paired crop analysis. Cross-benchmark fake recall and real-image FPR from multiple benchmarks are separate reference tables. No mixed-class accuracy-minus-recall gap is used. Thirty processed images are missed by all ten displayed methods. These observations do not establish a causal degradation mechanism.
+Ten selected configurations have lower recall on WildAIGC processed than on ITW-SM fake images. The page highlights a recall comparison figure and a compact standalone WildAIGC table. Cross-benchmark recall is expandable; paired crop analysis, FPR and supplementary accuracy tables are in the repository’s detailed results. No mixed-class accuracy-minus-recall gap is used. Thirty processed images are missed by all ten displayed methods. These observations do not establish a causal degradation mechanism.
 
-[Full tables](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Protocol](docs/evaluation.md) · [Model settings](docs/model-settings.md)
+[Core results](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Detailed tables](docs/detailed-results.md) · [Protocol](docs/evaluation.md) · [Model settings](docs/model-settings.md)
 
 Processed and retained ITW-SM records were recomputed without new inference. The raw supplement now supports 83-image paired crop transitions. AIDE ITW-SM remains an aggregate-only result. Qwen raw is updated to 155/407 from the newly supplied records, replacing the earlier 149/407 aggregate. Unknown outputs are reported and treated as real under the supplied scoring policy.
 
