@@ -11,11 +11,11 @@
 
 </div>
 
-WildAIGC-Bench brings together AI-generated and edited images tied to real news events, collected from their circulation across the web and social media. It preserves the image files found online, including the effects of actual sharing rather than artificially simulated degradation. These photographic-looking images challenge detectors that perform well on other benchmark collections.
+WildAIGC-Bench brings together AI-generated and edited images tied to real news events and online claims, where fabricated content can mislead, enable scams or fuel public controversy. Every label is manually confirmed with AI evidence. The collection preserves the complex degradation encountered in actual internet and social-media circulation.
 
-| Real news, real circulation | Human review, clear evidence | Shared detector blind spots |
+| Real events, real-world risks | Human-verified, evidence-supported | Real circulation, complex degradation |
 |:---|:---|:---|
-| AI imagery from news events, collected as it circulated across the web and social media, without simulated degradation. | Each image is manually confirmed as AI-generated or edited, with clear source evidence supporting its label. | All evaluated detectors show lower recall than their external-benchmark average, with some images missed by every detector. |
+| AI imagery tied to news events and online claims, focusing on potential misinformation, scams and public controversy. | Each image is manually confirmed using creator disclosures, generation watermarks or documented evidence of AI involvement. | Actual compression, screen capture and rephotography introduce complex propagation effects that challenge current detectors. |
 
 ## A look at the collection
 
@@ -35,6 +35,8 @@ WildAIGC-Bench brings together AI-generated and edited images tied to real news 
 Illustrative processed examples. [Enlarge images and explore their source context →](https://yuzijian.github.io/WildAIGC-Bench/#dataset)
 
 ## How do detectors perform?
+
+Under real circulation conditions, these images present a clear challenge across the evaluated detectors.
 
 ![AI-image recall on WildAIGC-Bench and external benchmarks](assets/recall_overview.svg)
 

@@ -4,11 +4,13 @@
 
 ## Collection and annotation
 
-WildAIGC-Bench v1.0 contains 407 human-annotated AI-generated or edited images from documented news events and online claims. Collection follows event discovery, source/evidence review, duplicate checking, manual confirmation and release selection.
+WildAIGC-Bench v1.0 contains 407 human-annotated AI-generated or edited images. Collection follows event discovery, source/evidence review, duplicate checking, manual confirmation and release selection.
 
-Each retained label is supported by source evidence, such as creator disclosures, detected generation-platform watermarks or documented fact-check findings. General-purpose detector predictions were not used for inclusion. Source reports do not imply that every forensic test was independently repeated by the maintainers.
+- **Real events, real-world risks.** Images are tied to real news events and online claims, focusing on fabricated content that may mislead, enable scams or fuel public controversy. A real event or circulation context does not mean the scene depicted in an image actually occurred.
+- **Human-verified, evidence-supported.** Every retained image is manually confirmed with evidence of AI generation or editing, including creator disclosures, visible generation marks, detected platform watermarks or documented fact-check findings. General-purpose detector predictions were not used for inclusion.
+- **Real circulation, complex degradation.** The collection preserves effects encountered in actual web and social-media circulation, including compression, screen capture and rephotography, creating a challenging setting for image detection.
 
-Selection favors ordinary photographic appearance and excludes overtly stylized artwork, unsuitable image quality and redundant samples. This is a curated challenge set, concentrated in news and fact-check contexts; it does not represent the full distribution of online AI imagery. Source references support annotation, while detector evaluation uses images alone.
+Selection favors ordinary photographic appearance and excludes overtly stylized artwork, unsuitable image quality and redundant samples. This is a curated challenge set concentrated in news and fact-check contexts. Source references support annotation, while detector evaluation uses images alone. Recorded source evidence does not imply every forensic test was independently repeated by the maintainers.
 
 ## Raw and processed
 
