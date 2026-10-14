@@ -10,6 +10,8 @@ External real-image FPR is shown separately. Those real images are not source-ma
 
 ## Coverage and averaging
 
+The results include Effort, D3QE, FatFormer, PGC, OmniAID and CO-SPY, evaluated on the full benchmark sets. Their supplied runs contain no unknown outputs.
+
 Standard benchmarks: EvalGen, synthbuster and UnivFD. In-the-Wild benchmarks: AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM. WildAIGC is reported as a separate challenge set.
 
 Classification models use the full external benchmark sets. Multimodal large language models use fixed subsets of 2,000 images for EvalGen, UnivFD, AIGIBench, Chameleon and RRDataset; synthbuster, SynthWildx and WildRF use their full evaluated lists. ITW-SM and WildAIGC are evaluated in full. Subsets are marked with † in the tables. Sample totals and class counts are available in [sampling coverage](sampling-coverage.json).

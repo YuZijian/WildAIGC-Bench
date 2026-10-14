@@ -36,9 +36,11 @@ Illustrative processed examples. [Enlarge images and explore their source contex
 
 ## How do detectors perform?
 
+The evaluation now also includes Effort, D3QE, FatFormer, PGC, OmniAID and CO-SPY.
+
 Under real circulation conditions, these images present a clear challenge across the evaluated detectors.
 
-![AI-image recall on WildAIGC-Bench and external benchmarks](assets/recall_overview.svg)
+![AI-image recall on WildAIGC-Bench and external benchmarks](assets/recall_overview.svg?v=20261014)
 
 The comparison uses AI-image recall on WildAIGC processed and an equally weighted mean across the same external benchmarks for every method. It reveals a challenge across evaluated detectors; it does not isolate the cause of the performance gap.
 

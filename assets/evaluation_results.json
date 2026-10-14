@@ -1,7 +1,7 @@
 {
-  "snapshot": "2026-10-13",
+  "snapshot": "2026-10-14",
   "positive_class": "aigc/fake = 1",
-  "scope": "10 selected methods; fixed 407 accepted images",
+  "scope": "Evaluated classification and multimodal detectors; fixed 407 accepted images",
   "metrics_note": "Recall includes unknowns as misses. External real-image FPR is not a source-matched WildAIGC control. Evaluated configurations are not calibrated to matched FPR. Supplementary synthbuster/UnivFD accuracy counts unknowns as errors; other aggregates retain their documented scoring policy.",
   "benchmarks": [
     "EvalGen",
@@ -763,6 +763,804 @@
         "recall": 0.9350555555555555,
         "fpr": 0.027025,
         "acc": 0.956188888888889
+      }
+    },
+    {
+      "model": "effort",
+      "method": "Effort",
+      "cross_benchmark": {
+        "EvalGen": {
+          "n": 55285,
+          "acc": 0.5437822194085195,
+          "recall": 0.5437822194085195,
+          "fpr": null,
+          "unknown_rate": 0.0
+        },
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.73325,
+          "recall": 0.9703333333333334,
+          "fpr": 0.978,
+          "unknown_rate": 0.0
+        },
+        "UnivFD": {
+          "n": 90329,
+          "acc": 0.7193038780458103,
+          "recall": 0.9120460584588131,
+          "fpr": 0.47339989816024264,
+          "unknown_rate": 0.0
+        },
+        "AIGIBench": {
+          "n": 210798,
+          "acc": 0.724020151993852,
+          "recall": 0.8325609223347072,
+          "fpr": 0.3843127962085308,
+          "unknown_rate": 0.0
+        },
+        "Chameleon": {
+          "n": 26033,
+          "acc": 0.5246418007913033,
+          "recall": 0.5190689346463743,
+          "fpr": 0.4711700195115387,
+          "unknown_rate": 0.0
+        },
+        "SynthWildx": {
+          "n": 1781,
+          "acc": 0.4194272880404267,
+          "recall": 0.34711964549483015,
+          "fpr": 0.351288056206089,
+          "unknown_rate": 0.0
+        },
+        "WildRF": {
+          "n": 1834,
+          "acc": 0.707742639040349,
+          "recall": 0.692972972972973,
+          "fpr": 0.27722772277227725,
+          "unknown_rate": 0.0
+        },
+        "RRDataset": {
+          "n": 50991,
+          "acc": 0.5072463768115942,
+          "recall": 0.15098039215686274,
+          "fpr": 0.1363618532030913,
+          "unknown_rate": 0.0
+        }
+      },
+      "itw_sm": {
+        "n": 10000,
+        "n_real": 5000,
+        "n_fake": 5000,
+        "tp": 1863,
+        "fp": 1497,
+        "tn": 3503,
+        "fn": 3137,
+        "acc": 0.5366,
+        "recall": 0.3726,
+        "fpr": 0.2994,
+        "unknown_count": 0,
+        "unknown_rate": 0.0
+      },
+      "wild": {
+        "raw_recall": 0.25307125307125306,
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 103,
+          "fp": 0,
+          "tn": 0,
+          "fn": 304,
+          "acc": 0.25307125307125306,
+          "recall": 0.25307125307125306,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 107,
+          "fp": 0,
+          "tn": 0,
+          "fn": 300,
+          "acc": 0.2628992628992629,
+          "recall": 0.2628992628992629,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 22,
+            "fn": 61,
+            "recall": 0.26506024096385544,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 26,
+            "fn": 57,
+            "recall": 0.3132530120481928,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 5,
+          "missed_to_detected": 9,
+          "both_detected": 17,
+          "both_missed": 52
+        }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.5934960532007127,
+        "fpr": 0.4213950432577212,
+        "acc": 0.6017793726813172
+      }
+    },
+    {
+      "model": "d3qe",
+      "method": "D3QE",
+      "cross_benchmark": {
+        "EvalGen": {
+          "n": 55285,
+          "acc": 0.26122818124265174,
+          "recall": 0.26122818124265174,
+          "fpr": null,
+          "unknown_rate": 0.0
+        },
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.45025,
+          "recall": 0.30733333333333335,
+          "fpr": 0.121,
+          "unknown_rate": 0.0
+        },
+        "UnivFD": {
+          "n": 90329,
+          "acc": 0.7994331831416267,
+          "recall": 0.6743356953055801,
+          "fpr": 0.07549425490934047,
+          "unknown_rate": 0.0
+        },
+        "AIGIBench": {
+          "n": 210798,
+          "acc": 0.6571314718355962,
+          "recall": 0.3786871545518433,
+          "fpr": 0.06495734597156398,
+          "unknown_rate": 0.0
+        },
+        "Chameleon": {
+          "n": 26033,
+          "acc": 0.5607498175392771,
+          "recall": 0.038227394807520146,
+          "fpr": 0.04655856825674494,
+          "unknown_rate": 0.0
+        },
+        "SynthWildx": {
+          "n": 1781,
+          "acc": 0.26558113419427287,
+          "recall": 0.053175775480059084,
+          "fpr": 0.06088992974238876,
+          "unknown_rate": 0.0
+        },
+        "WildRF": {
+          "n": 1834,
+          "acc": 0.544711014176663,
+          "recall": 0.16324324324324324,
+          "fpr": 0.0671067106710671,
+          "unknown_rate": 0.0
+        },
+        "RRDataset": {
+          "n": 50991,
+          "acc": 0.5413896569982938,
+          "recall": 0.11282352941176471,
+          "fpr": 0.029892903377662705,
+          "unknown_rate": 0.0
+        }
+      },
+      "itw_sm": {
+        "n": 10000,
+        "n_real": 5000,
+        "n_fake": 5000,
+        "tp": 289,
+        "fp": 142,
+        "tn": 4858,
+        "fn": 4711,
+        "acc": 0.5147,
+        "recall": 0.0578,
+        "fpr": 0.0284,
+        "unknown_count": 0,
+        "unknown_rate": 0.0
+      },
+      "wild": {
+        "raw_recall": 0.02702702702702703,
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 11,
+          "fp": 0,
+          "tn": 0,
+          "fn": 396,
+          "acc": 0.02702702702702703,
+          "recall": 0.02702702702702703,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 11,
+          "fp": 0,
+          "tn": 0,
+          "fn": 396,
+          "acc": 0.02702702702702703,
+          "recall": 0.02702702702702703,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 2,
+            "fn": 81,
+            "recall": 0.024096385542168676,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 2,
+            "fn": 81,
+            "recall": 0.024096385542168676,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 1,
+          "missed_to_detected": 1,
+          "both_detected": 1,
+          "both_missed": 80
+        }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.2274282563751106,
+        "fpr": 0.061787464116095994,
+        "acc": 0.5105749399031535
+      }
+    },
+    {
+      "model": "fatformer",
+      "method": "FatFormer",
+      "cross_benchmark": {
+        "EvalGen": {
+          "n": 55285,
+          "acc": 0.27153839196888846,
+          "recall": 0.27153839196888846,
+          "fpr": null,
+          "unknown_rate": 0.0
+        },
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.50275,
+          "recall": 0.445,
+          "fpr": 0.324,
+          "unknown_rate": 0.0
+        },
+        "UnivFD": {
+          "n": 90329,
+          "acc": 0.89747478661338,
+          "recall": 0.9769486271036315,
+          "fpr": 0.18198321857911398,
+          "unknown_rate": 0.0
+        },
+        "AIGIBench": {
+          "n": 210798,
+          "acc": 0.6930758356341141,
+          "recall": 0.4864099982905658,
+          "fpr": 0.10065402843601896,
+          "unknown_rate": 0.0
+        },
+        "Chameleon": {
+          "n": 26033,
+          "acc": 0.5802635116966927,
+          "recall": 0.023276633840644583,
+          "fpr": 0.0011437798560183004,
+          "unknown_rate": 0.0
+        },
+        "SynthWildx": {
+          "n": 1781,
+          "acc": 0.32341381246490736,
+          "recall": 0.12629246676514033,
+          "fpr": 0.05152224824355972,
+          "unknown_rate": 0.0
+        },
+        "WildRF": {
+          "n": 1834,
+          "acc": 0.6673936750272628,
+          "recall": 0.4064864864864865,
+          "fpr": 0.0671067106710671,
+          "unknown_rate": 0.0
+        },
+        "RRDataset": {
+          "n": 50991,
+          "acc": 0.5011668725853582,
+          "recall": 0.014823529411764706,
+          "fpr": 0.012318073045388568,
+          "unknown_rate": 0.0
+        }
+      },
+      "itw_sm": {
+        "n": 10000,
+        "n_real": 5000,
+        "n_fake": 5000,
+        "tp": 218,
+        "fp": 174,
+        "tn": 4826,
+        "fn": 4782,
+        "acc": 0.5044,
+        "recall": 0.0436,
+        "fpr": 0.0348,
+        "unknown_count": 0,
+        "unknown_rate": 0.0
+      },
+      "wild": {
+        "raw_recall": 0.014742014742014743,
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 6,
+          "fp": 0,
+          "tn": 0,
+          "fn": 401,
+          "acc": 0.014742014742014743,
+          "recall": 0.014742014742014743,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 7,
+          "fp": 0,
+          "tn": 0,
+          "fn": 400,
+          "acc": 0.0171990171990172,
+          "recall": 0.0171990171990172,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 1,
+            "fn": 82,
+            "recall": 0.012048192771084338,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 2,
+            "fn": 81,
+            "recall": 0.024096385542168676,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 0,
+          "missed_to_detected": 1,
+          "both_detected": 1,
+          "both_missed": 81
+        }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.3104862370963468,
+        "fpr": 0.09669100735389582,
+        "acc": 0.5490529873322892
+      }
+    },
+    {
+      "model": "pgc",
+      "method": "PGC",
+      "cross_benchmark": {
+        "EvalGen": {
+          "n": 55285,
+          "acc": 0.5718730216152663,
+          "recall": 0.5718730216152663,
+          "fpr": null,
+          "unknown_rate": 0.0
+        },
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.80775,
+          "recall": 0.8106666666666666,
+          "fpr": 0.201,
+          "unknown_rate": 0.0
+        },
+        "UnivFD": {
+          "n": 90329,
+          "acc": 0.8768391103632277,
+          "recall": 0.9199291408325952,
+          "fpr": 0.1662423343443512,
+          "unknown_rate": 0.0
+        },
+        "AIGIBench": {
+          "n": 210798,
+          "acc": 0.8701837778347044,
+          "recall": 0.8099679006248932,
+          "fpr": 0.06971563981042654,
+          "unknown_rate": 0.0
+        },
+        "Chameleon": {
+          "n": 26033,
+          "acc": 0.6178696270118695,
+          "recall": 0.1602506714413608,
+          "fpr": 0.038215703424611454,
+          "unknown_rate": 0.0
+        },
+        "SynthWildx": {
+          "n": 1781,
+          "acc": 0.7501403705783268,
+          "recall": 0.7104874446085672,
+          "fpr": 0.12412177985948478,
+          "unknown_rate": 0.0
+        },
+        "WildRF": {
+          "n": 1834,
+          "acc": 0.8609596510359869,
+          "recall": 0.8843243243243243,
+          "fpr": 0.1628162816281628,
+          "unknown_rate": 0.0
+        },
+        "RRDataset": {
+          "n": 50991,
+          "acc": 0.5816712753230963,
+          "recall": 0.27447058823529413,
+          "fpr": 0.11101957553646385,
+          "unknown_rate": 0.0
+        }
+      },
+      "itw_sm": {
+        "n": 10000,
+        "n_real": 5000,
+        "n_fake": 5000,
+        "tp": 3246,
+        "fp": 739,
+        "tn": 4261,
+        "fn": 1754,
+        "acc": 0.7507,
+        "recall": 0.6492,
+        "fpr": 0.1478,
+        "unknown_count": 0,
+        "unknown_rate": 0.0
+      },
+      "wild": {
+        "raw_recall": 0.1375921375921376,
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 56,
+          "fp": 0,
+          "tn": 0,
+          "fn": 351,
+          "acc": 0.1375921375921376,
+          "recall": 0.1375921375921376,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 53,
+          "fp": 0,
+          "tn": 0,
+          "fn": 354,
+          "acc": 0.13022113022113022,
+          "recall": 0.13022113022113022,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 14,
+            "fn": 69,
+            "recall": 0.1686746987951807,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 11,
+            "fn": 72,
+            "recall": 0.13253012048192772,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 3,
+          "missed_to_detected": 0,
+          "both_detected": 11,
+          "both_missed": 69
+        }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.6434633064832186,
+        "fpr": 0.12761641432543758,
+        "acc": 0.7431096481958309
+      }
+    },
+    {
+      "model": "omniaid",
+      "method": "OmniAID",
+      "cross_benchmark": {
+        "EvalGen": {
+          "n": 55285,
+          "acc": 0.9721081667721805,
+          "recall": 0.9721081667721805,
+          "fpr": null,
+          "unknown_rate": 0.0
+        },
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.87525,
+          "recall": 0.8343333333333334,
+          "fpr": 0.002,
+          "unknown_rate": 0.0
+        },
+        "UnivFD": {
+          "n": 90329,
+          "acc": 0.8685250583976353,
+          "recall": 0.8077280779450842,
+          "fpr": 0.07069007505147336,
+          "unknown_rate": 0.0
+        },
+        "AIGIBench": {
+          "n": 210798,
+          "acc": 0.8084991318703213,
+          "recall": 0.7115329825827651,
+          "fpr": 0.09472037914691943,
+          "unknown_rate": 0.0
+        },
+        "Chameleon": {
+          "n": 26033,
+          "acc": 0.9412668536088811,
+          "recall": 0.9085944494180842,
+          "fpr": 0.03417883334454686,
+          "unknown_rate": 0.0
+        },
+        "SynthWildx": {
+          "n": 1781,
+          "acc": 0.9449747332959012,
+          "recall": 0.9379615952732644,
+          "fpr": 0.03278688524590164,
+          "unknown_rate": 0.0
+        },
+        "WildRF": {
+          "n": 1834,
+          "acc": 0.9863685932388222,
+          "recall": 0.985945945945946,
+          "fpr": 0.013201320132013201,
+          "unknown_rate": 0.0
+        },
+        "RRDataset": {
+          "n": 50991,
+          "acc": 0.8493459630130807,
+          "recall": 0.7287058823529412,
+          "fpr": 0.029971362441646072,
+          "unknown_rate": 0.0
+        }
+      },
+      "itw_sm": {
+        "n": 10000,
+        "n_real": 5000,
+        "n_fake": 5000,
+        "tp": 4752,
+        "fp": 182,
+        "tn": 4818,
+        "fn": 248,
+        "acc": 0.957,
+        "recall": 0.9504,
+        "fpr": 0.0364,
+        "unknown_count": 0,
+        "unknown_rate": 0.0
+      },
+      "wild": {
+        "raw_recall": 0.2972972972972973,
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 121,
+          "fp": 0,
+          "tn": 0,
+          "fn": 286,
+          "acc": 0.2972972972972973,
+          "recall": 0.2972972972972973,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 125,
+          "fp": 0,
+          "tn": 0,
+          "fn": 282,
+          "acc": 0.3071253071253071,
+          "recall": 0.3071253071253071,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 23,
+            "fn": 60,
+            "recall": 0.27710843373493976,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 27,
+            "fn": 56,
+            "recall": 0.3253012048192771,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 0,
+          "missed_to_detected": 4,
+          "both_detected": 23,
+          "both_missed": 56
+        }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.8708122704026221,
+        "fpr": 0.03924360692031257,
+        "acc": 0.9114820555774246
+      }
+    },
+    {
+      "model": "cospy",
+      "method": "CO-SPY",
+      "cross_benchmark": {
+        "EvalGen": {
+          "n": 55285,
+          "acc": 0.9267794157547256,
+          "recall": 0.9267794157547256,
+          "fpr": null,
+          "unknown_rate": 0.0
+        },
+        "synthbuster": {
+          "n": 4000,
+          "acc": 0.81025,
+          "recall": 0.7553333333333333,
+          "fpr": 0.025,
+          "unknown_rate": 0.0
+        },
+        "UnivFD": {
+          "n": 90329,
+          "acc": 0.608486753977128,
+          "recall": 0.4243799822852081,
+          "fpr": 0.20744315791804113,
+          "unknown_rate": 0.0
+        },
+        "AIGIBench": {
+          "n": 210798,
+          "acc": 0.7222696610024764,
+          "recall": 0.6161845429162947,
+          "fpr": 0.17184834123222748,
+          "unknown_rate": 0.0
+        },
+        "Chameleon": {
+          "n": 26033,
+          "acc": 0.7072561748549917,
+          "recall": 0.5219337511190689,
+          "fpr": 0.1534683442104555,
+          "unknown_rate": 0.0
+        },
+        "SynthWildx": {
+          "n": 1781,
+          "acc": 0.7422796181920269,
+          "recall": 0.7378138847858198,
+          "fpr": 0.24355971896955503,
+          "unknown_rate": 0.0
+        },
+        "WildRF": {
+          "n": 1834,
+          "acc": 0.7682660850599782,
+          "recall": 0.7567567567567568,
+          "fpr": 0.22002200220022003,
+          "unknown_rate": 0.0
+        },
+        "RRDataset": {
+          "n": 50991,
+          "acc": 0.7436410346923967,
+          "recall": 0.6433333333333333,
+          "fpr": 0.15601584873092464,
+          "unknown_rate": 0.0
+        }
+      },
+      "itw_sm": {
+        "n": 10000,
+        "n_real": 5000,
+        "n_fake": 5000,
+        "tp": 2591,
+        "fp": 2140,
+        "tn": 2860,
+        "fn": 2409,
+        "acc": 0.5451,
+        "recall": 0.5182,
+        "fpr": 0.428,
+        "unknown_count": 0,
+        "unknown_rate": 0.0
+      },
+      "wild": {
+        "raw_recall": 0.3046683046683047,
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 124,
+          "fp": 0,
+          "tn": 0,
+          "fn": 283,
+          "acc": 0.3046683046683047,
+          "recall": 0.3046683046683047,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 131,
+          "fp": 0,
+          "tn": 0,
+          "fn": 276,
+          "acc": 0.32186732186732187,
+          "recall": 0.32186732186732187,
+          "fpr": null,
+          "unknown_count": 0,
+          "unknown_rate": 0.0
+        },
+        "paired_crop": {
+          "n": 83,
+          "raw": {
+            "n": 83,
+            "tp": 26,
+            "fn": 57,
+            "recall": 0.3132530120481928,
+            "unknown_count": 0
+          },
+          "processed": {
+            "n": 83,
+            "tp": 33,
+            "fn": 50,
+            "recall": 0.39759036144578314,
+            "unknown_count": 0
+          },
+          "detected_to_missed": 4,
+          "missed_to_detected": 11,
+          "both_detected": 22,
+          "both_missed": 46
+        }
+      },
+      "common_benchmark_macro": {
+        "recall": 0.6556350000316157,
+        "fpr": 0.20066967665767796,
+        "acc": 0.7304809715037471
       }
     },
     {
