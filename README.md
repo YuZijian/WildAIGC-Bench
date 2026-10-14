@@ -40,9 +40,9 @@ The WildAIGC comparison includes Qwen3.8-27B and GLM-5.3-Flash alongside classif
 
 Under real circulation conditions, these images present a clear challenge across the evaluated detectors.
 
-![Raw and processed AI-image recall on WildAIGC-Bench](assets/recall_overview.svg?v=20261014-api)
+![WildAIGC processed recall and external benchmark means where available](assets/recall_overview.svg?v=20261014-coverage)
 
-The figure compares raw and processed recall on the same 407 AI images. The highest processed recall among the displayed configurations is 63.39%. Cross-benchmark tables separately include methods with broad evaluation coverage.
+The figure compares WildAIGC processed recall with the same nine-benchmark external mean for methods with full coverage. Qwen3.8-27B and GLM-5.3-Flash show only WildAIGC scores because their external coverage is limited; no external mean or gap is inferred. The highest displayed processed recall is 63.39%.
 
 **WildAIGC is positive-only.** Higher recall alone does not establish better overall detection performance. Real-image FPR, raw/processed results and supplementary accuracy are available in the [full results](docs/detailed-results.md); see the [evaluation protocol](docs/evaluation.md) for metric definitions and sampling scope.
 
