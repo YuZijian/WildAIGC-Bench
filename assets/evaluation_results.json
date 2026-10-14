@@ -899,272 +899,6 @@
       }
     },
     {
-      "model": "d3qe",
-      "method": "D3QE",
-      "cross_benchmark": {
-        "EvalGen": {
-          "n": 55285,
-          "acc": 0.26122818124265174,
-          "recall": 0.26122818124265174,
-          "fpr": null,
-          "unknown_rate": 0.0
-        },
-        "synthbuster": {
-          "n": 4000,
-          "acc": 0.45025,
-          "recall": 0.30733333333333335,
-          "fpr": 0.121,
-          "unknown_rate": 0.0
-        },
-        "UnivFD": {
-          "n": 90329,
-          "acc": 0.7994331831416267,
-          "recall": 0.6743356953055801,
-          "fpr": 0.07549425490934047,
-          "unknown_rate": 0.0
-        },
-        "AIGIBench": {
-          "n": 210798,
-          "acc": 0.6571314718355962,
-          "recall": 0.3786871545518433,
-          "fpr": 0.06495734597156398,
-          "unknown_rate": 0.0
-        },
-        "Chameleon": {
-          "n": 26033,
-          "acc": 0.5607498175392771,
-          "recall": 0.038227394807520146,
-          "fpr": 0.04655856825674494,
-          "unknown_rate": 0.0
-        },
-        "SynthWildx": {
-          "n": 1781,
-          "acc": 0.26558113419427287,
-          "recall": 0.053175775480059084,
-          "fpr": 0.06088992974238876,
-          "unknown_rate": 0.0
-        },
-        "WildRF": {
-          "n": 1834,
-          "acc": 0.544711014176663,
-          "recall": 0.16324324324324324,
-          "fpr": 0.0671067106710671,
-          "unknown_rate": 0.0
-        },
-        "RRDataset": {
-          "n": 50991,
-          "acc": 0.5413896569982938,
-          "recall": 0.11282352941176471,
-          "fpr": 0.029892903377662705,
-          "unknown_rate": 0.0
-        }
-      },
-      "itw_sm": {
-        "n": 10000,
-        "n_real": 5000,
-        "n_fake": 5000,
-        "tp": 289,
-        "fp": 142,
-        "tn": 4858,
-        "fn": 4711,
-        "acc": 0.5147,
-        "recall": 0.0578,
-        "fpr": 0.0284,
-        "unknown_count": 0,
-        "unknown_rate": 0.0
-      },
-      "wild": {
-        "raw_recall": 0.02702702702702703,
-        "raw": {
-          "n": 407,
-          "n_real": 0,
-          "n_fake": 407,
-          "tp": 11,
-          "fp": 0,
-          "tn": 0,
-          "fn": 396,
-          "acc": 0.02702702702702703,
-          "recall": 0.02702702702702703,
-          "fpr": null,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "processed": {
-          "n": 407,
-          "n_real": 0,
-          "n_fake": 407,
-          "tp": 11,
-          "fp": 0,
-          "tn": 0,
-          "fn": 396,
-          "acc": 0.02702702702702703,
-          "recall": 0.02702702702702703,
-          "fpr": null,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_crop": {
-          "n": 83,
-          "raw": {
-            "n": 83,
-            "tp": 2,
-            "fn": 81,
-            "recall": 0.024096385542168676,
-            "unknown_count": 0
-          },
-          "processed": {
-            "n": 83,
-            "tp": 2,
-            "fn": 81,
-            "recall": 0.024096385542168676,
-            "unknown_count": 0
-          },
-          "detected_to_missed": 1,
-          "missed_to_detected": 1,
-          "both_detected": 1,
-          "both_missed": 80
-        }
-      },
-      "common_benchmark_macro": {
-        "recall": 0.2274282563751106,
-        "fpr": 0.061787464116095994,
-        "acc": 0.5105749399031535
-      }
-    },
-    {
-      "model": "fatformer",
-      "method": "FatFormer",
-      "cross_benchmark": {
-        "EvalGen": {
-          "n": 55285,
-          "acc": 0.27153839196888846,
-          "recall": 0.27153839196888846,
-          "fpr": null,
-          "unknown_rate": 0.0
-        },
-        "synthbuster": {
-          "n": 4000,
-          "acc": 0.50275,
-          "recall": 0.445,
-          "fpr": 0.324,
-          "unknown_rate": 0.0
-        },
-        "UnivFD": {
-          "n": 90329,
-          "acc": 0.89747478661338,
-          "recall": 0.9769486271036315,
-          "fpr": 0.18198321857911398,
-          "unknown_rate": 0.0
-        },
-        "AIGIBench": {
-          "n": 210798,
-          "acc": 0.6930758356341141,
-          "recall": 0.4864099982905658,
-          "fpr": 0.10065402843601896,
-          "unknown_rate": 0.0
-        },
-        "Chameleon": {
-          "n": 26033,
-          "acc": 0.5802635116966927,
-          "recall": 0.023276633840644583,
-          "fpr": 0.0011437798560183004,
-          "unknown_rate": 0.0
-        },
-        "SynthWildx": {
-          "n": 1781,
-          "acc": 0.32341381246490736,
-          "recall": 0.12629246676514033,
-          "fpr": 0.05152224824355972,
-          "unknown_rate": 0.0
-        },
-        "WildRF": {
-          "n": 1834,
-          "acc": 0.6673936750272628,
-          "recall": 0.4064864864864865,
-          "fpr": 0.0671067106710671,
-          "unknown_rate": 0.0
-        },
-        "RRDataset": {
-          "n": 50991,
-          "acc": 0.5011668725853582,
-          "recall": 0.014823529411764706,
-          "fpr": 0.012318073045388568,
-          "unknown_rate": 0.0
-        }
-      },
-      "itw_sm": {
-        "n": 10000,
-        "n_real": 5000,
-        "n_fake": 5000,
-        "tp": 218,
-        "fp": 174,
-        "tn": 4826,
-        "fn": 4782,
-        "acc": 0.5044,
-        "recall": 0.0436,
-        "fpr": 0.0348,
-        "unknown_count": 0,
-        "unknown_rate": 0.0
-      },
-      "wild": {
-        "raw_recall": 0.014742014742014743,
-        "raw": {
-          "n": 407,
-          "n_real": 0,
-          "n_fake": 407,
-          "tp": 6,
-          "fp": 0,
-          "tn": 0,
-          "fn": 401,
-          "acc": 0.014742014742014743,
-          "recall": 0.014742014742014743,
-          "fpr": null,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "processed": {
-          "n": 407,
-          "n_real": 0,
-          "n_fake": 407,
-          "tp": 7,
-          "fp": 0,
-          "tn": 0,
-          "fn": 400,
-          "acc": 0.0171990171990172,
-          "recall": 0.0171990171990172,
-          "fpr": null,
-          "unknown_count": 0,
-          "unknown_rate": 0.0
-        },
-        "paired_crop": {
-          "n": 83,
-          "raw": {
-            "n": 83,
-            "tp": 1,
-            "fn": 82,
-            "recall": 0.012048192771084338,
-            "unknown_count": 0
-          },
-          "processed": {
-            "n": 83,
-            "tp": 2,
-            "fn": 81,
-            "recall": 0.024096385542168676,
-            "unknown_count": 0
-          },
-          "detected_to_missed": 0,
-          "missed_to_detected": 1,
-          "both_detected": 1,
-          "both_missed": 81
-        }
-      },
-      "common_benchmark_macro": {
-        "recall": 0.3104862370963468,
-        "fpr": 0.09669100735389582,
-        "acc": 0.5490529873322892
-      }
-    },
-    {
       "model": "pgc",
       "method": "PGC",
       "cross_benchmark": {
@@ -2066,6 +1800,78 @@
         "fpr": 0.1971875,
         "acc": 0.8297833333333333
       }
+    },
+    {
+      "model": "qwen38",
+      "method": "Qwen3.8-27B",
+      "wild": {
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 222,
+          "fn": 185,
+          "fp": 0,
+          "tn": 0,
+          "recall": 0.5454545454545454,
+          "acc": 0.5454545454545454,
+          "unknown_count": 0,
+          "unknown_rate": 0.0,
+          "fpr": null
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 216,
+          "fn": 191,
+          "fp": 0,
+          "tn": 0,
+          "recall": 0.5307125307125307,
+          "acc": 0.5307125307125307,
+          "unknown_count": 0,
+          "unknown_rate": 0.0,
+          "fpr": null
+        },
+        "raw_recall": 0.5454545454545454
+      },
+      "coverage": "WildAIGC full; excluded from cross-benchmark comparisons"
+    },
+    {
+      "model": "glm53",
+      "method": "GLM-5.3-Flash",
+      "wild": {
+        "raw": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 248,
+          "fn": 159,
+          "fp": 0,
+          "tn": 0,
+          "recall": 0.6093366093366094,
+          "acc": 0.6093366093366094,
+          "unknown_count": 14,
+          "unknown_rate": 0.0343980343980344,
+          "fpr": null
+        },
+        "processed": {
+          "n": 407,
+          "n_real": 0,
+          "n_fake": 407,
+          "tp": 258,
+          "fn": 149,
+          "fp": 0,
+          "tn": 0,
+          "recall": 0.6339066339066339,
+          "acc": 0.6339066339066339,
+          "unknown_count": 16,
+          "unknown_rate": 0.03931203931203931,
+          "fpr": null
+        },
+        "raw_recall": 0.6093366093366094
+      },
+      "coverage": "WildAIGC full; excluded from cross-benchmark comparisons"
     }
   ],
   "common_benchmark_macro_policy": {
