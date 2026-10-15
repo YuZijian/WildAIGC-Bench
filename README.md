@@ -64,9 +64,15 @@ Report the dataset revision and image version used. See [data format and usage](
 
 ## From online circulation to a benchmark
 
-![Discover, trace evidence, deduplicate, human review and freeze release](assets/construction_illustrated.png)
+![Collection, evidence review, human annotation and image provenance](assets/construction_pipeline.png?v=20261015)
 
 Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select samples. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
+
+## Dataset profile
+
+![Image short-edge resolution and recorded source website distribution](assets/dataset_profile.png?v=20261015)
+
+Resolution is measured by the shorter edge in pixels. Source counts describe recorded report websites, not necessarily the original social platforms.
 
 ## Explore further
 
