@@ -21,14 +21,14 @@ WildAIGC-Bench brings together AI-generated and edited images tied to real news 
 
 <table>
 <tr>
-<td align="center" width="33%"><img src="assets/img_0fe24cc6e96245b8-processed.png" height="190" alt="AI-edited retail poster"><br><sub>Retail poster</sub></td>
-<td align="center" width="33%"><img src="assets/img_1b3026fd893bf218-raw.jpg" height="190" alt="AI-generated parcels scene"><br><sub>Everyday scene</sub></td>
-<td align="center" width="33%"><img src="assets/img_2bb3885c6b59817a-raw.jpg" height="190" alt="AI-edited football spectator"><br><sub>Local image editing</sub></td>
+<td align="center" width="33%"><img src="assets/img_0fe24cc6e96245b8-processed.png" height="190" alt="AI-edited retail poster"><br><sub>Song Yuqi retail poster</sub></td>
+<td align="center" width="33%"><img src="assets/img_1b3026fd893bf218-raw.jpg" height="190" alt="AI-generated parcels scene"><br><sub>Courier parcels and a television box</sub></td>
+<td align="center" width="33%"><img src="assets/img_2bb3885c6b59817a-raw.jpg" height="190" alt="AI-edited football spectator"><br><sub>A locally edited football spectator</sub></td>
 </tr>
 <tr>
-<td align="center"><img src="assets/img_6cfd077cd16360a7-raw.jpg" height="190" alt="Fabricated celebrity wedding"><br><sub>Celebrity event</sub></td>
-<td align="center"><img src="assets/img_2662f72eae79741a-raw.jpg" height="190" alt="AI-generated public-event formation"><br><sub>Public-event claim</sub></td>
-<td align="center"><img src="assets/img_eef641f81db6498b-raw.jpg" height="190" alt="AI-generated urban queue"><br><sub>Urban scene</sub></td>
+<td align="center"><img src="assets/img_6cfd077cd16360a7-raw.jpg" height="190" alt="Fabricated celebrity wedding"><br><sub>A fabricated Ronaldo wedding scene</sub></td>
+<td align="center"><img src="assets/img_2662f72eae79741a-raw.jpg" height="190" alt="AI-generated public-event formation"><br><sub>Kenyan recruits in a slogan formation</sub></td>
+<td align="center"><img src="assets/img_eef641f81db6498b-raw.jpg" height="190" alt="AI-generated urban queue"><br><sub>A purported Beijing drone collection queue</sub></td>
 </tr>
 </table>
 
