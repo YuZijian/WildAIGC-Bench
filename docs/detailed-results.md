@@ -1,6 +1,6 @@
 # Detailed evaluation tables
 
-Snapshot: 14 October 2026. [Evaluation guide](evaluation.md) · [Dataset guide](dataset.md). All values describe the evaluated configurations.
+Snapshot: 15 October 2026. [Evaluation guide](evaluation.md) · [Dataset guide](dataset.md). All values describe the evaluated configurations.
 
 ## WildAIGC
 
@@ -20,10 +20,10 @@ Snapshot: 14 October 2026. [Evaluation guide](evaluation.md) · [Dataset guide](
 |FakeVLM|0.5283|0.5405|+1.23|220/407|
 |BusterX++|0.2973|0.2948|-0.25|120/407|
 |Veritas++|0.4644|0.4717|+0.74|192/407|
-|Qwen3.8-27B|0.5455|0.5307|-1.47|216/407|
-|GLM-5.3-Flash|0.6093|0.6339|+2.46|258/407|
+|Qwen3.8-27B|0.5528|0.5283|-2.46|215/407|
+|GLM-5.3-Flash|0.6658|0.6093|-5.65|248/407|
 
-Qwen3.8-27B and GLM-5.3-Flash are included in the full WildAIGC comparison only; no cross-benchmark mean is reported for these runs. Unknown outputs count as misses.
+Qwen3.8-27B and GLM-5.3-Flash use updated full WildAIGC runs. Unknown outputs count as misses. ‡ External results use the documented sample sizes, including 2,000 ITW-SM images.
 
 ## 83-image paired crop analysis
 
@@ -62,6 +62,8 @@ Qwen3.8-27B and GLM-5.3-Flash are included in the full WildAIGC comparison only;
 |FakeVLM †|0.9900|0.9587|0.9270|0.9409|0.9953|0.9490|0.9276|0.5870|0.8810|0.5405|0.9063|
 |BusterX++ †|0.9290|0.8103|0.5370|0.5465|0.6142|0.9313|0.9589|0.5640|0.9422|0.2948|0.7593|
 |Veritas++ †|0.9890|0.8300|0.4430|0.6977|0.9324|0.9321|0.9741|0.7050|0.9540|0.4717|0.8286|
+|Qwen3.8-27B ‡|0.8795|0.6460|0.7110|0.7397|0.6935|0.8678|0.8605|0.6690|0.8820|0.5283|0.7721|
+|GLM-5.3-Flash ‡|0.9875|0.8233|0.7250|0.7007|0.8998|0.9284|0.9589|0.7300|0.9370|0.6093|0.8545|
 
 ## External real-image FPR
 
@@ -81,6 +83,8 @@ Qwen3.8-27B and GLM-5.3-Flash are included in the full WildAIGC comparison only;
 |FakeVLM †|0.7290|0.4200|0.3207|0.5044|0.4731|0.4444|0.2760|0.4564|0.4530|
 |BusterX++ †|0.0050|0.3370|0.0929|0.1550|0.1265|0.0693|0.1500|0.1232|0.1324|
 |Veritas++ †|0.1730|0.1570|0.1379|0.2058|0.2295|0.1793|0.1800|0.3150|0.1972|
+|Qwen3.8-27B ‡|0.3470|0.5970|0.4086|0.4133|0.3583|0.3300|0.3510|0.3550|0.3950|
+|GLM-5.3-Flash ‡|0.0610|0.3370|0.0829|0.0954|0.1429|0.0715|0.1440|0.1520|0.1358|
 
 ## Cross-benchmark accuracy
 
@@ -100,5 +104,7 @@ Qwen3.8-27B and GLM-5.3-Flash are included in the full WildAIGC comparison only;
 |FakeVLM †|0.9900|0.7865|0.7535|0.8100|0.7100|0.8478|0.7432|0.6555|0.7123|0.7788|
 |BusterX++ †|0.9290|0.8565|0.6000|0.7270|0.7460|0.9175|0.9449|0.7070|0.9095|0.8153|
 |Veritas++ †|0.9890|0.8293|0.6430|0.7800|0.8535|0.8933|0.8980|0.7625|0.8195|0.8298|
+|Qwen3.8-27B ‡|0.8795|0.6478|0.5570|0.6655|0.6325|0.8136|0.7661|0.6590|0.7635|0.7094|
+|GLM-5.3-Flash ‡|0.9875|0.8522|0.6940|0.8090|0.9025|0.9113|0.9438|0.7930|0.8925|0.8651|
 
 Common means use identical shared coverage. † Fixed subsets on larger dimensions; full evaluation on smaller dimensions. See the evaluation guide for coverage and unknown-output handling. Paired crop differences are descriptive.

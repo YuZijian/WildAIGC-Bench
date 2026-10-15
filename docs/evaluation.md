@@ -14,9 +14,9 @@ The results include Effort, PGC, OmniAID and CO-SPY, evaluated on the full bench
 
 Standard benchmarks: EvalGen, synthbuster and UnivFD. In-the-Wild benchmarks: AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM. WildAIGC is reported as a separate challenge set.
 
-Qwen3.8-27B and GLM-5.3-Flash are shown only in the full WildAIGC table and figure. They are excluded from cross-benchmark tables and common means because their external coverage is limited.
+Qwen3.8-27B and GLM-5.3-Flash now cover all nine external benchmarks and full WildAIGC. Their ITW-SM evaluation uses 2,000 images (1,000 real and 1,000 AI), marked ‡; their other benchmark sizes follow the multimodal sampling scope below. These updated runs supersede the earlier results. External metrics are supplied aggregates; WildAIGC counts were verified against per-image predictions.
 
-Classification models use the full external benchmark sets. Multimodal large language models use fixed subsets of 2,000 images for EvalGen, UnivFD, AIGIBench, Chameleon and RRDataset; synthbuster, SynthWildx and WildRF use their full evaluated lists. ITW-SM and WildAIGC are evaluated in full. Subsets are marked with † in the tables. Sample totals and class counts are available in [sampling coverage](sampling-coverage.json).
+Classification models use the full external benchmark sets. Multimodal large language models use fixed subsets of 2,000 images for EvalGen, UnivFD, AIGIBench, Chameleon and RRDataset; synthbuster, SynthWildx and WildRF use their full evaluated lists. ITW-SM is evaluated in full except for the two ‡ methods. WildAIGC is evaluated in full for every method. Subsets are marked with † in the tables. Sample totals and class counts are available in [sampling coverage](sampling-coverage.json).
 
 Recall and Accuracy means give equal weight to all nine external benchmarks. FPR means cover the eight containing real images, excluding EvalGen. Every method uses the same benchmark coverage; WildAIGC is excluded from these means. Means inherit the precision of the component results. Differences in content and full-versus-subset evaluation should be considered when comparing methods.
 
