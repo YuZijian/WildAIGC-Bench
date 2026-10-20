@@ -16,9 +16,9 @@ Standard benchmarks: EvalGen, synthbuster and UnivFD. In-the-Wild benchmarks: AI
 
 Qwen3.8-27B and GLM-5.3-Flash now cover all nine external benchmarks and full WildAIGC. These updated runs supersede the earlier results. External metrics are supplied aggregates; WildAIGC counts were verified against per-image predictions.
 
-Classification models use the full external benchmark sets. Multimodal large language models use fixed subsets of 2,000 images for EvalGen, UnivFD, AIGIBench, Chameleon and RRDataset; synthbuster, SynthWildx and WildRF use their full evaluated lists. WildAIGC is evaluated in full for every method. Subsets are marked with † in the tables. Sample totals and class counts are available in [sampling coverage](sampling-coverage.json).
+Classification models use the full external benchmark sets. Multimodal large language models use fixed subsets of 2,000 images for EvalGen, UnivFD, AIGIBench, Chameleon and RRDataset; synthbuster, SynthWildx, WildRF and ITW-SM use their full evaluated lists. ITW-SM contains 10,000 images (5,000 real and 5,000 AI) for every method. All MLLMs share the same fixed subsets, with sampling seed 42. WildAIGC is evaluated in full for every method. Subsets are marked with † in the tables. Sample totals and class counts are available in [sampling coverage](sampling-coverage.json).
 
-Recall and Accuracy means give equal weight to all nine external benchmarks. FPR means cover the eight containing real images, excluding EvalGen. Every method uses the same benchmark coverage; WildAIGC is excluded from these means. Means inherit the precision of the component results. Differences in content and full-versus-subset evaluation should be considered when comparing methods.
+Recall means give equal weight to all nine external benchmarks. FPR and balanced accuracy (BAcc) means cover the eight containing real images, excluding EvalGen. BAcc is (AI-image recall + real-image specificity) / 2. Paper-aligned tables report BAcc; historical accuracy is retained separately as supplementary data. Every method uses the same benchmark coverage; WildAIGC is excluded from these means. Means inherit the precision of the component results. Differences in content and full-versus-subset evaluation should be considered when comparing methods.
 
 ## Unknown outputs
 
@@ -26,7 +26,7 @@ WildAIGC unknowns are misses. Historical external results map unknowns to a real
 
 ## Raw and processed
 
-The main challenge score uses processed images. Raw results and the paired crop analysis are reported separately. Cropping can change surrounding content, input geometry and subsequent model preprocessing. Raw/processed differences do not isolate watermark removal or compression effects.
+Both raw and processed versions are evaluated in full. The paired analysis separately covers the 83 cropped images; the remaining 324 pairs are unchanged. Cropping can change surrounding content, input geometry and subsequent model preprocessing. Raw/processed differences do not isolate watermark removal or compression effects.
 
 The results describe the evaluated configurations on a curated collection. They do not establish a universal detector ranking, a causal explanation of difficulty, or population-wide performance. Context and sources are used for annotation; detectors receive images alone.
 
@@ -42,4 +42,5 @@ Use the dataset’s manifest to check sample IDs and report the raw or processed
 
 ## PE baselines
 
-PE-336 and PE-518 are our trained detectors using PE-Core-Large (Perception Encoder) and a classification head. Their names indicate 336 × 336 and 518 × 518 input resolutions. Model implementation and training details are outside this release.
+PE-336 and PE-518 are our trained detectors using PE-Core-Large (Perception Encoder) and a classification head. Their names indicate 336 × 336 and 518 × 518 input resolutions. Training uses the training splits of WildFake, So-Fake-Set and WildRF; WildAIGC-Bench is excluded from training and model selection. Inference directly resizes the input to the indicated resolution.
+
