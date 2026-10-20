@@ -28,7 +28,11 @@ WildAIGC unknowns are misses. Historical external results map unknowns to a real
 
 Both raw and processed versions are evaluated in full. The paired analysis separately covers the 83 cropped images; the remaining 324 pairs are unchanged. Cropping can change surrounding content, input geometry and subsequent model preprocessing. Raw/processed differences do not isolate watermark removal or compression effects.
 
-The results describe the evaluated configurations on a curated collection. They do not establish a universal detector ranking, a causal explanation of difficulty, or population-wide performance. Context and sources are used for annotation; detectors receive images alone.
+The results describe the evaluated configurations on a curated collection. They do not establish a universal detector ranking, a causal explanation of difficulty, or population-wide performance. Source evidence is used to verify AI labels; detection is evaluated solely from the images.
+
+## Shared misses
+
+On processed inputs, 191 of 407 images (46.93%) are missed by at least 12 of the 16 evaluated configurations. These cases span local edits, fabricated scenes, and AI reconstruction across people, public affairs, disasters, infrastructure, advertising, and other photographic-looking content. Shared misses occur across image quality levels and are not confined to visibly degraded inputs.
 
 ## Score your predictions
 
