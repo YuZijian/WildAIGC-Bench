@@ -5,7 +5,7 @@
 ### AI images behind real news events and online claims.
 ### A hard test for today’s detectors.
 
-**Real-world AI imagery · Continuous collection · Human-verified labels**
+**Broad Coverage · Timely Updates · Human-Verified Labels**
 
 [**🤗 Dataset**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) &nbsp; · &nbsp; [**Project page ↗**](https://yuzijian.github.io/WildAIGC-Bench/) &nbsp; · &nbsp; [**Results**](docs/detailed-results.md) &nbsp; · &nbsp; **Technical report — coming soon**
 
@@ -13,9 +13,9 @@
 
 WildAIGC-Bench brings together AI-generated and edited images tied to real news events and online claims, where fabricated content can mislead, enable scams or fuel public controversy. Scheduled tasks automatically collect, screen, and preliminarily annotate candidates across news websites, fact-checking sources, and related social media content. Human reviewers verify the annotations and perform quality control before inclusion. The collection preserves photographic appearance and the effects of actual online circulation.
 
-| Real events, real-world risks | Human-verified, evidence-supported | Real circulation, complex degradation |
+| Broad Coverage | Timely Updates | Human-Verified Labels |
 |:---|:---|:---|
-| AI imagery tied to news events and online claims, focusing on potential misinformation, scams and public controversy. | Each image is manually confirmed using creator disclosures, generation watermarks or documented evidence of AI involvement. | Actual compression, screen capture and rephotography introduce complex propagation effects that challenge current detectors. |
+| Collection spans news websites, fact-checking sources, and related social media content, covering public figures, social affairs, disasters, and varied forms of image generation and editing. | Scheduled tasks continually collect, screen, and preliminarily annotate new candidates. Human-reviewed additions will enter subsequent releases, while each published evaluation set remains fixed. | Human reviewers verify automatic annotations against image-specific evidence and perform quality control. Candidates with uncertain AI involvement or insufficient evidence are excluded. |
 
 ## A look at the collection
 
