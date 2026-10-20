@@ -61,5 +61,13 @@
       "0": 909
     },
     "input_sha256": "f981a8c34486f1099008d60e584f93ba69f1604a206a73139716d734c8fb1b8d"
+  },
+  "ITW-SM": {
+    "total": 10000,
+    "label_counts": {
+      "0": 5000,
+      "1": 5000
+    },
+    "coverage": "full for every method"
   }
 }
