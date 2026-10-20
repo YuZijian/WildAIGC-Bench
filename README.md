@@ -5,13 +5,13 @@
 ### AI images behind real news events and online claims.
 ### A hard test for today’s detectors.
 
-**407 human-annotated AI images · Real online circulation · Photographic appearance**
+**Real-world AI imagery · Continuous collection · Human-verified labels**
 
 [**🤗 Dataset**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) &nbsp; · &nbsp; [**Project page ↗**](https://yuzijian.github.io/WildAIGC-Bench/) &nbsp; · &nbsp; [**Results**](docs/detailed-results.md) &nbsp; · &nbsp; **Technical report — coming soon**
 
 </div>
 
-WildAIGC-Bench brings together AI-generated and edited images tied to real news events and online claims, where fabricated content can mislead, enable scams or fuel public controversy. Every label is manually confirmed with AI evidence. The collection preserves the complex degradation encountered in actual internet and social-media circulation.
+WildAIGC-Bench brings together AI-generated and edited images tied to real news events and online claims, where fabricated content can mislead, enable scams or fuel public controversy. Scheduled tasks automatically collect, screen, and preliminarily annotate candidates across news websites, fact-checking sources, and related social media content. Human reviewers verify the annotations and perform quality control before inclusion. The collection preserves photographic appearance and the effects of actual online circulation.
 
 | Real events, real-world risks | Human-verified, evidence-supported | Real circulation, complex degradation |
 |:---|:---|:---|
@@ -36,13 +36,11 @@ Illustrative processed examples. [Enlarge images and explore their source contex
 
 ## How do detectors perform?
 
-The WildAIGC comparison includes Qwen3.8-27B and GLM-5.3-Flash alongside classification and multimodal detectors.
-
-Under real circulation conditions, these images present a clear challenge across the evaluated detectors.
+Dedicated visual detectors, multimodal large language models, and our PE-Det baselines all show lower recall on WildAIGC-Bench than their external benchmark mean.
 
 ![WildAIGC processed recall and external benchmark means where available](assets/recall_overview.svg?v=20261015-complete)
 
-The figure compares WildAIGC processed recall with an equally weighted mean across the same nine external benchmarks. Qwen3.8-27B and GLM-5.3-Flash now include all external benchmarks, using sampled evaluation where indicated. The highest displayed processed recall is 60.93%.
+The figure compares WildAIGC processed recall with an equally weighted mean across the same nine external benchmarks. The highest displayed processed recall is 60.93%.
 
 **WildAIGC is positive-only.** Higher recall alone does not establish better overall detection performance. Balanced accuracy (BAcc), real-image FPR, raw/processed results and the 83-image paired crop analysis are available in the [full results](docs/detailed-results.md); see the [evaluation protocol](docs/evaluation.md) for metric definitions and sampling scope.
 
@@ -64,11 +62,21 @@ print(ds[0]["sample_id"], ds[0]["label"])
 
 Report the dataset revision and image version used. See [data format and usage](docs/dataset.md) for the file layout and integrity checks.
 
-## From online circulation to a benchmark
+## A continuously operating construction pipeline
 
-![Collection, evidence review, human annotation and image provenance](assets/construction_pipeline.png?v=20261015)
+![Automatic collection, screening and preliminary annotation followed by human verification, quality control and continued releases](assets/construction_pipeline.svg?v=20261020)
 
-Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select samples. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
+1. **Automatic collection, screening, and preliminary annotation.** Scheduled tasks are already running. They gather newly circulating candidates from multiple websites, covering public figures, social affairs, disasters, and other widely discussed events.
+2. **Human verification and quality control.** Human reviewers check automatic annotations against image-specific evidence and decide final inclusion. Candidates with insufficient evidence or uncertain AI involvement are excluded. Invisible-watermark evidence comes from results publicly reported by fact-checking organizations.
+3. **Versioned releases and continued expansion.** Accepted images retain their acquired form, source links, and evidence summaries. Ongoing collection supplies future releases while each evaluation set remains fixed.
+
+**Evaluated detectors receive images alone**, and their predictions are not used to select samples. See the [construction and annotation protocol](docs/dataset.md) for details.
+
+## Current release and what comes next
+
+The current v1.0 release contains **407 verified AI-generated or edited images**, with 83 cropped images and 324 unchanged pairs. Linked source pages span **78 website hostnames**.
+
+Future releases will add more samples and broaden event and source coverage. We also plan to add **real-image controls**, including original photographs underlying some AI recreations, enhancements, or edits. These source originals will be part of a broader real-image collection, supporting both paired comparisons and false-positive evaluation.
 
 ## Dataset profile
 
