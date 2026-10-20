@@ -66,11 +66,11 @@ Report the dataset revision and image version used. See [data format and usage](
 
 ![Automatic collection, screening and preliminary annotation followed by human verification, quality control and continued releases](assets/construction_pipeline.svg?v=20261020)
 
-1. **Automatic collection, screening, and preliminary annotation.** Scheduled tasks are already running. They gather newly circulating candidates from multiple websites, covering public figures, social affairs, disasters, and other widely discussed events.
+1. **Automatic collection, screening, and preliminary annotation.** Scheduled tasks are already running. They gather newly circulating candidates from multiple websites, covering public figures, social affairs, disasters, and other widely discussed events. Preliminary annotations draw on source descriptions, creator disclosures, watermark evidence, and fact-checking findings.
 2. **Human verification and quality control.** Human reviewers check automatic annotations against image-specific evidence and decide final inclusion. Candidates with insufficient evidence or uncertain AI involvement are excluded. Invisible-watermark evidence comes from results publicly reported by fact-checking organizations.
 3. **Versioned releases and continued expansion.** Accepted images retain their acquired form, source links, and evidence summaries. Ongoing collection supplies future releases while each evaluation set remains fixed.
 
-**Evaluated detectors receive images alone**, and their predictions are not used to select samples. See the [construction and annotation protocol](docs/dataset.md) for details.
+**No AI-image detectors are used for sample selection.** Source evidence is used to verify AI labels; detection is evaluated solely from the images. See the [construction and annotation protocol](docs/dataset.md) for details.
 
 ## Current release and what comes next
 
