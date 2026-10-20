@@ -44,7 +44,9 @@ Under real circulation conditions, these images present a clear challenge across
 
 The figure compares WildAIGC processed recall with an equally weighted mean across the same nine external benchmarks. Qwen3.8-27B and GLM-5.3-Flash now include all external benchmarks, using sampled evaluation where indicated. The highest displayed processed recall is 60.93%.
 
-**WildAIGC is positive-only.** Higher recall alone does not establish better overall detection performance. Real-image FPR, raw/processed results and supplementary accuracy are available in the [full results](docs/detailed-results.md); see the [evaluation protocol](docs/evaluation.md) for metric definitions and sampling scope.
+**WildAIGC is positive-only.** Higher recall alone does not establish better overall detection performance. Balanced accuracy (BAcc), real-image FPR, raw/processed results and the 83-image paired crop analysis are available in the [full results](docs/detailed-results.md); see the [evaluation protocol](docs/evaluation.md) for metric definitions and sampling scope.
+
+The [paper-aligned tables](docs/detailed-results.md) cover all 16 configurations. External mean recall averages nine benchmarks; mean BAcc and FPR average the eight with real images. ITW-SM uses all 10,000 images for every method.
 
 ## Get started
 
@@ -85,7 +87,7 @@ Resolution is measured by the shorter edge in pixels. Source counts describe rec
 | [Result tables](docs/detailed-results.md) | Per-benchmark performance and crop analysis |
 | [Metric scorer](scripts/score_predictions.py) | Score your own normalized predictions |
 
-PE-336 and PE-518 are our trained baselines, combining PE-Core-Large (Perception Encoder) with a classification head. Their names indicate input resolution; additional discussion will accompany the technical report.
+PE-336 and PE-518 are our trained baselines, combining PE-Core-Large (Perception Encoder) with a classification head. Their names indicate input resolution. See the [evaluation guide](docs/evaluation.md) for training-data and inference details.
 
 ## Citation and feedback
 
@@ -94,3 +96,4 @@ The technical report and formal citation are in preparation. For now, cite **Wil
 Read the dataset [LICENSE](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/LICENSE) for metadata licensing and third-party image rights. For corrections or rights concerns, [open an issue](https://github.com/YuZijian/WildAIGC-Bench/issues) with the relevant sample ID.
 
 **If WildAIGC-Bench is useful to your research, consider starring this repository to follow the project.**
+
