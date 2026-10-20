@@ -8,15 +8,15 @@ WildAIGC-Bench combines a continuously operating construction pipeline with huma
 
 ### Automatic collection, screening, and preliminary annotation
 
-Scheduled tasks are already running: they collect potential AI-generated or edited images, perform initial screening, and prepare preliminary annotations. Recurring collection brings newly circulating material into the candidate pool, supporting timely updates and diverse event coverage. Automatic annotations remain provisional until human review.
+Scheduled tasks are already running: they collect potential AI-generated or edited images, perform initial screening, and prepare preliminary annotations using source descriptions, creator disclosures, watermark evidence, and fact-checking findings. Recurring collection brings newly circulating material into the candidate pool, supporting timely updates and diverse event coverage. Automatic annotations remain provisional until human review.
 
 ### Human verification and quality control
 
 Human reviewers verify the automatic annotations and decide whether each sample enters the benchmark. Evidence must establish AI generation or editing of the target image; a false event claim alone is insufficient. Accepted evidence includes creator disclosures, visible platform watermarks, and explicit fact-checking findings. Invisible-watermark evidence is based on detection results publicly reported by fact-checking organizations, rather than independent watermark-tool runs by the team.
 
-Candidates with insufficient evidence or uncertain AI involvement are excluded. Quality control also removes redundant samples, overtly stylized artwork, and unusable images, while retaining real circulation effects such as compression, screenshots, and recapture. Predictions from the evaluated detectors are not used for sample selection.
+Candidates with insufficient evidence or uncertain AI involvement are excluded. Quality control also removes redundant samples, overtly stylized artwork, and unusable images, while retaining real circulation effects such as compression, screenshots, and recapture. No AI-image detectors are used for sample selection.
 
-Each accepted image has a source webpage link and an evidence summary. Source information supports annotation; evaluated detectors receive images alone. A documented circulation context does not establish that the depicted event actually occurred.
+Each accepted image has a source webpage link and an evidence summary. Source evidence is used to verify AI labels; detection is evaluated solely from the images. A documented circulation context does not establish that the depicted event actually occurred.
 
 ## Versioned release and continued expansion
 
@@ -31,6 +31,10 @@ Future releases will broaden event and source coverage and add more AI images an
 `raw` preserves the acquired online file, which need not be the generator’s first output. `processed` is a rectangular crop of the target region where appropriate, removing peripheral comments, platform marks or whitespace. No resizing, resampling, inpainting or enhancement is applied. There are 83 cropped images and 324 unchanged pairs. When no crop is needed, processed is byte-identical to raw.
 
 Crop boxes are `[x, y, width, height]` in decoded raw raster coordinates without EXIF rotation. Crops are saved as lossless PNGs. Raw/processed dimensions, coordinates and SHA256 hashes are recorded in the manifest.
+
+### Why remove peripheral text?
+
+In the Imran Khan hospital-arrival example, the acquired screenshot includes the uploader's AI-enhancement disclosure and a comment calling the image fake. [Soch Fact Check](https://www.sochfactcheck.com/viral-image-of-imran-khan-in-an-ambulance-at-shifa-hospital-is-ai-generated/) separately reports a positive SynthID detection supporting the label. MLLMs can read the peripheral text and potentially infer the label without detecting manipulation in the target image, giving them an advantage over visual detectors focused on image features. Cropping removes these direct clues and supports a more comparable assessment of the target content. Both versions remain available for evaluation.
 
 ## Files and loading
 
