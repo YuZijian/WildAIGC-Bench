@@ -7,7 +7,7 @@
 
 **Broad Coverage · Timely Updates · Human-Verified Labels**
 
-[**🤗 Dataset**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) &nbsp; · &nbsp; [**Project page ↗**](https://yuzijian.github.io/WildAIGC-Bench/) &nbsp; · &nbsp; [**Results**](docs/detailed-results.md) &nbsp; · &nbsp; **Technical report — coming soon**
+[**🤗 Dataset**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) &nbsp; · &nbsp; [**Project page ↗**](https://yuzijian.github.io/WildAIGC-Bench/) &nbsp; · &nbsp; [**Results**](docs/detailed-results.md) &nbsp; · &nbsp; [**Paper ↗**](https://arxiv.org/abs/2610.28087)
 
 </div>
 
@@ -88,6 +88,7 @@ Resolution is measured by the shorter edge in pixels. Source counts describe rec
 
 | Resource | What you will find |
 |:---|:---|
+| [Paper on arXiv](https://arxiv.org/abs/2610.28087) | Full methodology, experiments and appendix |
 | [Hugging Face dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) | Images, labels, context and dataset preview |
 | [Project page](https://yuzijian.github.io/WildAIGC-Bench/) | Interactive examples, figures and dataset statistics |
 | [Dataset guide](docs/dataset.md) | Construction overview, raw/processed semantics and metadata |
@@ -99,7 +100,21 @@ PE-336 and PE-518 are our trained baselines, combining PE-Core-Large (Perception
 
 ## Citation and feedback
 
-The technical report and formal citation are in preparation. For now, cite **WildAIGC-Bench v1.0**, this repository and the dataset revision used.
+Our paper is available on [arXiv](https://arxiv.org/abs/2610.28087). If you use WildAIGC-Bench, please cite:
+
+```bibtex
+@misc{yu2026wildaigcbench,
+  title={WildAIGC-Bench: Can AI Image Detectors Handle the Wild? A Benchmark of Generated and Edited Images in Online Circulation},
+  author={Zijian Yu and Hangwei Zhang and Jun Lan and Huijia Zhu and Weiqiang Wang and Jianfu Zhang},
+  year={2026},
+  eprint={2610.28087},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV},
+  url={https://arxiv.org/abs/2610.28087}
+}
+```
+
+Also report the dataset revision and image version used.
 
 Read the dataset [LICENSE](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/LICENSE) for metadata licensing and third-party image rights. For corrections or rights concerns, [open an issue](https://github.com/YuZijian/WildAIGC-Bench/issues) with the relevant sample ID.
 
