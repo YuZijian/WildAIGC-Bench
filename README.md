@@ -38,7 +38,7 @@ Illustrative processed examples. [Enlarge images and explore their source contex
 
 Dedicated visual detectors, multimodal large language models, and our PE-Det baselines all show lower recall on WildAIGC-Bench than their external benchmark mean.
 
-![WildAIGC processed recall and external benchmark means where available](assets/recall_overview.svg?v=20261015-complete)
+![WildAIGC processed recall and external benchmark means where available](assets/recall_overview.svg?v=20261022-order)
 
 The figure compares WildAIGC processed recall with an equally weighted mean across the same nine external benchmarks. The highest displayed processed recall is 60.93%.
 
