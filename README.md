@@ -1,50 +1,32 @@
-<div align="center">
+![WildAIGC-Bench — Real stories. Fabricated images.](assets/readme_banner.svg)
 
-# WildAIGC-Bench
+<p align="center"><a href="https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench"><b>Download dataset ↗</b></a> &nbsp; · &nbsp; <a href="https://yuzijian.github.io/WildAIGC-Bench/"><b>Explore the project ↗</b></a> &nbsp; · &nbsp; <a href="https://arxiv.org/abs/2610.28087"><b>Read the paper ↗</b></a></p>
 
-### AI images behind real news events and online claims.
-### A hard test for today’s detectors.
+**WildAIGC-Bench** tests AI-image detection on photographic-looking images tied to real news events and online claims, collected after actual web and social-media circulation.
 
-**Broad Coverage · Timely Updates · Human-Verified Labels**
+- **Broad coverage.** News websites, fact-checking sources and social media, spanning public figures, social affairs, disasters and everyday scenes. Images retain the conditions encountered in real online circulation.
+- **Timely updates.** Ongoing discovery, screening and preliminary annotation track newly circulating images. Human-reviewed additions enter future releases, while published evaluation sets remain fixed.
+- **Human-verified labels.** Each included image is manually checked against image-specific AI evidence, including creator disclosures, platform watermarks or fact-checking findings.
 
-[**🤗 Dataset**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) &nbsp; · &nbsp; [**Project page ↗**](https://yuzijian.github.io/WildAIGC-Bench/) &nbsp; · &nbsp; [**Results**](docs/detailed-results.md) &nbsp; · &nbsp; [**Paper ↗**](https://arxiv.org/abs/2610.28087)
+## Selected examples
 
-</div>
+| Animal story | Historical landmark | World Cup stadium |
+|:---:|:---:|:---:|
+| ![A viral service-dog story](assets/img_07a35ec18eeda070-display.jpg) | ![The Taj Mahal under construction](assets/img_9cf679023f3f7bd8-display.jpg) | ![Rainbow flags added to a World Cup stadium](assets/img_c8cb9fa489e4d903-display.jpg) |
 
-WildAIGC-Bench brings together AI-generated and edited images tied to real news events and online claims, where fabricated content can mislead, enable scams or fuel public controversy. Scheduled tasks automatically collect, screen, and preliminarily annotate candidates across news websites, fact-checking sources, and related social media content. Human reviewers verify the annotations and perform quality control before inclusion. The collection preserves photographic appearance and the effects of actual online circulation.
+| Retail poster | Hospital notice | Earthquake scene |
+|:---:|:---:|:---:|
+| ![Song Yuqi retail poster](assets/img_0fe24cc6e96245b8-display.png) | ![A hospital notice about AI diagnosis](assets/img_389d5651c4658339-display.jpg) | ![A purported historical earthquake scene](assets/img_ef07d6f200fb3139-display.webp) |
 
-| Broad Coverage | Timely Updates | Human-Verified Labels |
-|:---|:---|:---|
-| Collection spans news websites, fact-checking sources, and related social media content, covering public figures, social affairs, disasters, and varied forms of image generation and editing. | Scheduled tasks continually collect, screen, and preliminarily annotate new candidates. Human-reviewed additions will enter subsequent releases, while each published evaluation set remains fixed. | Human reviewers verify automatic annotations against image-specific evidence and perform quality control. Candidates with uncertain AI involvement or insufficient evidence are excluded. |
+Illustrative AI-generated / edited examples from V1. [Explore images and source context →](https://yuzijian.github.io/WildAIGC-Bench/#dataset)
 
-## A look at the collection
+## A revealing test for today’s detectors
 
-<table>
-<tr>
-<td align="center" width="33%"><img src="assets/img_0fe24cc6e96245b8-processed.png" height="190" alt="AI-edited retail poster"><br><sub>Retail poster</sub></td>
-<td align="center" width="33%"><img src="assets/img_1b3026fd893bf218-raw.jpg" height="190" alt="AI-generated parcels scene"><br><sub>Everyday scene</sub></td>
-<td align="center" width="33%"><img src="assets/img_2bb3885c6b59817a-raw.jpg" height="190" alt="AI-edited football spectator"><br><sub>Local image editing</sub></td>
-</tr>
-<tr>
-<td align="center"><img src="assets/img_6cfd077cd16360a7-raw.jpg" height="190" alt="Fabricated celebrity wedding"><br><sub>Celebrity event</sub></td>
-<td align="center"><img src="assets/img_2662f72eae79741a-raw.jpg" height="190" alt="AI-generated public-event formation"><br><sub>Public-event claim</sub></td>
-<td align="center"><img src="assets/img_eef641f81db6498b-raw.jpg" height="190" alt="AI-generated urban queue"><br><sub>Urban scene</sub></td>
-</tr>
-</table>
+![WildAIGC processed recall compared with external benchmark means](assets/recall_overview.svg)
 
-Illustrative processed examples. [Enlarge images and explore their source context →](https://yuzijian.github.io/WildAIGC-Bench/#dataset)
+The highest processed recall among the displayed configurations is **60.93%**. External means equally weight nine benchmarks. Higher recall alone does not establish better overall detection performance; WildAIGC v1.0 contains AI images only.
 
-## How do detectors perform?
-
-Dedicated visual detectors, multimodal large language models, and our PE-Det baselines all show lower recall on WildAIGC-Bench than their external benchmark mean.
-
-![WildAIGC processed recall and external benchmark means where available](assets/recall_overview.svg?v=20261022-order)
-
-The figure compares WildAIGC processed recall with an equally weighted mean across the same nine external benchmarks. The highest displayed processed recall is 60.93%.
-
-**WildAIGC is positive-only.** Higher recall alone does not establish better overall detection performance. Balanced accuracy (BAcc), real-image FPR, raw/processed results and the 83-image paired crop analysis are available in the [full results](docs/detailed-results.md); see the [evaluation protocol](docs/evaluation.md) for metric definitions and sampling scope.
-
-The [paper-aligned tables](docs/detailed-results.md) cover all 16 configurations. External mean recall averages nine benchmarks; mean BAcc and FPR average the eight with real images. ITW-SM uses all 10,000 images for every method.
+[Explore interactive results →](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Full tables and external FPR →](docs/detailed-results.md)
 
 ## Get started
 
@@ -62,21 +44,11 @@ print(ds[0]["sample_id"], ds[0]["label"])
 
 Report the dataset revision and image version used. See [data format and usage](docs/dataset.md) for the file layout and integrity checks.
 
-## A continuously operating construction pipeline
+## From online circulation to a benchmark
 
-![Automatic collection, screening and preliminary annotation followed by human verification, quality control and continued releases](assets/construction_pipeline.svg?v=20261020)
+![Collection, evidence review, human annotation and image provenance](assets/construction_pipeline.png?v=20261015)
 
-1. **Automatic collection, screening, and preliminary annotation.** Scheduled tasks are already running. They gather newly circulating candidates from multiple websites, covering public figures, social affairs, disasters, and other widely discussed events. Preliminary annotations draw on source descriptions, creator disclosures, watermark evidence, and fact-checking findings.
-2. **Human verification and quality control.** Human reviewers check automatic annotations against image-specific evidence and decide final inclusion. Candidates with insufficient evidence or uncertain AI involvement are excluded. Invisible-watermark evidence comes from results publicly reported by fact-checking organizations.
-3. **Versioned releases and continued expansion.** Accepted images retain their acquired form, source links, and evidence summaries. Ongoing collection supplies future releases while each evaluation set remains fixed.
-
-**No AI-image detectors are used for sample selection.** Source evidence is used to verify AI labels; detection is evaluated solely from the images. See the [construction and annotation protocol](docs/dataset.md) for details.
-
-## Current release and what comes next
-
-The current v1.0 release contains **407 verified AI-generated or edited images**, with 83 cropped images and 324 unchanged pairs. Linked source pages span **78 website hostnames**.
-
-Future releases will add more samples and broaden event and source coverage. We also plan to add **real-image controls**, including original photographs underlying some AI recreations, enhancements, or edits. These source originals will be part of a broader real-image collection, supporting both paired comparisons and false-positive evaluation.
+Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select samples. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
 
 ## Dataset profile
 
@@ -88,7 +60,6 @@ Resolution is measured by the shorter edge in pixels. Source counts describe rec
 
 | Resource | What you will find |
 |:---|:---|
-| [Paper on arXiv](https://arxiv.org/abs/2610.28087) | Full methodology, experiments and appendix |
 | [Hugging Face dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) | Images, labels, context and dataset preview |
 | [Project page](https://yuzijian.github.io/WildAIGC-Bench/) | Interactive examples, figures and dataset statistics |
 | [Dataset guide](docs/dataset.md) | Construction overview, raw/processed semantics and metadata |
@@ -96,11 +67,11 @@ Resolution is measured by the shorter edge in pixels. Source counts describe rec
 | [Result tables](docs/detailed-results.md) | Per-benchmark performance and crop analysis |
 | [Metric scorer](scripts/score_predictions.py) | Score your own normalized predictions |
 
-PE-336 and PE-518 are our trained baselines, combining PE-Core-Large (Perception Encoder) with a classification head. Their names indicate input resolution. See the [evaluation guide](docs/evaluation.md) for training-data and inference details.
+PE-336 and PE-518 are our trained baselines, combining PE-Core-Large (Perception Encoder) with a classification head. Their names indicate input resolution; see the [technical report](https://arxiv.org/abs/2610.28087) for further discussion.
 
 ## Citation and feedback
 
-Our paper is available on [arXiv](https://arxiv.org/abs/2610.28087). If you use WildAIGC-Bench, please cite:
+See our [technical report on arXiv](https://arxiv.org/abs/2610.28087). Please cite:
 
 ```bibtex
 @misc{yu2026wildaigcbench,
@@ -114,9 +85,8 @@ Our paper is available on [arXiv](https://arxiv.org/abs/2610.28087). If you use 
 }
 ```
 
-Also report the dataset revision and image version used.
+Please also identify the dataset version and revision used in your evaluation.
 
 Read the dataset [LICENSE](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/LICENSE) for metadata licensing and third-party image rights. For corrections or rights concerns, [open an issue](https://github.com/YuZijian/WildAIGC-Bench/issues) with the relevant sample ID.
 
 **If WildAIGC-Bench is useful to your research, consider starring this repository to follow the project.**
-

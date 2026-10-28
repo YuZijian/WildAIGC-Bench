@@ -1,39 +1,16 @@
 'use strict';
-let samples = [];
-const dialog = document.getElementById('sampleDialog');
-function openSample(id) {
-  const sample = samples.find(item => item.sample_id === id);
-  if (!sample) return;
-  document.getElementById('dialogTitle').textContent = sample.title;
-  document.getElementById('dialogId').textContent = sample.sample_id;
-  document.getElementById('dialogSource').href = sample.source_page_url;
-  const image = document.getElementById('dialogImage');
-  image.src = sample.processed_url;
-  image.alt = `${sample.title} — processed`;
-  document.getElementById('fullImageLink').href = sample.processed_url;
-  document.getElementById('dialogStatus').textContent = sample.unchanged
-    ? 'Processed · no crop needed.' : 'Processed · cropped target region, without resizing.';
-  document.getElementById('dialogDimensions').textContent = `Processed · ${sample.processed_size[0]} × ${sample.processed_size[1]} pixels`;
-  dialog.showModal();
-  document.body.style.overflow = 'hidden';
-}
-document.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => {
-  if (samples.length) openSample(button.dataset.open);
-  else window.open(button.querySelector('img').src, '_blank', 'noopener');
-}));
-document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
-dialog.addEventListener('close', () => { document.body.style.overflow = ''; });
-dialog.addEventListener('click', event => {
-  if (event.target !== dialog) return;
-  const rect = dialog.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-});
-fetch('./assets/sample_examples.json?v=20261013c').then(response => {
-  if (!response.ok) throw new Error('Sample metadata could not be loaded');
-  return response.json();
-}).then(data => {
-  samples = data;
-  samples.forEach(sample => {
-    document.querySelector(`[data-sample="${sample.sample_id}"] img`).src = sample.processed_url;
-  });
-}).catch(() => { /* Static processed thumbnails remain usable as full-size links. */ });
+let samples=[];let rows=[];let family='all';let ordering='original';
+const dialog=document.getElementById('sampleDialog');
+function openSample(id){const s=samples.find(x=>x.sample_id===id);if(!s)return;document.getElementById('dialogTitle').textContent=s.title;document.getElementById('dialogId').textContent=s.sample_id;document.getElementById('dialogSource').href=s.source_page_url;document.getElementById('dialogImage').src=s.processed_url;document.getElementById('dialogImage').alt=s.title+' — processed';document.getElementById('fullImageLink').href=s.processed_url;document.getElementById('dialogStatus').textContent=s.unchanged?'Processed · no crop needed.':'Processed · cropped target region, without resizing.';document.getElementById('dialogDimensions').textContent=s.processed_size.join(' × ')+' pixels';dialog.showModal();document.body.style.overflow='hidden'}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-open]');if(b)openSample(b.dataset.open)});
+function setupDialog(d,close){document.getElementById(close).onclick=()=>d.close();d.addEventListener('close',()=>document.body.style.overflow='');d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}})}
+setupDialog(dialog,'closeDialog');setupDialog(document.getElementById('figureDialog'),'closeFigure');
+document.querySelectorAll('[data-figure]').forEach(b=>b.onclick=()=>{document.getElementById('figureTitle').textContent=b.dataset.title;document.getElementById('figureImage').src=b.dataset.figure;document.getElementById('figureImage').alt=b.dataset.title;document.getElementById('figureOriginal').href=b.dataset.figure;document.getElementById('figureDialog').showModal();document.body.style.overflow='hidden'});
+fetch('assets/sample_examples.json').then(r=>r.json()).then(data=>{samples=data;document.querySelectorAll('[data-case]').forEach(b=>b.onclick=()=>{const s=samples[Number(b.dataset.case)];document.querySelectorAll('[data-case]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));document.getElementById('featuredImage').src=s.processed_url;document.getElementById('featuredImage').alt=s.title;document.getElementById('featuredOpen').dataset.open=s.sample_id;document.getElementById('caseTopic').textContent=s.topic;document.getElementById('caseTitle').textContent=s.title;document.getElementById('caseSource').href=s.source_page_url})}).catch(()=>{document.getElementById('caseTopic').textContent='Example metadata unavailable — reload to explore'});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function render(){let rr=rows.map((r,i)=>({...r,group:i<10?'classifier':'mllm'})).filter(r=>family==='all'||r.group===family);if(ordering==='recall')rr.sort((a,b)=>b.wild.processed.recall-a.wild.processed.recall);if(ordering==='drop')rr.sort((a,b)=>(b.common_benchmark_macro.recall-b.wild.processed.recall)-(a.common_benchmark_macro.recall-a.wild.processed.recall));document.getElementById('interactiveChart').innerHTML=rr.map(r=>{const w=r.wild.processed.recall*100,m=r.common_benchmark_macro.recall*100,d=m-w;return `<div class="chart-row" tabindex="0" aria-label="${esc(r.method)}: processed recall ${w.toFixed(2)} percent, external mean ${m.toFixed(2)} percent, drop ${d.toFixed(2)} percentage points"><span class="chart-name">${esc(r.method)}</span><div class="chart-track" style="--lo:${w}%;--hi:${m}%"><i class="chart-line"></i><i class="chart-point"></i><i class="chart-point ext"></i></div><span class="chart-drop">−${d.toFixed(1)} pp</span><span class="chart-tooltip">${esc(r.method)} · WildAIGC ${w.toFixed(2)}% / External ${m.toFixed(2)}% · Drop ${d.toFixed(2)} pp</span></div>`}).join('')+'<div class="chart-axis"><span></span><div><span>0</span><span>20</span><span>40</span><span>60</span><span>80</span><span>100</span></div><span>Drop (pp)</span></div>'}
+fetch('assets/evaluation_results.json').then(r=>r.json()).then(d=>{rows=d.rows;render()}).catch(()=>{document.getElementById('interactiveChart').innerHTML='<img src="assets/recall_overview.svg" alt="Detector recall comparison">'});
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{family=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b))});render()});document.getElementById('chartSort').onchange=e=>{ordering=e.target.value;render()};
+document.querySelectorAll('[data-panel]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-panel]').forEach(x=>{const on=x===b;x.setAttribute('aria-selected',String(on));document.getElementById(x.dataset.panel).hidden=!on})});
+
+document.getElementById('copyCitation').addEventListener('click',async()=>{const text=document.getElementById('citationText').textContent;try{await navigator.clipboard.writeText(text);document.getElementById('copyCitation').textContent='Copied';document.getElementById('citationStatus').textContent='Citation copied.'}catch{const range=document.createRange();range.selectNodeContents(document.getElementById('citationText'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);document.getElementById('citationStatus').textContent='Text selected. Press Ctrl+C or Command+C to copy.'}});

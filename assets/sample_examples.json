@@ -1,115 +1,110 @@
 [
   {
+    "sample_id": "img_07a35ec18eeda070",
+    "title": "A viral service-dog story",
+    "topic": "Animal story",
+    "source_page_url": "https://www.snopes.com/fact-check/k9-valor-medal-honor-story/",
+    "processed_url": "./assets/img_07a35ec18eeda070-display.jpg",
+    "processed_size": [
+      600,
+      750
+    ],
+    "unchanged": true
+  },
+  {
+    "sample_id": "img_9cf679023f3f7bd8",
+    "title": "The Taj Mahal under construction",
+    "topic": "Historical landmark",
+    "source_page_url": "https://factcheck.afp.com/doc.afp.com.362D7BC",
+    "processed_url": "./assets/img_9cf679023f3f7bd8-display.jpg",
+    "processed_size": [
+      419,
+      746
+    ],
+    "unchanged": true
+  },
+  {
+    "sample_id": "img_c8cb9fa489e4d903",
+    "title": "Rainbow flags added to a World Cup stadium",
+    "topic": "Sports / edited scene",
+    "source_page_url": "https://leadstories.com/hoax-alert/2026/06/fact-check-fake-photo-shows-pride-rainbow-flags-on-pitch-ahead-of-iran-egypt-world-cup-match.html",
+    "processed_url": "./assets/img_c8cb9fa489e4d903-display.jpg",
+    "processed_size": [
+      1200,
+      900
+    ],
+    "unchanged": true
+  },
+  {
     "sample_id": "img_0fe24cc6e96245b8",
     "title": "Song Yuqi retail poster",
-    "topic": "Poster / local-edit claim",
+    "topic": "Poster / local edit",
     "source_page_url": "https://www.4anet.com/p/01m4csjyqm986pe0gzfwxsfa9d",
-    "raw_url": "./assets/img_0fe24cc6e96245b8-raw.jpg",
-    "processed_url": "./assets/img_0fe24cc6e96245b8-processed.png",
-    "unchanged": false,
-    "raw_size": [
-      800,
-      1460
-    ],
+    "processed_url": "./assets/img_0fe24cc6e96245b8-display.png",
     "processed_size": [
       689,
       852
     ],
-    "crop_box_xywh": [
-      93,
-      98,
-      689,
-      852
-    ]
+    "unchanged": false
   },
   {
-    "sample_id": "img_1b3026fd893bf218",
-    "title": "Courier parcels and a television box",
-    "topic": "Everyday scene",
-    "source_page_url": "https://www.creativebloq.com/ai/ai-art/can-you-spot-all-the-clues-that-prove-this-ai-photo-isnt-real",
-    "raw_url": "./assets/img_1b3026fd893bf218-raw.jpg",
-    "processed_url": "./assets/img_1b3026fd893bf218-raw.jpg",
-    "unchanged": true,
-    "raw_size": [
-      1200,
-      1036
-    ],
+    "sample_id": "img_389d5651c4658339",
+    "title": "A hospital notice about AI diagnosis",
+    "topic": "Everyday misinformation",
+    "source_page_url": "https://tech.ifeng.com/c/8x3NDLW2zvl",
+    "processed_url": "./assets/img_389d5651c4658339-display.jpg",
     "processed_size": [
-      1200,
-      1036
+      1040,
+      943
     ],
-    "crop_box_xywh": null
+    "unchanged": true
   },
   {
-    "sample_id": "img_2bb3885c6b59817a",
-    "title": "A locally edited football spectator",
-    "topic": "Face replacement",
-    "source_page_url": "https://leadstories.com/hoax-alert/2026/06/fact-check-image-altered-with-openai-tools-made-german-soccer-fan-in-the-stands-look-like-adolf-hitler.html",
-    "raw_url": "./assets/img_2bb3885c6b59817a-raw.jpg",
-    "processed_url": "./assets/img_2bb3885c6b59817a-raw.jpg",
-    "unchanged": true,
-    "raw_size": [
-      988,
-      661
-    ],
+    "sample_id": "img_ef07d6f200fb3139",
+    "title": "A purported historical earthquake scene",
+    "topic": "Disaster / historical claim",
+    "source_page_url": "https://www.unilad.com/technology/ai-earthquake-oregon-2001-060928-20230328/",
+    "processed_url": "./assets/img_ef07d6f200fb3139-display.webp",
     "processed_size": [
-      988,
-      661
+      828,
+      532
     ],
-    "crop_box_xywh": null
+    "unchanged": true
   },
   {
-    "sample_id": "img_6cfd077cd16360a7",
-    "title": "A fabricated Ronaldo wedding scene",
+    "sample_id": "img_caf321e5a730c7a7",
+    "title": "Ronaldo wedding group photograph",
     "topic": "Celebrity event",
     "source_page_url": "https://crhoy.com/entretenimiento/no-caiga-fotos-que-circulan-de-la-boda-de-cristiano-y-georgina-son-ia/",
-    "raw_url": "./assets/img_6cfd077cd16360a7-raw.jpg",
-    "processed_url": "./assets/img_6cfd077cd16360a7-raw.jpg",
-    "unchanged": true,
-    "raw_size": [
-      1200,
-      1607
-    ],
+    "processed_url": "./assets/img_caf321e5a730c7a7-display.jpg",
     "processed_size": [
       1200,
-      1607
+      1600
     ],
-    "crop_box_xywh": null
+    "unchanged": true
   },
   {
-    "sample_id": "img_2662f72eae79741a",
-    "title": "Kenyan recruits in a slogan formation",
-    "topic": "Public-event claim",
-    "source_page_url": "https://factcheck.afp.com/doc.afp.com.C79679F",
-    "raw_url": "./assets/img_2662f72eae79741a-raw.jpg",
-    "processed_url": "./assets/img_2662f72eae79741a-raw.jpg",
-    "unchanged": true,
-    "raw_size": [
-      723,
-      469
-    ],
+    "sample_id": "img_3d0c60912ad0e595",
+    "title": "A viral sunburn competition",
+    "topic": "Viral event",
+    "source_page_url": "https://www.heute.at/s/fake-text-fake-bilder-an-diesen-posts-stimmt-nichts-120122012",
+    "processed_url": "./assets/img_3d0c60912ad0e595-display.jpg",
     "processed_size": [
-      723,
-      469
+      720,
+      720
     ],
-    "crop_box_xywh": null
+    "unchanged": true
   },
   {
-    "sample_id": "img_eef641f81db6498b",
-    "title": "A purported Beijing drone collection queue",
-    "topic": "Urban scene",
-    "source_page_url": "https://factcheck.afp.com/doc.afp.com.C98N6CQ",
-    "raw_url": "./assets/img_eef641f81db6498b-raw.jpg",
-    "processed_url": "./assets/img_eef641f81db6498b-raw.jpg",
-    "unchanged": true,
-    "raw_size": [
-      759,
-      1200
-    ],
+    "sample_id": "img_0f8bef1e5ba4dda3",
+    "title": "A vintage exterior baby car seat",
+    "topic": "Everyday / historical claim",
+    "source_page_url": "https://www.snopes.com/fact-check/image-baby-car-seat-outside/",
+    "processed_url": "./assets/img_0f8bef1e5ba4dda3-display.jpg",
     "processed_size": [
-      759,
-      1200
+      640,
+      640
     ],
-    "crop_box_xywh": null
+    "unchanged": true
   }
 ]
