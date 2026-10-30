@@ -69,9 +69,9 @@ Report the dataset revision and image version used. See [data format and usage](
 
 Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select samples. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
 
-## Dataset profile · V1 (407 images)
+## Dataset profile · V2 (600 images)
 
-![Image short-edge resolution and recorded source website distribution](assets/dataset_profile.png?v=20261015)
+![Image short-edge resolution and recorded source website distribution](assets/dataset_profile.png?v=20261030-v2)
 
 Resolution is measured by the shorter edge in pixels. Source counts describe recorded report websites, not necessarily the original social platforms.
 
