@@ -8,6 +8,12 @@
 - **Timely updates.** Ongoing discovery, screening and preliminary annotation track newly circulating images. Human-reviewed additions enter future releases, while published evaluation sets remain fixed.
 - **Human-verified labels.** Each included image is manually checked against image-specific AI evidence, including creator disclosures, platform watermarks or fact-checking findings.
 
+## News
+
+- **2026.10.30** — **V2 is being prepared for release:** 600 human-reviewed AI-generated and edited images, including 193 additions to V1.
+- **2026.10.20** — Our [paper](https://arxiv.org/abs/2610.28087) is available on arXiv.
+- **2026.10** — [WildAIGC-Bench V1](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) released with 407 human-reviewed AI-generated and edited images.
+
 ## Selected examples
 
 | Animal story | Historical landmark | World Cup stadium |
