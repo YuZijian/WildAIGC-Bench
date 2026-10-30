@@ -10,9 +10,9 @@
 
 ## News
 
-- **2026.10.30** — **V2 is being prepared for release:** 600 human-reviewed AI-generated and edited images, including 193 additions to V1.
+- **2026.10.30** — [**V2 released**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench): **600** human-reviewed AI-generated and edited images, including **193 new samples** and two updated processed crops.
 - **2026.10.20** — Our [paper](https://arxiv.org/abs/2610.28087) is available on arXiv.
-- **2026.10** — [WildAIGC-Bench V1](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) released with 407 human-reviewed AI-generated and edited images.
+- **2026.10.15** — [WildAIGC-Bench V1](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) released with 407 human-reviewed AI-generated and edited images.
 
 ## Selected examples
 
@@ -28,11 +28,22 @@ Illustrative AI-generated / edited examples from V1. [Explore images and source 
 
 ## A revealing test for today’s detectors
 
+**Evaluation version: V1 · 407 images.** The results below and in the paper have not been recomputed on V2.
+
 ![WildAIGC processed recall compared with external benchmark means](assets/recall_overview.svg)
 
 The highest processed recall among the displayed configurations is **60.93%**. External means equally weight nine benchmarks. Higher recall alone does not establish better overall detection performance; WildAIGC v1.0 contains AI images only.
 
 [Explore interactive results →](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Full tables and external FPR →](docs/detailed-results.md)
+
+## Dataset releases
+
+| Release | Images | Scope |
+|:---|---:|:---|
+| **V2 · latest** | **600** | 193 additions; two existing processed crops updated |
+| [V1 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) | 407 | Original images used in the paper and published evaluations |
+
+All original sample IDs, labels and raw images are retained. Two processed crops are revised only in V2; see the dataset [change log](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/CHANGELOG.md). The per-sample `version` field records first inclusion, not an immutable image revision.
 
 ## Get started
 
@@ -48,6 +59,8 @@ print(ds[0]["sample_id"], ds[0]["label"])
 - **Raw:** the acquired online file.
 - **Metadata:** labels, event context, evidence summaries and source links.
 
+To reproduce the paper’s original V1, pass `revision="0b043a1dd41e694749227af8610930cc86049747"` to `load_dataset`. Filtering the latest data to `version == "v1"` is not equivalent because two crops have changed.
+
 Report the dataset revision and image version used. See [data format and usage](docs/dataset.md) for the file layout and integrity checks.
 
 ## From online circulation to a benchmark
@@ -56,7 +69,7 @@ Report the dataset revision and image version used. See [data format and usage](
 
 Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select samples. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
 
-## Dataset profile
+## Dataset profile · V1 (407 images)
 
 ![Image short-edge resolution and recorded source website distribution](assets/dataset_profile.png?v=20261015)
 
