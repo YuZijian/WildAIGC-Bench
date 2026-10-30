@@ -10,7 +10,7 @@
 
 ## News
 
-- **2026.10.30** — [**V2 released**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench): **600** human-reviewed AI-generated and edited images, including **193 new samples** and two updated processed crops.
+- **2026.10.30** — [**V2 released**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench): **600** human-reviewed AI-generated and edited images, including **193 new samples**.
 - **2026.10.20** — Our [paper](https://arxiv.org/abs/2610.28087) is available on arXiv.
 - **2026.10.15** — [WildAIGC-Bench V1](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) released with 407 human-reviewed AI-generated and edited images.
 
@@ -40,10 +40,10 @@ The highest processed recall among the displayed configurations is **60.93%**. E
 
 | Release | Images | Scope |
 |:---|---:|:---|
-| **V2 · latest** | **600** | 193 additions; two existing processed crops updated |
+| **V2 · latest** | **600** | 193 new samples added to V1 |
 | [V1 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) | 407 | Original images used in the paper and published evaluations |
 
-All original sample IDs, labels and raw images are retained. Two processed crops are revised only in V2; see the dataset [change log](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/CHANGELOG.md). The per-sample `version` field records first inclusion, not an immutable image revision.
+The per-sample `version` field records first inclusion. For release history, see the dataset [change log](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/CHANGELOG.md).
 
 ## Get started
 
@@ -59,7 +59,7 @@ print(ds[0]["sample_id"], ds[0]["label"])
 - **Raw:** the acquired online file.
 - **Metadata:** labels, event context, evidence summaries and source links.
 
-To reproduce the paper’s original V1, pass `revision="0b043a1dd41e694749227af8610930cc86049747"` to `load_dataset`. Filtering the latest data to `version == "v1"` is not equivalent because two crops have changed.
+To reproduce the paper’s original V1, pass `revision="0b043a1dd41e694749227af8610930cc86049747"` to `load_dataset`. Use this fixed revision for the original evaluation files.
 
 Report the dataset revision and image version used. See [data format and usage](docs/dataset.md) for the file layout and integrity checks.
 
