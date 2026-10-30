@@ -10,9 +10,9 @@
 
 ## News
 
-- **2026.10.30** — [**V2 released**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench): **600** human-reviewed AI-generated and edited images, including **193 new samples**.
-- **2026.10.20** — Our [paper](https://arxiv.org/abs/2610.28087) is now available on arXiv! It introduces WildAIGC-Bench, describes our continuous collection and human-verification pipeline, and evaluates visual detectors and multimodal models on the original 407-image release, revealing substantial recall gaps compared with existing benchmarks.
-- **2026.10.15** — [WildAIGC-Bench V1](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) released with 407 human-reviewed AI-generated and edited images.
+- 🚀 `2026.10.30` **V2 is released!** Now **600 images**, with 193 new samples. [Dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench)
+- 📄 `2026.10.20` Our **paper** is on arXiv: *Can AI Image Detectors Handle the Wild?* [Paper](https://arxiv.org/abs/2610.28087)
+- 🎉 `2026.10.15` **WildAIGC-Bench V1 is released** with **407 human-reviewed images**. [Dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747)
 
 ## Selected examples
 
