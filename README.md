@@ -44,7 +44,7 @@ The highest processed recall among the displayed configurations is **60.93%**. E
 
 | Release | Images | Scope |
 |:---|---:|:---|
-| **V3 · latest** | **1,238** | 600 AI images + 638 real photographs |
+| [**V3 · latest**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) | **1,238** | 600 AI images + 638 real photographs |
 | [V2 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/a446d52c5f59e18e87266ca96c0ca48193a422ac) | 600 | AI-image cohort retained unchanged in V3 |
 | [V1 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) | 407 | Original images used in the paper and published evaluations |
 
