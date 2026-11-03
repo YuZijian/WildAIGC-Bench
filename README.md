@@ -10,9 +10,13 @@
 
 ## News
 
+- 🚀 `2026.11.03` **V3 is released!** Adding **638 real photographs** alongside **600 AI images**, with confirmed reference relationships for a subset. [Dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench)
+
 - 🚀 `2026.10.30` **V2 is released!** Now **600 images**, with 193 new samples. [Dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench)
 - 📄 `2026.10.20` Our **paper** is on arXiv: *Can AI Image Detectors Handle the Wild?* [Paper](https://arxiv.org/abs/2610.28087)
 - 🎉 `2026.10.15` **WildAIGC-Bench V1 is released** with **407 human-reviewed images**. [Dataset](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747)
+
+V3 adds real-image controls for false-positive evaluation alongside AI-image recall. Real labels are supported by photographic sources and human review; the complete editing history may not be known.
 
 ## Selected examples
 
@@ -28,7 +32,7 @@ Illustrative AI-generated / edited examples from V1. [Explore images and source 
 
 ## A revealing test for today’s detectors
 
-**Evaluation version: V1 · 407 images.** The results below and in the paper have not been recomputed on V2.
+**Evaluation version: V1 · 407 images.** The results below and in the paper have not been recomputed on V2 or V3.
 
 ![WildAIGC processed recall compared with external benchmark means](assets/recall_overview.svg)
 
@@ -40,7 +44,8 @@ The highest processed recall among the displayed configurations is **60.93%**. E
 
 | Release | Images | Scope |
 |:---|---:|:---|
-| **V2 · latest** | **600** | 193 new samples added to V1 |
+| **V3 · latest** | **1,238** | 600 AI images + 638 real photographs |
+| [V2 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/a446d52c5f59e18e87266ca96c0ca48193a422ac) | 600 | AI-image cohort retained unchanged in V3 |
 | [V1 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) | 407 | Original images used in the paper and published evaluations |
 
 The per-sample `version` field records first inclusion. For release history, see the dataset [change log](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/CHANGELOG.md).
@@ -51,12 +56,16 @@ The per-sample `version` field records first inclusion. For release history, see
 from datasets import load_dataset
 
 ds = load_dataset("yuzj1997yzj/WildAIGC-Bench", split="test")
+ai = ds.filter(lambda x: x["label"] == "aigc")  # 600
+real = ds.filter(lambda x: x["label"] == "real")  # 638
 image = ds[0]["processed_image"]
 print(ds[0]["sample_id"], ds[0]["label"])
 ```
 
 - **Processed:** target-region crop where needed, with no resizing; otherwise identical to raw.
 - **Raw:** the acquired online file.
+- **Real photographs:** processed reuses raw, with no additional transformation.
+- **Reference relationships:** 44 confirmed links distinguish editing originals from same-event photographs. [View examples →](https://yuzijian.github.io/WildAIGC-Bench/#reference-pairs)
 - **Metadata:** labels, event context, evidence summaries and source links.
 
 To reproduce the paper’s original V1, pass `revision="0b043a1dd41e694749227af8610930cc86049747"` to `load_dataset`. Use this fixed revision for the original evaluation files.
@@ -67,11 +76,11 @@ Report the dataset revision and image version used. See [data format and usage](
 
 ![Collection, evidence review, human annotation and image provenance](assets/construction_pipeline.png?v=20261015)
 
-Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select samples. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
+Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select the AI-image cohort. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
 
-## Dataset profile · V2 (600 images)
+## Dataset profile · V3 (600 AI + 638 real images)
 
-![Image short-edge resolution and recorded source website distribution](assets/dataset_profile.png?v=20261030-v2)
+![Image short-edge resolution and recorded source website distribution](assets/dataset_profile_v3.png)
 
 Resolution is measured by the shorter edge in pixels. Source counts describe recorded report websites, not necessarily the original social platforms.
 
