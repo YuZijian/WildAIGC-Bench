@@ -1,0 +1,184 @@
+{
+  "release": "V3",
+  "ai_images": 600,
+  "real_images": 638,
+  "units": "percent",
+  "rows": [
+    {
+      "method": "DRCT",
+      "family": "classifier",
+      "raw_recall": 29.83,
+      "processed_recall": 29.67,
+      "fpr": 14.11,
+      "balanced_accuracy": 57.78
+    },
+    {
+      "method": "DDA",
+      "family": "classifier",
+      "raw_recall": 37.33,
+      "processed_recall": 37.67,
+      "fpr": 8.46,
+      "balanced_accuracy": 64.6
+    },
+    {
+      "method": "AIDE",
+      "family": "classifier",
+      "raw_recall": 16.5,
+      "processed_recall": 21.33,
+      "fpr": 12.38,
+      "balanced_accuracy": 54.48
+    },
+    {
+      "method": "B-Free",
+      "family": "classifier",
+      "raw_recall": 35.83,
+      "processed_recall": 36.33,
+      "fpr": 3.13,
+      "balanced_accuracy": 66.6
+    },
+    {
+      "method": "Effort",
+      "family": "classifier",
+      "raw_recall": 27.33,
+      "processed_recall": 28.0,
+      "fpr": 20.69,
+      "balanced_accuracy": 53.66
+    },
+    {
+      "method": "PGC",
+      "family": "classifier",
+      "raw_recall": 15.67,
+      "processed_recall": 15.5,
+      "fpr": 14.58,
+      "balanced_accuracy": 50.46
+    },
+    {
+      "method": "OmniAID",
+      "family": "classifier",
+      "raw_recall": 30.0,
+      "processed_recall": 30.83,
+      "fpr": 5.8,
+      "balanced_accuracy": 62.52
+    },
+    {
+      "method": "CO-SPY",
+      "family": "classifier",
+      "raw_recall": 31.5,
+      "processed_recall": 33.5,
+      "fpr": 26.49,
+      "balanced_accuracy": 53.51
+    },
+    {
+      "method": "PE-336",
+      "family": "classifier",
+      "raw_recall": 19.67,
+      "processed_recall": 20.5,
+      "fpr": 8.62,
+      "balanced_accuracy": 55.94
+    },
+    {
+      "method": "PE-518",
+      "family": "classifier",
+      "raw_recall": 22.0,
+      "processed_recall": 22.83,
+      "fpr": 1.72,
+      "balanced_accuracy": 60.55
+    },
+    {
+      "method": "FakeVLM",
+      "family": "mllm",
+      "raw_recall": 64.5,
+      "processed_recall": 66.5,
+      "fpr": 49.53,
+      "balanced_accuracy": 58.49
+    },
+    {
+      "method": "Veritas++",
+      "family": "mllm",
+      "raw_recall": 33.67,
+      "processed_recall": 35.33,
+      "fpr": 3.13,
+      "balanced_accuracy": 66.1
+    },
+    {
+      "method": "BusterX2026",
+      "family": "mllm",
+      "raw_recall": 23.83,
+      "processed_recall": 24.67,
+      "fpr": 14.11,
+      "balanced_accuracy": 55.28
+    },
+    {
+      "method": "DeepVRM",
+      "family": "mllm",
+      "raw_recall": 30.17,
+      "processed_recall": 30.17,
+      "fpr": 18.65,
+      "balanced_accuracy": 55.76
+    },
+    {
+      "method": "FakeShield",
+      "family": "mllm",
+      "raw_recall": 31.0,
+      "processed_recall": 30.33,
+      "fpr": 11.76,
+      "balanced_accuracy": 59.29
+    },
+    {
+      "method": "UniGenDet",
+      "family": "mllm",
+      "raw_recall": 43.0,
+      "processed_recall": 45.0,
+      "fpr": 9.56,
+      "balanced_accuracy": 67.72
+    },
+    {
+      "method": "Qwen3.6-35B-A3B",
+      "family": "mllm",
+      "raw_recall": 39.17,
+      "processed_recall": 37.17,
+      "fpr": 1.88,
+      "balanced_accuracy": 67.64
+    },
+    {
+      "method": "Qwen3.8-27B",
+      "family": "mllm",
+      "raw_recall": 55.5,
+      "processed_recall": 54.5,
+      "fpr": 12.38,
+      "balanced_accuracy": 71.06
+    },
+    {
+      "method": "GLM-5.3-Flash",
+      "family": "mllm",
+      "raw_recall": 50.0,
+      "processed_recall": 46.5,
+      "fpr": 1.41,
+      "balanced_accuracy": 72.54
+    },
+    {
+      "method": "Kimi-K3",
+      "family": "mllm",
+      "raw_recall": 60.0,
+      "processed_recall": 57.33,
+      "fpr": 3.13,
+      "balanced_accuracy": 77.1
+    },
+    {
+      "method": "DeepSeek-V4.1-Flash",
+      "family": "mllm",
+      "raw_recall": 60.17,
+      "processed_recall": 57.33,
+      "fpr": 5.8,
+      "balanced_accuracy": 75.77
+    },
+    {
+      "method": "MiniMax-M3",
+      "family": "mllm",
+      "raw_recall": 61.5,
+      "processed_recall": 61.5,
+      "fpr": 16.61,
+      "balanced_accuracy": 72.44
+    }
+  ]
+}

@@ -12,7 +12,7 @@
 
 - **Broad coverage.** News websites, fact-checking sources and social media, spanning public figures, social affairs, disasters and everyday scenes. Images retain the conditions encountered in real online circulation.
 - **Timely updates.** Ongoing discovery, screening and preliminary annotation track newly circulating images. Human-reviewed additions enter future releases, while published evaluation sets remain fixed.
-- **Human-verified labels.** Each included image is manually checked against image-specific AI evidence, including creator disclosures, platform watermarks or fact-checking findings.
+- **Human-verified labels.** Each AI image is manually checked against image-specific evidence, including creator disclosures, platform watermarks or fact-checking findings. Real photographs are reviewed against their source provenance.
 
 ## News
 
@@ -36,15 +36,25 @@ V3 adds real-image controls for false-positive evaluation alongside AI-image rec
 
 Illustrative AI-generated / edited examples from V1. [Explore images and source context →](https://yuzijian.github.io/WildAIGC-Bench/#dataset)
 
-## A revealing test for today’s detectors
+## Detect the fake. Trust the real.
 
-**Evaluation version: V1 · 407 images.** The results below and in the paper have not been recomputed on V2 or V3.
+**V3 evaluation · 600 AI images + 638 real photographs.** We report AI recall, real-image false-positive rate and balanced accuracy together.
 
-![WildAIGC processed recall compared with external benchmark means](assets/recall_overview.svg)
+![V3 recall versus FPR: full-range overview and an expanded low-FPR comparison](assets/v3_detection_tradeoff.svg)
 
-The highest processed recall among the displayed configurations is **60.93%**. External means equally weight nine benchmarks. Higher recall alone does not establish better overall detection performance; WildAIGC v1.0 contains AI images only.
+The overview includes all displayed methods; the main plot expands FPR 0–30%. **Upper-right is better** in both views.
 
-[Explore interactive results →](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Full tables and external FPR →](docs/detailed-results.md)
+**Kimi-K3 has the highest displayed balanced accuracy (77.10%)**, with 57.33% AI recall and 3.13% FPR. **FakeVLM has the highest recall (66.50%)**, but also 49.53% FPR. Results use processed images at each model’s evaluated operating point; recall alone does not establish overall detection performance.
+
+### A revealing test for today’s detectors
+
+![V3 processed recall compared with external benchmark mean recall](assets/recall_overview_v3.svg)
+
+WildAIGC scores use **V3 · 600 AI images**. External means equally weight the nine previously evaluated benchmarks. Only methods with available external results are shown; evaluation configurations may differ between runs.
+
+[Explore V3 results →](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Full V3 table](docs/detailed-results.md) · [Cross-benchmark recall comparison](docs/cross-benchmark-v3.md)
+
+The cross-benchmark comparison uses **V3 processed recall** alongside existing external evaluations; recall drop is their difference in percentage points. The paper’s original **V1 results remain archived separately** in the [historical tables](docs/results-v1.md).
 
 ## Dataset releases
 
@@ -84,11 +94,11 @@ Report the dataset revision and image version used. See [data format and usage](
 
 Source context supports manual annotation; **evaluated detectors receive images alone**. General-purpose detector outputs were not used to select the AI-image cohort. This is a curated challenge set, not an estimate of the entire internet’s AI-image distribution.
 
-## Dataset profile · V3 (600 AI + 638 real images)
+## Dataset profile · V3 AI-image cohort (600 images)
 
-![Image short-edge resolution and recorded source website distribution](assets/dataset_profile_v3.png)
+![Image short-edge resolution and recorded source website distribution](assets/dataset_profile_v3_ai.svg)
 
-Resolution is measured by the shorter edge in pixels. Source counts describe recorded report websites, not necessarily the original social platforms.
+These charts cover the 600 AI images only; real photographs are excluded. Resolution compares raw and processed versions by shorter-edge length. Source counts describe recorded report websites, not necessarily the original social platforms.
 
 ## Explore further
 
@@ -98,7 +108,8 @@ Resolution is measured by the shorter edge in pixels. Source counts describe rec
 | [Project page](https://yuzijian.github.io/WildAIGC-Bench/) | Interactive examples, figures and dataset statistics |
 | [Dataset guide](docs/dataset.md) | Construction overview, raw/processed semantics and metadata |
 | [Evaluation guide](docs/evaluation.md) | Metrics, sampling and comparison scope |
-| [Result tables](docs/detailed-results.md) | Per-benchmark performance and crop analysis |
+| [V3 result tables](docs/detailed-results.md) | Recall, FPR, balanced accuracy and raw/processed comparison |
+| [Cross-benchmark comparison](docs/cross-benchmark-v3.md) | External recall, V3 recall and the difference |
 | [Metric scorer](scripts/score_predictions.py) | Score your own normalized predictions |
 
 PE-336 and PE-518 are our trained baselines, combining PE-Core-Large (Perception Encoder) with a classification head. Their names indicate input resolution; see the [technical report](https://arxiv.org/abs/2610.28087) for further discussion.

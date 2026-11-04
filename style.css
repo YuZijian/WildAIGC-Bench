@@ -12,3 +12,10 @@ table td.metric-best{font-weight:750;color:var(--ink)}
 #crossTable .macro-column{background:#eaf0f8;color:#476084}
 
 #wildTable td.drop-emphasis{font-weight:750;color:#984558;}
+
+/* V3 evaluation: restrained emphasis, one primary table. */
+.v3-insight{margin:28px 0;padding:22px 26px;border-left:3px solid #496a96;background:#f2f5f9}.v3-insight strong{font-size:21px}.v3-insight p{margin:8px 0 0;max-width:920px}.v3-plot{margin:28px 0 40px}.v3-plot img{width:100%;height:auto;background:white}.v3-plot figcaption{font-size:14px;color:#637489}.v3-best{font-weight:750;color:#253f63}.v3-crops{margin:26px 0;border-top:1px solid #dce3ec;border-bottom:1px solid #dce3ec;padding:18px 0}.v3-crops summary{cursor:pointer;font-weight:650}.v3-crops[open] summary{margin-bottom:20px}#v3Panel table{width:100%;min-width:650px}#v3Panel td{font-variant-numeric:tabular-nums}#v3Panel h3{font-size:24px}#crossPanel>.fine{margin:24px 0}@media(max-width:700px){.v3-plot{overflow-x:auto}.v3-plot img{min-width:760px}.v3-insight{padding:18px}.table-tabs button{font-size:15px}}
+
+#v3RecallComparison{margin-top:42px}#v3RecallComparison h3{margin-bottom:12px}
+
+#v3ResultsTable{min-width:950px}#evaluation>.wrap>.chart-card{margin:30px 0 42px}#v3ResultsTable th,#v3ResultsTable td{padding:16px 18px}
