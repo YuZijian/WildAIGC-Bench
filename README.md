@@ -1,6 +1,12 @@
 ![WildAIGC-Bench — Real stories. Fabricated images.](assets/readme_banner.svg)
 
-<p align="center"><a href="https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench"><b>Download dataset ↗</b></a> &nbsp; · &nbsp; <a href="https://yuzijian.github.io/WildAIGC-Bench/"><b>Explore the project ↗</b></a> &nbsp; · &nbsp; <a href="https://arxiv.org/abs/2610.28087"><b>Read the paper ↗</b></a></p>
+<p align="center">
+  <a href="https://yuzijian.github.io/WildAIGC-Bench/"><img src="https://img.shields.io/badge/Project_Page-Visit-496A96?style=flat-square&amp;labelColor=384355" alt="Project Page — Visit" height="28"></a>
+  &nbsp;
+  <a href="https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench"><img src="https://img.shields.io/badge/%F0%9F%A4%97_Dataset-V3-557FA8?style=flat-square&amp;labelColor=384355" alt="Hugging Face Dataset — V3" height="28"></a>
+  &nbsp;
+  <a href="https://arxiv.org/abs/2610.28087"><img src="https://img.shields.io/badge/arXiv-2610.28087-B31B1B?style=flat-square&amp;labelColor=384355" alt="arXiv — 2610.28087" height="28"></a>
+</p>
 
 **WildAIGC-Bench** tests AI-image detection on photographic-looking images tied to real news events and online claims, collected after actual web and social-media circulation.
 
