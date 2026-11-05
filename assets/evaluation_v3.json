@@ -101,7 +101,7 @@
       "balanced_accuracy": 66.1
     },
     {
-      "method": "BusterX2026",
+      "method": "BusterX++",
       "family": "mllm",
       "raw_recall": 23.83,
       "processed_recall": 24.67,

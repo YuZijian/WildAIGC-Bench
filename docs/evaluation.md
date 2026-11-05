@@ -16,7 +16,7 @@ All current tables use percentages. Each model uses its evaluated operating poin
 
 The external columns retain their existing benchmark evaluations. WildAIGC columns use V3 processed recall. The external mean equally weights EvalGen, synthbuster, UnivFD, AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM. Recall drop is external mean minus V3 recall, in percentage points.
 
-Only models with corresponding external results are included in this comparison. External runs were not repeated for this update; configuration differences and dataset differences can both affect the gap. BusterX2026 is not combined with historical BusterX++ scores. Existing sampling coverage is recorded in [sampling coverage](sampling-coverage.json).
+Only models with corresponding external results are included in this comparison. External runs were not repeated for this update; configuration differences and dataset differences can both affect the gap. The V3 BusterX++ run uses updated weights. The external comparison requires results for the corresponding model version. Existing sampling coverage is recorded in [sampling coverage](sampling-coverage.json).
 
 ## Raw and processed
 
