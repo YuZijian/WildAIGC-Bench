@@ -1561,6 +1561,6 @@
       ]
     },
     "wild_excluded": true,
-    "note": "Fixed shared coverage across all ten displayed methods. Recompute all rows if coverage changes. Aggregates inherit precision of supplied metrics."
+    "note": "Fixed nine-benchmark coverage for each included method. Aggregates inherit the precision of supplied metrics."
   }
 }
