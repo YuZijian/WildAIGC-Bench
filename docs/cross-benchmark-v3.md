@@ -1,6 +1,6 @@
 # Across benchmarks · recall (%)
 
-WildAIGC uses V3 processed images. External columns retain previous evaluations; they have not been rerun. Differences may reflect dataset and evaluation configuration changes. External mean equally weights all nine external benchmarks.
+WildAIGC uses V3 processed images. External mean equally weights nine benchmarks. This recall comparison is distinct from the paper’s main cross-benchmark balanced-accuracy table, which covers eight two-class benchmarks.
 
 | Method | EvalGen | synthbuster | UnivFD | AIGIBench | Chameleon | SynthWildx | WildRF | RRDataset | ITW-SM | WildAIGC V3 | External mean | Drop (pp) |
 |:---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -14,10 +14,12 @@ WildAIGC uses V3 processed images. External columns retain previous evaluations;
 | CO-SPY | 92.68 | 75.53 | 42.44 | 61.62 | 52.19 | 73.78 | 75.68 | 64.33 | 51.82 | 33.50 | 65.56 | 32.06 |
 | PE-336 | 99.96 | 96.53 | 99.45 | 97.00 | 76.06 | 90.62 | 96.54 | 77.97 | 80.28 | 20.50 | 90.49 | 69.99 |
 | PE-518 | 99.97 | 99.73 | 99.42 | 96.09 | 82.16 | 94.68 | 98.81 | 82.29 | 88.40 | 22.83 | 93.51 | 70.68 |
-| Qwen3.6-35B | 87.75 | 51.57 | 53.30 | 46.05 | 57.69 | 86.56 | 91.57 | 55.10 | 93.06 | 37.17 | 69.18 | 32.01 |
 | FakeVLM | 99.00 | 95.87 | 92.70 | 94.09 | 99.53 | 94.90 | 92.76 | 58.70 | 88.10 | 66.50 | 90.63 | 24.13 |
 | Veritas++ | 98.90 | 83.00 | 44.30 | 69.77 | 93.24 | 93.21 | 97.41 | 70.50 | 95.40 | 35.33 | 82.86 | 47.53 |
+| BusterX++ | 77.80 | 67.27 | 61.80 | 63.16 | 66.67 | 90.62 | 93.30 | 56.30 | 86.96 | 24.67 | 73.76 | 49.09 |
+| DeepVRM | 96.55 | 97.20 | 88.00 | 84.28 | 83.22 | 75.48 | 92.76 | 58.40 | 78.44 | 30.17 | 83.81 | 53.64 |
+| FakeShield | 96.10 | 98.90 | 64.20 | 89.69 | 19.35 | 48.23 | 65.41 | 88.60 | 51.86 | 30.33 | 69.15 | 38.82 |
+| UniGenDet | 70.60 | 67.17 | 66.30 | 88.49 | 95.80 | 86.26 | 88.32 | 69.80 | 89.30 | 45.00 | 80.23 | 35.23 |
+| Qwen3.6-35B-A3B | 87.75 | 51.57 | 53.30 | 46.05 | 57.69 | 86.56 | 91.57 | 55.10 | 93.06 | 37.17 | 69.18 | 32.01 |
 | Qwen3.8-27B | 87.95 | 64.60 | 71.10 | 73.97 | 69.35 | 86.78 | 86.05 | 66.90 | 88.20 | 54.50 | 77.21 | 22.71 |
 | GLM-5.3-Flash | 98.75 | 82.33 | 72.50 | 70.07 | 89.98 | 92.84 | 95.89 | 73.00 | 93.70 | 46.50 | 85.45 | 38.95 |
-
-[V1 historical results](results-v1.md).

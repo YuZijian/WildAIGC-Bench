@@ -16,13 +16,13 @@ All current tables use percentages. Each model uses its evaluated operating poin
 
 The external columns retain their existing benchmark evaluations. WildAIGC columns use V3 processed recall. The external mean equally weights EvalGen, synthbuster, UnivFD, AIGIBench, Chameleon, SynthWildx, WildRF, RRDataset and ITW-SM. Recall drop is external mean minus V3 recall, in percentage points.
 
-Only models with corresponding external results are included in this comparison. External runs were not repeated for this update; configuration differences and dataset differences can both affect the gap. The V3 BusterX++ run uses updated weights. The external comparison requires results for the corresponding model version. Existing sampling coverage is recorded in [sampling coverage](sampling-coverage.json).
+Only models with corresponding external results are included. The finalized materials include external results for BusterX++, DeepVRM, FakeShield and UniGenDet. Dataset and evaluation configuration differences can both affect the gap. The paper’s main external table reports balanced accuracy on eight two-class benchmarks; this page reports recall across nine benchmarks, including the AI-only EvalGen set. Existing sampling coverage is recorded in [sampling coverage](sampling-coverage.json).
 
 ## Raw and processed
 
 Raw and processed recall are reported separately. Real photographs are identical across versions. Cropping can change surrounding content, geometry and subsequent model preprocessing, so differences do not isolate a single degradation effect.
 
-The paper evaluates V1 (407 AI images); those results remain in the explicitly labeled historical archive. Current V3 results do not replace the paper's measurements.
+The finalized arXiv v3 paper evaluates V3 (600 AI images and 638 real photographs). Earlier V1 results remain in the explicitly labeled historical archive.
 
 ## Reporting your results
 

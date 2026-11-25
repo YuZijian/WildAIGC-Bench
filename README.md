@@ -54,7 +54,7 @@ WildAIGC scores use **V3 · 600 AI images**. External means equally weight the n
 
 [Explore V3 results →](https://yuzijian.github.io/WildAIGC-Bench/#evaluation) · [Full V3 table](docs/detailed-results.md) · [Cross-benchmark recall comparison](docs/cross-benchmark-v3.md)
 
-The cross-benchmark comparison uses **V3 processed recall** alongside existing external evaluations; recall drop is their difference in percentage points. The paper’s original **V1 results remain archived separately** in the [historical tables](docs/results-v1.md).
+The cross-benchmark comparison uses **V3 processed recall** alongside existing external evaluations; recall drop is their difference in percentage points. The latest [arXiv v3 paper](https://arxiv.org/abs/2610.28087v3) evaluates **V3 (600 AI + 638 real images)**. Earlier **V1 results remain archived separately** in the [historical tables](docs/results-v1.md).
 
 ## Dataset releases
 
@@ -62,7 +62,7 @@ The cross-benchmark comparison uses **V3 processed recall** alongside existing e
 |:---|---:|:---|
 | [**V3 · latest**](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench) | **1,238** | 600 AI images + 638 real photographs |
 | [V2 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/a446d52c5f59e18e87266ca96c0ca48193a422ac) | 600 | AI-image cohort retained unchanged in V3 |
-| [V1 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) | 407 | Original images used in the paper and published evaluations |
+| [V1 · frozen](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/tree/0b043a1dd41e694749227af8610930cc86049747) | 407 | Original release used in earlier evaluations |
 
 The per-sample `version` field records first inclusion. For release history, see the dataset [change log](https://huggingface.co/datasets/yuzj1997yzj/WildAIGC-Bench/blob/main/CHANGELOG.md).
 
@@ -84,7 +84,7 @@ print(ds[0]["sample_id"], ds[0]["label"])
 - **Reference relationships:** 44 confirmed links distinguish editing originals from same-event photographs. [View examples →](https://yuzijian.github.io/WildAIGC-Bench/#reference-pairs)
 - **Metadata:** labels, event context, evidence summaries and source links.
 
-To reproduce the paper’s original V1, pass `revision="0b043a1dd41e694749227af8610930cc86049747"` to `load_dataset`. Use this fixed revision for the original evaluation files.
+To reproduce the historical V1 release, pass `revision="0b043a1dd41e694749227af8610930cc86049747"` to `load_dataset`. Use this fixed revision for the original evaluation files.
 
 Report the dataset revision and image version used. See [data format and usage](docs/dataset.md) for the file layout and integrity checks.
 
@@ -120,8 +120,8 @@ See our [technical report on arXiv](https://arxiv.org/abs/2610.28087). Please ci
 
 ```bibtex
 @misc{yu2026wildaigcbench,
-  title={WildAIGC-Bench: Can AI Image Detectors Handle the Wild? A Benchmark of Generated and Edited Images in Online Circulation},
-  author={Zijian Yu and Hangwei Zhang and Jun Lan and Huijia Zhu and Weiqiang Wang and Jianfu Zhang},
+  title={WildAIGC-Bench: Can AI Image Detectors Handle the Wild?},
+  author={Zijian Yu and Hangwei Zhang and Shunxin Chen and Jun Lan and Huijia Zhu and Weiqiang Wang and Jianfu Zhang},
   year={2026},
   eprint={2610.28087},
   archivePrefix={arXiv},

@@ -28,6 +28,7 @@
 | Kimi-K3 | 60.00 | 57.33 | 3.13 | 77.10 |
 | DeepSeek-V4.1-Flash | 60.17 | 57.33 | 5.80 | 75.77 |
 | MiniMax-M3 | 61.50 | 61.50 | 16.61 | 72.44 |
+| GPT-5.6-sol | 46.33 | 40.50 | 1.72 | 69.39 |
 
 Each model is reported at its evaluated operating point. Higher recall alone does not imply better overall performance. Raw and processed real images are identical.
 

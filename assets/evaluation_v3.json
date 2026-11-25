@@ -179,6 +179,14 @@
       "processed_recall": 61.5,
       "fpr": 16.61,
       "balanced_accuracy": 72.44
+    },
+    {
+      "method": "GPT-5.6-sol",
+      "family": "mllm",
+      "raw_recall": 46.33,
+      "processed_recall": 40.5,
+      "fpr": 1.72,
+      "balanced_accuracy": 69.39
     }
   ]
 }
